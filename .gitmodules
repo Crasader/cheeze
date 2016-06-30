@@ -4,3 +4,18 @@
 [submodule "Vendor/lib"]
 	path = Vendor/lib
 	url = git@github.com:oke-ya/cocos2d-x-lib.git
+[submodule "Vendor/PluginXGooglePlay"]
+	path = Vendor/PluginXGooglePlay
+	url = git@github.com:yalab/PluginXGooglePlay.git
+[submodule "Vendor/PluginXIosIap"]
+	path = Vendor/PluginXIosIap
+	url = git@github.com:yalab/PluginXIosIap.git
+[submodule "Vendor/openssl-android"]
+	path = Vendor/openssl-android
+	url = git@github.com:guardianproject/openssl-android.git
+[submodule "Vendor/C2DXChartboost"]
+	path = Vendor/C2DXChartboost
+	url = git@github.com:jesanchezgo/C2DXChartboost.git
+[submodule "Vendor/PluginXProtocols"]
+	path = Vendor/PluginXProtocols
+	url = git@github.com:yalab/PluginXProtocols.git
