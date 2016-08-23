@@ -3,8 +3,133 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="HomeScene.csd" Type="Scene" />
-        <Project Name="TitleScene.csd" Type="Scene" />
+        <Folder Name="Csbs">
+          <Folder Name="Battle">
+            <Project Name="MemberListBox.csd" Type="Node" />
+            <Project Name="Enemy.csd" Type="Node" />
+          </Folder>
+          <Folder Name="Home">
+            <Project Name="MemberStatusPageBox.csd" Type="Node" />
+          </Folder>
+          <Project Name="BattleScene.csd" Type="Scene" />
+          <Project Name="HomeScene.csd" Type="Scene" />
+          <Project Name="LoadingLayer.csd" Type="Layer" />
+          <Project Name="TitleScene.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="Csis">
+          <PlistInfo Name="UIParts.csi" Type="Plist" />
+          <PlistInfo Name="Monsters.csi" Type="Plist" />
+        </Folder>
+        <Folder Name="Images">
+          <Folder Name="Monster">
+            <Image Name="s_ant.png" />
+            <Image Name="s_antlion.png" />
+            <Image Name="s_anubis.png" />
+            <Image Name="s_aruraune1.png" />
+            <Image Name="s_aruraune2.png" />
+            <Image Name="s_basilisk.png" />
+            <Image Name="s_bastet.png" />
+            <Image Name="s_bear.png" />
+            <Image Name="s_beauty.png" />
+            <Image Name="s_bee.png" />
+            <Image Name="s_bud.png" />
+            <Image Name="s_bulb.png" />
+            <Image Name="s_cactus.png" />
+            <Image Name="s_cactus_f.png" />
+            <Image Name="s_cobra.png" />
+            <Image Name="s_cockatrice.png" />
+            <Image Name="s_cockatricemini.png" />
+            <Image Name="s_deadtree.png" />
+            <Image Name="s_death.png" />
+            <Image Name="s_dragon_blue.png" />
+            <Image Name="s_dragon_green.png" />
+            <Image Name="s_dragon_red.png" />
+            <Image Name="s_dragon_yellow.png" />
+            <Image Name="s_dryad.png" />
+            <Image Name="s_element_big.png" />
+            <Image Name="s_element1.png" />
+            <Image Name="s_element2.png" />
+            <Image Name="s_elfboy_d1.png" />
+            <Image Name="s_elfboy_d2.png" />
+            <Image Name="s_elfboy1.png" />
+            <Image Name="s_elfboy2.png" />
+            <Image Name="s_elfgirl_d1.png" />
+            <Image Name="s_elfgirl_d2.png" />
+            <Image Name="s_elfgirl1.png" />
+            <Image Name="s_elfgirl2.png" />
+            <Image Name="s_genie.png" />
+            <Image Name="s_golem_gold.png" />
+            <Image Name="s_golem_silver.png" />
+            <Image Name="s_hatsnail1.png" />
+            <Image Name="s_hatsnail2.png" />
+            <Image Name="s_hornet.png" />
+            <Image Name="s_kraken.png" />
+            <Image Name="s_kraken01.png" />
+            <Image Name="s_kraken02.png" />
+            <Image Name="s_kraken03.png" />
+            <Image Name="s_kraken04.png" />
+            <Image Name="s_kraken05.png" />
+            <Image Name="s_ladybug.png" />
+            <Image Name="s_lich.png" />
+            <Image Name="s_lilliput1.png" />
+            <Image Name="s_lilliput2.png" />
+            <Image Name="s_lizard_blue.png" />
+            <Image Name="s_lizard_green.png" />
+            <Image Name="s_lizard_red.png" />
+            <Image Name="s_lizard_yellow.png" />
+            <Image Name="s_mantis.png" />
+            <Image Name="s_mejedo.png" />
+            <Image Name="s_mejedo01.png" />
+            <Image Name="s_mummy.png" />
+            <Image Name="s_owl.png" />
+            <Image Name="s_poisonmushroom.png" />
+            <Image Name="s_rat.png" />
+            <Image Name="s_sandoll.png" />
+            <Image Name="s_sandworm.png" />
+            <Image Name="s_scorpion_black.png" />
+            <Image Name="s_scorpion_red.png" />
+            <Image Name="s_seadragon.png" />
+            <Image Name="s_sphinx.png" />
+            <Image Name="s_spider_1.png" />
+            <Image Name="s_spider_2.png" />
+            <Image Name="s_tarantula.png" />
+            <Image Name="s_teddy_bear.png" />
+            <Image Name="s_treant.png" />
+            <Image Name="s_warlock.png" />
+            <Image Name="s_warlock01.png" />
+            <Image Name="s_wood_dragon.png" />
+          </Folder>
+          <Folder Name="sample">
+            <Image Name="bg_sample.png" />
+          </Folder>
+          <Folder Name="UIParts">
+            <Image Name="bg_lucent.png" />
+            <Image Name="button_command_d.png" />
+            <Image Name="button_command_n.png" />
+            <Image Name="button_command_p.png" />
+            <Image Name="character_1.png" />
+            <Image Name="character_2.png" />
+            <Image Name="character_3.png" />
+            <Image Name="character_4.png" />
+            <Image Name="character_large_1.png" />
+            <Image Name="character_large_2.png" />
+            <Image Name="character_large_3.png" />
+            <Image Name="character_large_4.png" />
+            <Image Name="character_thumbnail_1.png" />
+            <Image Name="character_thumbnail_2.png" />
+            <Image Name="character_thumbnail_3.png" />
+            <Image Name="character_thumbnail_4.png" />
+            <Image Name="icon_skill.png" />
+            <Image Name="icon_skill_off.png" />
+            <Image Name="icon016.png" />
+            <Image Name="icon020.png" />
+            <Image Name="icon024.png" />
+            <Image Name="icon025.png" />
+            <Image Name="icon030.png" />
+            <Image Name="pipo-battlebg001b.jpg" />
+            <Image Name="pipo-battlebg021b.jpg" />
+          </Folder>
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

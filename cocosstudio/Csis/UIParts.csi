@@ -1,0 +1,31 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="UIParts" Type="Plist" ID="ba938c65-8512-4ae6-85cc-5fa3ec55b950" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="2" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="Images/UIParts/character_thumbnail_1.png" />
+      <FilePathData Path="Images/UIParts/character_thumbnail_2.png" />
+      <FilePathData Path="Images/UIParts/character_thumbnail_3.png" />
+      <FilePathData Path="Images/UIParts/character_thumbnail_4.png" />
+      <FilePathData Path="Images/UIParts/icon_skill.png" />
+      <FilePathData Path="Images/UIParts/icon_skill_off.png" />
+      <FilePathData Path="Images/UIParts/bg_lucent.png" />
+      <FilePathData Path="Images/UIParts/button_command_d.png" />
+      <FilePathData Path="Images/UIParts/button_command_n.png" />
+      <FilePathData Path="Images/UIParts/button_command_p.png" />
+      <FilePathData Path="Images/UIParts/icon016.png" />
+      <FilePathData Path="Images/UIParts/icon020.png" />
+      <FilePathData Path="Images/UIParts/icon024.png" />
+      <FilePathData Path="Images/UIParts/icon025.png" />
+      <FilePathData Path="Images/UIParts/icon030.png" />
+      <FilePathData Path="Images/UIParts/character_1.png" />
+      <FilePathData Path="Images/UIParts/character_2.png" />
+      <FilePathData Path="Images/UIParts/character_3.png" />
+      <FilePathData Path="Images/UIParts/character_4.png" />
+      <FilePathData Path="Images/UIParts/character_large_1.png" />
+      <FilePathData Path="Images/UIParts/character_large_2.png" />
+      <FilePathData Path="Images/UIParts/character_large_3.png" />
+      <FilePathData Path="Images/UIParts/character_large_4.png" />
+    </ImageFiles>
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>

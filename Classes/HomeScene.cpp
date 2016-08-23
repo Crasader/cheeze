@@ -7,15 +7,11 @@
 //
 
 #include "HomeScene.h"
+#include "BattleScene.h"
+#include "LoadingLayer.h"
+#include "MemberStatusBox.h"
 
-#include "cocos/ui/CocosGUI.h"
-#include "editor-support/cocostudio/CocoStudio.h"
-#include "audio/include/AudioEngine.h"
-
-USING_NS_CC;
-using namespace cocostudio;
-using namespace cocos2d::ui;
-using namespace cocos2d::experimental;
+#include "BGMPlayer.h"
 
 HomeScene::HomeScene() = default;
 HomeScene::~HomeScene() = default;
@@ -24,9 +20,43 @@ bool HomeScene::init()
 {
     BaseScene::init();
     
-    AudioEngine::stopAll();
-    AudioEngine::play2d("Sounds/bgm_home.mp3", true, 1.0f);
+    _partyList = getChildByName<PageView*>("PageView");
+    getPartyList()->setBounceEnabled(true);
+    getPartyList()->removeAllItems();
+    
+    setPartyMembers();
+    
+    auto menu = getChildByName("Menu");
+    auto battleButton = menu->getChildByName<Button*>("Battle");
+    BaseScene::onTouch(battleButton, [&](Ref* ref){
+        BGMPlayer::play2d("Sounds/se_ok.mp3");
+        this->scheduleOnce([&](float dt){
+            auto scene = BattleScene::createScene();
+            auto fade = TransitionFade::create(2.0f, scene);
+            Director::getInstance()->replaceScene(fade);
+        }, 3.0f, "loading");
+        auto loading = LoadingLayer::create();
+        addChild(loading);
+    });
     
     return true;
 }
+
+void HomeScene::onEnter()
+{
+    BaseScene::onEnter();
+    
+    BGMPlayer::stopAll();
+    BGMPlayer::play("Sounds/PerituneMaterial_OverWorld3.mp3");
+}
+
+void HomeScene::setPartyMembers()
+{
+    for (auto i = 1; i <= 4; i++) {
+        auto member = std::make_shared<MemberStatusBox>();
+        member->appendTo(getPartyList(), i);
+        _party.push_back(member);
+    }
+}
+
 
