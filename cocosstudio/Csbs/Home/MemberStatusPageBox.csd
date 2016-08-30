@@ -17,7 +17,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.7500" Y="0.5888" />
-                <FileData Type="MarkedSubImage" Path="Images/UIParts/character_large_1.png" Plist="Csis/UIParts.plist" />
+                <FileData Type="MarkedSubImage" Path="Images/Party/character_1_large.png" Plist="Csis/UIParts.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="Status" ActionTag="555565059" Tag="776" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="50.0000" RightMargin="50.0000" TopMargin="230.0000" BottomMargin="310.0000" ClipAble="False" BackColorAlpha="127" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="540.0000" Y="260.0000" />
@@ -40,7 +40,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.4630" Y="0.9615" />
-                    <FileData Type="MarkedSubImage" Path="Images/UIParts/character_1.png" Plist="Csis/UIParts.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/Party/character_1.png" Plist="Csis/UIParts.plist" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Label" ActionTag="-245732678" Tag="778" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="165.0000" RightMargin="165.0000" TopMargin="13.0000" BottomMargin="213.0000" FontSize="30" LabelText="【ステータス】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="210.0000" Y="34.0000" />

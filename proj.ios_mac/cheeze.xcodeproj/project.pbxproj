@@ -61,6 +61,8 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		7224D5951D09A67F009A9A5E /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7224D5941D09A67F009A9A5E /* HomeScene.cpp */; };
+		72B85EE31D6E0A5800772D3E /* BattleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */; };
+		72B85EEF1D6EA65300772D3E /* BattleUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */; };
 		72D0BDDA1D699D670052FA49 /* Default in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDD41D699D670052FA49 /* Default */; };
 		72D0BDDC1D699D670052FA49 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDD61D699D670052FA49 /* Images */; };
 		72D0BDE11D699DF20052FA49 /* Csbs in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDE01D699DF20052FA49 /* Csbs */; };
@@ -82,13 +84,10 @@
 		72D0BE1B1D6B62710052FA49 /* SocialShare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE0B1D6B62710052FA49 /* SocialShare.cpp */; };
 		72D0BE1C1D6B62710052FA49 /* Touchable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE0E1D6B62710052FA49 /* Touchable.cpp */; };
 		72D0BE1E1D6B62FA0052FA49 /* Csis in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BE1D1D6B62FA0052FA49 /* Csis */; };
-		72D0BE211D6B65280052FA49 /* MemberListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE201D6B65280052FA49 /* MemberListBox.cpp */; };
-		72D0BE2A1D6B66D20052FA49 /* BattleUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE291D6B66D20052FA49 /* BattleUnit.cpp */; };
-		72D0BE2D1D6B66FD0052FA49 /* PartyUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE2C1D6B66FD0052FA49 /* PartyUnit.cpp */; };
-		72D0BE301D6B67240052FA49 /* EnemyUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE2F1D6B67240052FA49 /* EnemyUnit.cpp */; };
+		72D0BE211D6B65280052FA49 /* PartyUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE201D6B65280052FA49 /* PartyUnit.cpp */; };
 		72D0BE341D6BCFFB0052FA49 /* UnitData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE331D6BCFFB0052FA49 /* UnitData.cpp */; };
 		72D0BE3B1D6BDD0D0052FA49 /* MemberStatusBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE3A1D6BDD0D0052FA49 /* MemberStatusBox.cpp */; };
-		72D0BE571D6C9DAC0052FA49 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE561D6C9DAC0052FA49 /* Enemy.cpp */; };
+		72D0BE571D6C9DAC0052FA49 /* EnemyUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE561D6C9DAC0052FA49 /* EnemyUnit.cpp */; };
 		72D0BE5C1D6CB42F0052FA49 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BE5B1D6CB42F0052FA49 /* Fonts */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -212,6 +211,10 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7224D5901D09A66D009A9A5E /* HomeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
 		7224D5941D09A67F009A9A5E /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HomeScene.cpp; sourceTree = "<group>"; };
+		72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCommand.cpp; sourceTree = "<group>"; };
+		72B85EE71D6E0A6100772D3E /* BattleCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleCommand.h; sourceTree = "<group>"; };
+		72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleUnit.cpp; sourceTree = "<group>"; };
+		72B85EF01D6EA65D00772D3E /* BattleUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleUnit.h; sourceTree = "<group>"; };
 		72D0BDD41D699D670052FA49 /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		72D0BDD61D699D670052FA49 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		72D0BDE01D699DF20052FA49 /* Csbs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Csbs; sourceTree = "<group>"; };
@@ -254,20 +257,14 @@
 		72D0BE0F1D6B62710052FA49 /* Touchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touchable.h; sourceTree = "<group>"; };
 		72D0BE101D6B62710052FA49 /* valuemapwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valuemapwriter.h; sourceTree = "<group>"; };
 		72D0BE1D1D6B62FA0052FA49 /* Csis */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Csis; sourceTree = "<group>"; };
-		72D0BE1F1D6B65150052FA49 /* MemberListBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberListBox.h; sourceTree = "<group>"; };
-		72D0BE201D6B65280052FA49 /* MemberListBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemberListBox.cpp; sourceTree = "<group>"; };
-		72D0BE291D6B66D20052FA49 /* BattleUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleUnit.cpp; sourceTree = "<group>"; };
-		72D0BE2B1D6B66DD0052FA49 /* BattleUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleUnit.h; sourceTree = "<group>"; };
-		72D0BE2C1D6B66FD0052FA49 /* PartyUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartyUnit.cpp; sourceTree = "<group>"; };
-		72D0BE2E1D6B670D0052FA49 /* PartyUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartyUnit.h; sourceTree = "<group>"; };
-		72D0BE2F1D6B67240052FA49 /* EnemyUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyUnit.cpp; sourceTree = "<group>"; };
-		72D0BE311D6B672C0052FA49 /* EnemyUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnemyUnit.h; sourceTree = "<group>"; };
+		72D0BE1F1D6B65150052FA49 /* PartyUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartyUnit.h; sourceTree = "<group>"; };
+		72D0BE201D6B65280052FA49 /* PartyUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartyUnit.cpp; sourceTree = "<group>"; };
 		72D0BE321D6BCFEC0052FA49 /* UnitData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitData.h; sourceTree = "<group>"; };
 		72D0BE331D6BCFFB0052FA49 /* UnitData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitData.cpp; sourceTree = "<group>"; };
 		72D0BE391D6BDCFD0052FA49 /* MemberStatusBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberStatusBox.h; sourceTree = "<group>"; };
 		72D0BE3A1D6BDD0D0052FA49 /* MemberStatusBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemberStatusBox.cpp; sourceTree = "<group>"; };
-		72D0BE521D6C9D9E0052FA49 /* Enemy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		72D0BE561D6C9DAC0052FA49 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		72D0BE521D6C9D9E0052FA49 /* EnemyUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnemyUnit.h; sourceTree = "<group>"; };
+		72D0BE561D6C9DAC0052FA49 /* EnemyUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyUnit.cpp; sourceTree = "<group>"; };
 		72D0BE5B1D6CB42F0052FA49 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -495,12 +492,12 @@
 				241546DA1CD0CD8A00C37E01 /* Env.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				72D0BE381D6BDCCC0052FA49 /* Home */,
 				7224D5941D09A67F009A9A5E /* HomeScene.cpp */,
 				7224D5901D09A66D009A9A5E /* HomeScene.h */,
-				72D0BE221D6B65300052FA49 /* Battle */,
+				72D0BE381D6BDCCC0052FA49 /* Home */,
 				72D0BDE71D69AAB90052FA49 /* BattleScene.cpp */,
 				72D0BDE61D69AAAD0052FA49 /* BattleScene.h */,
+				72D0BE221D6B65300052FA49 /* Battle */,
 				72D0BDEA1D69BE410052FA49 /* TitleScene.cpp */,
 				72D0BDEB1D69BE410052FA49 /* TitleScene.h */,
 			);
@@ -558,10 +555,14 @@
 		72D0BE221D6B65300052FA49 /* Battle */ = {
 			isa = PBXGroup;
 			children = (
-				72D0BE201D6B65280052FA49 /* MemberListBox.cpp */,
-				72D0BE1F1D6B65150052FA49 /* MemberListBox.h */,
-				72D0BE561D6C9DAC0052FA49 /* Enemy.cpp */,
-				72D0BE521D6C9D9E0052FA49 /* Enemy.h */,
+				72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */,
+				72B85EF01D6EA65D00772D3E /* BattleUnit.h */,
+				72D0BE201D6B65280052FA49 /* PartyUnit.cpp */,
+				72D0BE1F1D6B65150052FA49 /* PartyUnit.h */,
+				72D0BE561D6C9DAC0052FA49 /* EnemyUnit.cpp */,
+				72D0BE521D6C9D9E0052FA49 /* EnemyUnit.h */,
+				72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */,
+				72B85EE71D6E0A6100772D3E /* BattleCommand.h */,
 			);
 			name = Battle;
 			sourceTree = "<group>";
@@ -569,12 +570,6 @@
 		72D0BE271D6B66A30052FA49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				72D0BE291D6B66D20052FA49 /* BattleUnit.cpp */,
-				72D0BE2B1D6B66DD0052FA49 /* BattleUnit.h */,
-				72D0BE2C1D6B66FD0052FA49 /* PartyUnit.cpp */,
-				72D0BE2E1D6B670D0052FA49 /* PartyUnit.h */,
-				72D0BE2F1D6B67240052FA49 /* EnemyUnit.cpp */,
-				72D0BE311D6B672C0052FA49 /* EnemyUnit.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -772,16 +767,16 @@
 			files = (
 				72D0BE111D6B62710052FA49 /* Alerm.cpp in Sources */,
 				72D0BE171D6B62710052FA49 /* ListBoard.cpp in Sources */,
+				72B85EE31D6E0A5800772D3E /* BattleCommand.cpp in Sources */,
 				72D0BE341D6BCFFB0052FA49 /* UnitData.cpp in Sources */,
 				72D0BE161D6B62710052FA49 /* ImageManager.cpp in Sources */,
 				72D0BE181D6B62710052FA49 /* PageBoard.cpp in Sources */,
 				72D0BE131D6B62710052FA49 /* CentralClient.cpp in Sources */,
 				72D0BE151D6B62710052FA49 /* DoNotBackup.mm in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				72B85EEF1D6EA65300772D3E /* BattleUnit.cpp in Sources */,
 				72D0BE191D6B62710052FA49 /* PlayerBase.cpp in Sources */,
-				72D0BE2D1D6B66FD0052FA49 /* PartyUnit.cpp in Sources */,
 				72D0BE1A1D6B62710052FA49 /* RestClient.cpp in Sources */,
-				72D0BE2A1D6B66D20052FA49 /* BattleUnit.cpp in Sources */,
 				72D0BE1C1D6B62710052FA49 /* Touchable.cpp in Sources */,
 				72D0BDE91D69AAB90052FA49 /* BattleScene.cpp in Sources */,
 				72D0BE121D6B62710052FA49 /* BGMPlayer.cpp in Sources */,
@@ -791,9 +786,8 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				72D0BDEC1D69BE410052FA49 /* TitleScene.cpp in Sources */,
-				72D0BE571D6C9DAC0052FA49 /* Enemy.cpp in Sources */,
-				72D0BE211D6B65280052FA49 /* MemberListBox.cpp in Sources */,
-				72D0BE301D6B67240052FA49 /* EnemyUnit.cpp in Sources */,
+				72D0BE571D6C9DAC0052FA49 /* EnemyUnit.cpp in Sources */,
+				72D0BE211D6B65280052FA49 /* PartyUnit.cpp in Sources */,
 				72D0BDF21D69C27A0052FA49 /* LoadingLayer.cpp in Sources */,
 				72D0BE1B1D6B62710052FA49 /* SocialShare.cpp in Sources */,
 				72D0BE141D6B62710052FA49 /* ConfirmBoard.cpp in Sources */,

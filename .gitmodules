@@ -10,9 +10,6 @@
 [submodule "Vendor/PluginXIosIap"]
 	path = Vendor/PluginXIosIap
 	url = git@github.com:yalab/PluginXIosIap.git
-[submodule "Vendor/openssl-android"]
-	path = Vendor/openssl-android
-	url = git@github.com:guardianproject/openssl-android.git
 [submodule "Vendor/C2DXChartboost"]
 	path = Vendor/C2DXChartboost
 	url = git@github.com:jesanchezgo/C2DXChartboost.git

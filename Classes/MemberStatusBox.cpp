@@ -24,7 +24,8 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
     auto image = getCsb()->getChildByName<ImageView*>("Image");
     auto command = getCsb()->getChildByName("Command");
     command->setVisible(false);
-    auto filePath = "Images/UIParts/character_large_" + std::to_string(getPosition()) + ".png";
+    auto& data = getUnitData();
+    auto filePath = "Images/" + data.code + "_large.png";
     ImageManager::loadTexture(image, filePath);
     onTouch(image, [&](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");
@@ -46,11 +47,11 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
 
 void MemberStatusBox::setStatus()
 {
-    auto data = getUnitData();
+    auto& data = getUnitData();
     auto node = getCsb()->getChildByName("Status");
     
     auto image = node->getChildByName<ImageView*>("Image");
-    auto filePath = "Images/UIParts/character_" + std::to_string(getPosition()) + ".png";
+    auto filePath = "Images/" + data.code + ".png";
     ImageManager::loadTexture(image, filePath);
     
     auto parameter = node->getChildByName<Text*>("Parameter");
@@ -75,7 +76,7 @@ void MemberStatusBox::setStatus()
     parameterSS << "\n";
     parameterSS << "武器 : ";
     auto n = 0;
-    for (auto weaponType : data.weaponTypes) {
+    for (auto& weaponType : data.weaponTypes) {
         parameterSS << weaponCodes.at(weaponType).name;
         n++;
         if (n < data.weaponTypes.size()) {
@@ -87,15 +88,11 @@ void MemberStatusBox::setStatus()
 
 void MemberStatusBox::setWeapon()
 {
-    auto data = getWeaponData();
+    auto& data = getWeaponData();
     auto node = getCsb()->getChildByName("Weapon");
     auto bgImage = node->getChildByName<ImageView*>("BgLucent");
     bgImage->setColor(elementCodes.at(data.element).color);
     
-//    auto image = node->getChildByName<ImageView*>("Image");
-//    auto filePath = "Images/UIParts/character_" + std::to_string(getPosition()) + ".png";
-//    ImageManager::loadTexture(image, filePath);
-//    
     auto parameter = node->getChildByName<Text*>("Parameter");
     std::stringstream parameterSS;
     parameterSS << "【";
@@ -121,7 +118,7 @@ void MemberStatusBox::setWeapon()
     parameter->setString(parameterSS.str());
     
     auto burst = node->getChildByName<Text*>("WeaponBurst");
-    auto burstData = data.burst;
+    auto& burstData = weaponBurstDatas.at(data.burstId);
     std::stringstream burstSS;
     burstSS << "ウェポンバースト : ";
     burstSS << burstData.name;
@@ -132,23 +129,21 @@ void MemberStatusBox::setWeapon()
 
 void MemberStatusBox::setCommands()
 {
-    auto commandIds = getUnitData().commandIds;
+    auto commands = getUnitData().commands;
     auto node = getCsb()->getChildByName("Command");
-    auto n = 1;
-    for (auto& commandId : commandIds) {
+    for (auto n = 1; n <= 3; n++) {
+        auto& command = commands.at(n);
         auto text = node->getChildByName<Text*>("Text_" + std::to_string(n));
-        auto data = commandDatas.at(commandId);
         std::stringstream textSS;
         textSS << "コマンド";
         textSS << n;
         textSS << " : ";
-        textSS << data.name;
+        textSS << command.name;
         textSS << " [AP:";
-        textSS << data.ap;
+        textSS << command.ap;
         textSS << "]\n→";
-        textSS << data.explain;
+        textSS << command.explain;
         text->setString(textSS.str());
-        n++;
     }
     
 }

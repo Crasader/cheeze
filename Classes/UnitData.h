@@ -21,10 +21,10 @@ enum class ElementType : int {
     WEAPON, FIRE, WATER, WIND, EARTH,
 };
 enum class TargetType : int {
-    OWN, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ALL, ENEMY_RANDOM
+    OWN, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ALL, ENEMY_RANDOM_4
 };
 enum class EffectType : int {
-    WEAPON_BURST, DAMAGE, ATK_UP, ATK_DOWN, DAMAGE_CUT, GUARD_BREAK, AP_UP, AP_DOWN, POISON, REGENE, INVICIBLE, REFRESH, TP_UP, TP_DOWN, HEAL, RESURRECTION
+    WEAPON_BURST, DAMAGE, ATK_UP, ATK_DOWN, DAMAGE_CUT, GUARD_BREAK, PENETRATE, AP_UP, AP_DOWN, POISON, REGENE, INVICIBLE, REFRESH, TP_UP, TP_DOWN, HEAL, RESURRECTION
 };
 
 typedef struct EffectData {
@@ -34,12 +34,6 @@ typedef struct EffectData {
     const std::array<int, 2> power;
 } EffectData;
 
-typedef struct WeaponBurstData {
-    const std::string name;
-    const std::string explain;
-    const std::vector<EffectData> effects;
-} WeaponBurstData;
-
 typedef struct WeaponData {
     const std::string name;
     const WeaponType type;
@@ -48,32 +42,27 @@ typedef struct WeaponData {
     const int attack;
     const int accuracy;
     const int critical;
-    const WeaponBurstData burst;
+    const int burstId;
 } WeaponData;
 
 typedef struct CommandData {
     const std::string name;
     const std::string explain;
+    const std::string code;
     const int ap;
     const std::vector<EffectData> effects;
 } CommandData;
 
 typedef struct UnitData {
     const std::string name;
-    const int hp;
-    const int attack;
-    const std::vector<WeaponType> weaponTypes;
-    const std::vector<int> commandIds;
-} UnitData;
-
-typedef struct EnemyData {
-    const std::string name;
     const std::string code;
     const int hp;
     const int attack;
     const int ap;
-    const std::vector<CommandData> skills;
-} EnemyData;
+    const ElementType element;
+    const std::vector<WeaponType> weaponTypes;
+    const std::vector<CommandData> commands;
+} UnitData;
 
 typedef struct CodeName{
     const std::string name;
@@ -82,9 +71,9 @@ typedef struct CodeName{
 } CodeName;
 
 extern const std::unordered_map<int, const UnitData> partyUnitDatas;
-extern const std::unordered_map<int, const EnemyData> enemyUnitDatas;
+extern const std::unordered_map<int, const UnitData> enemyUnitDatas;
 extern const std::unordered_map<int, const WeaponData> weaponDatas;
-extern const std::unordered_map<int, const CommandData> commandDatas;
+extern const std::unordered_map<int, const CommandData> weaponBurstDatas;
 extern const std::unordered_map<WeaponType, const CodeName> weaponCodes;
 extern const std::unordered_map<ElementType, const CodeName> elementCodes;
 

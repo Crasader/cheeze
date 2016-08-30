@@ -5,8 +5,8 @@
       <RootFolder Name=".">
         <Folder Name="Csbs">
           <Folder Name="Battle">
-            <Project Name="MemberListBox.csd" Type="Node" />
-            <Project Name="Enemy.csd" Type="Node" />
+            <Project Name="EnemyUnit.csd" Type="Node" />
+            <Project Name="PartyUnit.csd" Type="Node" />
           </Folder>
           <Folder Name="Home">
             <Project Name="MemberStatusPageBox.csd" Type="Node" />
@@ -17,8 +17,11 @@
           <Project Name="TitleScene.csd" Type="Scene" />
         </Folder>
         <Folder Name="Csis">
-          <PlistInfo Name="UIParts.csi" Type="Plist" />
           <PlistInfo Name="Monsters.csi" Type="Plist" />
+          <PlistInfo Name="UIParts.csi" Type="Plist" />
+        </Folder>
+        <Folder Name="Fonts">
+          <Fnt Name="BasicLabel.fnt" />
         </Folder>
         <Folder Name="Images">
           <Folder Name="Monster">
@@ -99,6 +102,20 @@
             <Image Name="s_warlock01.png" />
             <Image Name="s_wood_dragon.png" />
           </Folder>
+          <Folder Name="Party">
+            <Image Name="character_1.png" />
+            <Image Name="character_1_large.png" />
+            <Image Name="character_1_thumbnail.png" />
+            <Image Name="character_2.png" />
+            <Image Name="character_2_large.png" />
+            <Image Name="character_2_thumbnail.png" />
+            <Image Name="character_3.png" />
+            <Image Name="character_3_large.png" />
+            <Image Name="character_3_thumbnail.png" />
+            <Image Name="character_4.png" />
+            <Image Name="character_4_large.png" />
+            <Image Name="character_4_thumbnail.png" />
+          </Folder>
           <Folder Name="sample">
             <Image Name="bg_sample.png" />
           </Folder>
@@ -107,18 +124,6 @@
             <Image Name="button_command_d.png" />
             <Image Name="button_command_n.png" />
             <Image Name="button_command_p.png" />
-            <Image Name="character_1.png" />
-            <Image Name="character_2.png" />
-            <Image Name="character_3.png" />
-            <Image Name="character_4.png" />
-            <Image Name="character_large_1.png" />
-            <Image Name="character_large_2.png" />
-            <Image Name="character_large_3.png" />
-            <Image Name="character_large_4.png" />
-            <Image Name="character_thumbnail_1.png" />
-            <Image Name="character_thumbnail_2.png" />
-            <Image Name="character_thumbnail_3.png" />
-            <Image Name="character_thumbnail_4.png" />
             <Image Name="icon_skill.png" />
             <Image Name="icon_skill_off.png" />
             <Image Name="icon016.png" />
