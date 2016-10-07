@@ -27,7 +27,7 @@ void BattleUnit::init()
 
 void BattleUnit::setAvatar(Node* node)
 {
-    auto filePath = "Images/" + getUnitData().code + ".png";
+    auto filePath = "Images/Character/" + getUnitData().code + ".png";
     _avatar = ImageManager::create(filePath);
     getAvatar()->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
     node->removeAllChildren();
@@ -43,7 +43,7 @@ void BattleUnit::setElementColor()
 void BattleUnit::setName()
 {
     auto& data = getUnitData();
-    auto name = getCsb()->getChildByName<Text*>("Name");
+    auto name = getCsb()->getChildByName<TextBMFont*>("Name");
     name->setString(data.name);
 }
 
@@ -57,7 +57,7 @@ void BattleUnit::setHP()
     hpSS << getHP();
     hpSS << " / ";
     hpSS << getHPMax();
-    auto hpLabel = hpNode->getChildByName<Text*>("Label");
+    auto hpLabel = hpNode->getChildByName<TextBMFont*>("Label");
     hpLabel->setString(hpSS.str());
 }
 
@@ -65,7 +65,7 @@ void BattleUnit::setAP()
 {
     auto& data = getUnitData();
     _apMax = data.ap;
-    auto apLabel = getCsb()->getChildByName<Text*>("APLabel");
+    auto apLabel = getCsb()->getChildByName<TextBMFont*>("APLabel");
     apLabel->setString("[AP:" + std::to_string(getAP()) + "/" + std::to_string(getAPMax()) + "]");
     for (auto i = 0; i < 5; i++) {
         auto ap = getCsb()->getChildByName<Button*>("AP_" + std::to_string(i + 1));
@@ -108,7 +108,7 @@ void BattleUnit::damaged(const int damage, const bool weak, const WeaponType wea
             particle->setPosition(getRandomPosition(node));
             particle->setRotationSkewY(-180.0f);
             particle->setScale(1.0f);
-            node->addChild(particle);
+            node->getParent()->addChild(particle);
             particle->setAutoRemoveOnFinish(true);
         };
     });
@@ -116,7 +116,7 @@ void BattleUnit::damaged(const int damage, const bool weak, const WeaponType wea
         auto damageLabel = TextBMFont::create(std::to_string(damage), "Fonts/DamageLabel.fnt");
         damageLabel->setPosition(getRandomPosition(node));
         damageLabel->setScale(0.5f);
-        node->addChild(damageLabel);
+        node->getParent()->addChild(damageLabel);
         animationLabel(damageLabel);
         if (weak) {
             auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
@@ -160,7 +160,7 @@ void BattleUnit::healed(const int heal)
             particle->setPosition(getRandomPosition(node));
             particle->setRotationSkewY(-180.0f);
             particle->setScale(1.0f);
-            node->addChild(particle);
+            node->getParent()->addChild(particle);
             particle->setAutoRemoveOnFinish(true);
         };
     });
@@ -168,7 +168,7 @@ void BattleUnit::healed(const int heal)
         auto healLabel = TextBMFont::create(std::to_string(heal), "Fonts/HealLabel.fnt");
         healLabel->setPosition(getRandomPosition(node));
         healLabel->setScale(0.5f);
-        node->addChild(healLabel);
+        node->getParent()->addChild(healLabel);
         animationLabel(healLabel);
     });
     auto healColor = CallFuncN::create([&](Node* node){
@@ -201,7 +201,7 @@ const WeaponType BattleUnit::getWeaponType()
 const Vec2 BattleUnit::getRandomPosition(const Node* node)
 {
     auto size = node->getContentSize();
-    auto x = random(size.width / 3, size.width / 3 * 2);
+    auto x = random(-size.width / 3, size.width / 3);
     auto y = random(size.height / 3, size.height / 3 * 2);
     auto pos = Vec2(x, y);
     return pos;
@@ -220,11 +220,7 @@ void BattleUnit::animationLabel(TextBMFont* label)
 
 const UnitData& BattleUnit::getUnitData() const
 {
-    if (isEnemy()) {
-        return enemyUnitDatas.at(getUnitId());
-    } else {
-        return partyUnitDatas.at(getUnitId());
-    }
+    return unitDatas.at(getUnitId());
 }
 
 const WeaponData& BattleUnit::getWeaponData() const

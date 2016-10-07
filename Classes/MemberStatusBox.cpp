@@ -21,22 +21,31 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
     auto tmpl = CSLoader::createNode("Csbs/Home/MemberStatusPageBox.csb")->getChildByName<Widget*>("Template");
     tmpl->retain();
     _csb = tmpl->clone();
-    auto image = getCsb()->getChildByName<ImageView*>("Image");
+
+    auto weapon = getCsb()->getChildByName("Weapon");
+    weapon->setVisible(false);
     auto command = getCsb()->getChildByName("Command");
     command->setVisible(false);
-    auto& data = getUnitData();
-    auto filePath = "Images/" + data.code + "_large.png";
-    ImageManager::loadTexture(image, filePath);
-    onTouch(image, [&](Ref* ref){
+    onTouch(static_cast<Widget*>(getCsb()), [&](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");
         auto status = getCsb()->getChildByName("Status");
         status->setVisible(!status->isVisible());
-        auto weapon = getCsb()->getChildByName("Weapon");
-        weapon->setVisible(!weapon->isVisible());
+//        auto weapon = getCsb()->getChildByName("Weapon");
+//        weapon->setVisible(!weapon->isVisible());
         auto command = getCsb()->getChildByName("Command");
-        command->setVisible(!status->isVisible());
+        command->setVisible(!command->isVisible());
     });
     
+    auto avatar = getCsb()->getChildByName("Avatar");
+    avatar->removeAllChildren();
+    auto& data = getUnitData();
+    auto filePath = "Images/Character/" + data.code + ".png";
+    auto image = ImageManager::create(filePath);
+    image->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
+    image->setPosition(Vec2::ZERO);
+    image->setFlippedX(true);
+    avatar->addChild(image);
+
     setStatus();
     setWeapon();
     setCommands();
@@ -50,9 +59,11 @@ void MemberStatusBox::setStatus()
     auto& data = getUnitData();
     auto node = getCsb()->getChildByName("Status");
     
-    auto image = node->getChildByName<ImageView*>("Image");
-    auto filePath = "Images/" + data.code + ".png";
-    ImageManager::loadTexture(image, filePath);
+    auto bgImage = node->getChildByName<ImageView*>("BgLucent");
+    bgImage->setColor(elementCodes.at(data.element).color);
+//    auto image = node->getChildByName<ImageView*>("Image");
+//    auto filePath = "Images/Character/" + data.code + ".png";
+//    ImageManager::loadTexture(image, filePath);
     
     auto parameter = node->getChildByName<Text*>("Parameter");
     std::stringstream parameterSS;
@@ -150,7 +161,7 @@ void MemberStatusBox::setCommands()
 
 const UnitData& MemberStatusBox::getUnitData() const
 {
-    return partyUnitDatas.at(getPosition());
+    return unitDatas.at(getPosition());
 }
 
 const WeaponData& MemberStatusBox::getWeaponData() const

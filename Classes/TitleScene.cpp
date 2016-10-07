@@ -26,7 +26,7 @@ bool TitleScene::init()
             auto scene = HomeScene::createScene();
             auto fade = TransitionFade::create(2.0f, scene);
             Director::getInstance()->replaceScene(fade);
-        }, 3.0f, "loading");
+        }, 1.0f, "loading");
         auto loading = LoadingLayer::create();
         addChild(loading);
     });
@@ -39,6 +39,6 @@ void TitleScene::onEnter()
     BaseScene::onEnter();
     
     BGMPlayer::stopAll();
-    BGMPlayer::play("Sounds/PerituneMaterial_Dramatic3.mp3");
+    BGMPlayer::play("Sounds/04_leprechaun.mp3");
 }
 

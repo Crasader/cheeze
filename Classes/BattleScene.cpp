@@ -60,7 +60,7 @@ void BattleScene::onEnter()
     BaseScene::onEnter();
     
     BGMPlayer::stopAll();
-    BGMPlayer::play("Sounds/PerituneMaterial_Raid2.mp3");
+    BGMPlayer::play("Sounds/07_hamadryas.mp3");
     
     setPartyMembers();
     setEnemys();
@@ -71,7 +71,7 @@ void BattleScene::setPartyMembers()
     auto tmpl = CSLoader::createNode("Csbs/Battle/PartyUnit.csb")->getChildByName<Widget*>("Template");
     tmpl->retain();
     auto window = getChildByName("Window");
-    for (auto i = 1; i <= 4; i++) {
+    for (auto i = 1; i <= 3; i++) {
         auto key = "Character_" + std::to_string(i);
         auto csb = tmpl->clone();
         auto partyUnit = std::make_shared<PartyUnit>(i, i, csb);
@@ -87,7 +87,7 @@ void BattleScene::setEnemys()
     for (auto i = 1; i <= 3; i++) {
         auto key = "Enemy_" + std::to_string(i);
         auto csb = CSLoader::createNode("Csbs/Battle/EnemyUnit.csb");
-        auto enemy = std::make_shared<EnemyUnit>(i, csb);
+        auto enemy = std::make_shared<EnemyUnit>(i + 10, csb);
         enemy->appendTo(window->getChildByName(key), i);
         _enemys.push_back(enemy);
     }

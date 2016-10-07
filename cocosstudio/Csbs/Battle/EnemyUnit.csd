@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="Images/Monster/s_rat.png" Plist="Csis/Monsters.plist" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="BgImage" ActionTag="1782496531" Tag="381" IconVisible="False" LeftMargin="-82.0000" RightMargin="-82.0000" TopMargin="-2.0000" BottomMargin="-40.0000" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="218" Scale9Height="218" ctype="ImageViewObjectData">
             <Size X="164.0000" Y="42.0000" />
@@ -26,33 +26,32 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="Images/UIParts/bg_lucent.png" Plist="Csis/UIParts.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="HP" ActionTag="-1190588495" Tag="1300" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-80.0000" RightMargin="-80.0000" BottomMargin="-20.0000" TouchEnable="True" ClipAble="False" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-            <Size X="160.0000" Y="20.0000" />
+          <AbstractNodeData Name="HP" ActionTag="-1190588495" Tag="1300" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-75.0000" RightMargin="-75.0000" TopMargin="2.5000" BottomMargin="-17.5000" TouchEnable="True" ClipAble="False" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="150.0000" Y="15.0000" />
             <Children>
               <AbstractNodeData Name="Bar" ActionTag="713182293" Tag="1301" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ProgressInfo="100" ctype="LoadingBarObjectData">
-                <Size X="160.0000" Y="20.0000" />
+                <Size X="150.0000" Y="15.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="80.0000" Y="10.0000" />
+                <Position X="75.0000" Y="7.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="68" B="0" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Label" ActionTag="1254610926" VisibleForFrame="False" Tag="344" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="50.0000" RightMargin="50.0000" TopMargin="-1.5000" BottomMargin="-1.5000" FontSize="20" LabelText="ネズミ" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="60.0000" Y="23.0000" />
+              <AbstractNodeData Name="Label" ActionTag="2136084513" VisibleForFrame="False" Tag="646" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-211.5000" RightMargin="-211.5000" TopMargin="-40.5000" BottomMargin="-40.5000" LabelText="HP:99999/99999" ctype="TextBMFontObjectData">
+                <Size X="573.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="80.0000" Y="10.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="0" />
+                <Position X="75.0000" Y="7.5000" />
+                <Scale ScaleX="0.2500" ScaleY="0.2500" />
+                <CColor A="255" R="255" G="238" B="136" />
                 <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.3750" Y="1.1500" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="0" G="0" B="0" />
+                <PreSize X="3.8200" Y="6.4000" />
+                <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position Y="-10.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -62,27 +61,25 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Name" ActionTag="-417735076" Tag="1302" IconVisible="False" LeftMargin="-30.0000" RightMargin="-30.0000" TopMargin="-1.5000" BottomMargin="-21.5000" FontSize="20" LabelText="ネズミ" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-            <Size X="60.0000" Y="23.0000" />
+          <AbstractNodeData Name="Name" ActionTag="1202136412" Tag="644" IconVisible="False" LeftMargin="-116.5000" RightMargin="-116.5000" TopMargin="-38.0000" BottomMargin="-58.0000" LabelText="キラリ" ctype="TextBMFontObjectData">
+            <Size X="233.0000" Y="96.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="-10.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="0" />
+            <Scale ScaleX="0.2500" ScaleY="0.2500" />
+            <CColor A="255" R="255" G="238" B="136" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="0" G="0" B="0" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="APLabel" ActionTag="-52179430" Tag="1304" IconVisible="False" LeftMargin="19.5000" RightMargin="-80.5000" TopMargin="18.5000" BottomMargin="-41.5000" FontSize="20" LabelText="[AP: 1]" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-            <Size X="61.0000" Y="23.0000" />
+          <AbstractNodeData Name="APLabel" ActionTag="1092017831" Tag="645" IconVisible="False" LeftMargin="-73.5000" RightMargin="-173.5000" TopMargin="-18.0000" BottomMargin="-78.0000" LabelText="[AP:1]" ctype="TextBMFontObjectData">
+            <Size X="247.0000" Y="96.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="50.0000" Y="-30.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="255" B="255" />
+            <Scale ScaleX="0.2000" ScaleY="0.2000" />
+            <CColor A="255" R="255" G="170" B="68" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="0" G="0" B="0" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="AP_1" ActionTag="-1683425644" Tag="1305" IconVisible="False" LeftMargin="-80.0000" RightMargin="60.0000" TopMargin="19.9993" BottomMargin="-39.9993" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="50" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="20.0000" Y="20.0000" />

@@ -8,189 +8,149 @@
 
 #include "UnitData.h"
 
-const std::unordered_map<int, const UnitData> partyUnitDatas = {
-    {1, {"ラグナス", "Party/character_1", 1800, 650, 5, ElementType::FIRE, {WeaponType::AX, WeaponType::SWORD, WeaponType::LANCE},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"ストライク", "敵単体に武器属性ダメージ", "", 1,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {150, 200}}
-                }
-            },
-            {"アーマーブレイク", "敵単体に武器属性ダメージ / ガードブレイク15%を付与(3ターン)", "", 2,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {150, 200}},
-                    {EffectType::GUARD_BREAK, TargetType::ENEMY_ONE, ElementType::WEAPON, {15, 3}}
-                }
-            },
-            {"ウォークライ", "味方全体のATKを20%アップ(1ターン)", "", 3,
-                {
-                    {EffectType::ATK_UP, TargetType::PARTY_ALL, ElementType::WEAPON, {20, 1}}
-                }
-            },
-        }
-    }},
-    {2, {"アレックス", "Party/character_2", 1400, 480, 5, ElementType::EARTH, {WeaponType::CANE, WeaponType::ARCH, WeaponType::KNIFE},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"クラック", "敵全体に土属性ダメージ", "", 2,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::EARTH, {75, 100}}
-                }
-            },
-            {"アースヒール", "味方全体のHPを回復", "", 4,
-                {
-                    {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::EARTH, {60, 75}}
-                }
-            },
-            {"ディスペル", "敵単体の強化効果を1つ取り除く", "", 3,
-                {
-                    {EffectType::ATK_UP, TargetType::PARTY_ALL, ElementType::WEAPON, {20, 1}}
-                }
-            },
-        },
-    }},
-    {3, {"ソフィア", "Party/character_3", 1600, 600, 5, ElementType::WATER, {WeaponType::LANCE, WeaponType::CANE, WeaponType::SWORD},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"ペネトレイト", "敵単体に武器属性ダメージ / ダメージカットを無視する", "", 2,
-                {
-                    {EffectType::PENETRATE, TargetType::PARTY_ALL, ElementType::WEAPON, {40, 60}},
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {125, 150}}
-                }
-            },
-            {"クイックヒール", "現在のＨＰが一番少ない味方単体のＨＰを回復", "", 2,
-                {
-                    {EffectType::HEAL, TargetType::PARTY_ONE, ElementType::WEAPON, {75, 100}}
-                }
-            },
-            {"リフレッシュ", "味方全体の弱体効果を1つ取り除く", "", 2,
-                {
-                    {EffectType::REFRESH, TargetType::PARTY_ONE, ElementType::WEAPON, {1, 1}}
-                }
-            },
-        },
-    }},
-    {4, {"ミケーラ", "Party/character_4", 1500, 540, 5, ElementType::WIND, {WeaponType::KNIFE, WeaponType::ARCH, WeaponType::AX},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"ウィンド", "敵単体に風属性ダメージ", "", 1,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WIND, {150, 200}}
-                }
-            },
-            {"スナッチ", "敵単体のAPを-1する / 自分のAPを+1する", "", 3,
-                {
-                    {EffectType::AP_DOWN, TargetType::ENEMY_ONE, ElementType::WEAPON, {1, 1}},
-                    {EffectType::AP_UP, TargetType::OWN, ElementType::WEAPON, {1, 1}}
-                }
-            },
-            {"ワイルドラッシュ", "敵単体に武器属性ダメージ / ターゲットランダムで4回繰り返す", "", 3,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_RANDOM_4, ElementType::WEAPON, {125, 150}}
-                }
-            },
-        },
-    }},
-};
-
-const std::unordered_map<int, const UnitData> enemyUnitDatas = {
-    {1, {"グリーンドラゴン", "Monster/s_dragon_green", 50000, 450, 3, ElementType::WIND, {WeaponType::ENEMY},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"ストームブラスト", "", "skill_fire_breath", 3,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::WEAPON, {150, 200}},
-                }
+const std::unordered_map<int, const UnitData> unitDatas = {
+    {1, {"キラリ", "1", 3, 1800, 650, 5, ElementType::FIRE, {WeaponType::SWORD, WeaponType::KNIFE, WeaponType::AX},
+        {"トライアドスター", "敵全体に火属性ダメージ(中) / 水属性の追加ダメージ(中) / 風属性の追加ダメージ(中)", "", 1,
+            {
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::FIRE, {200, 250}},
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WATER, {200, 250}},
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WIND, {200, 250}}
             }
         },
     }},
-    {2, {"くま", "Monster/s_bear", 4000, 240, 4, ElementType::FIRE, {WeaponType::ENEMY},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"とっしん", "", "skill_fire_breath", 4,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {250, 300}},
-                    {EffectType::AP_DOWN, TargetType::ENEMY_ONE, ElementType::WEAPON, {1, 1}}
-                }
+    {2, {"ヒラリ", "2", 2, 1400, 480, 5, ElementType::WIND, {WeaponType::ARCH},
+        {"しんぴのかぜ", "味方全体に活性効果を付与する(3ターン) / 味方全員のAPを+5する", "", 1,
+            {
+                {EffectType::REGENE, TargetType::PARTY_ALL, ElementType::WIND, {50, 3}},
+                {EffectType::AP_UP, TargetType::PARTY_ALL, ElementType::WIND, {5, 5}}
             }
         },
     }},
-    {3, {"ねずみ", "Monster/s_rat", 2000, 180, 2, ElementType::WATER, {WeaponType::ENEMY},
-        {
-            {"こうげき", "", "", 0,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
-                }
-            },
-            {"たいあたり", "", "skill_fire_breath", 2,
-                {
-                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {150, 200}}
-                }
+    {3, {"サラリ", "3", 1, 1600, 600, 5, ElementType::WATER, {WeaponType::CANE},
+        {"めいきょうしすい", "味方全体のＨＰを回復(特大) / 気絶した仲間を復活させる(HP:50%)", "", 1,
+            {
+                {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, {525, 625}},
+                {EffectType::RESURRECTION, TargetType::PARTY_ALL, ElementType::WATER, {45, 55}},
+            }
+        },
+    }},
+//    {4, {"ミケーラ", "4", 1, 1500, 540, 5, ElementType::WIND, {WeaponType::KNIFE, WeaponType::ARCH, WeaponType::AX},
+//        {
+//            {"こうげき", "", "", 0,
+//                {
+//                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
+//                }
+//            },
+//            {"ウィンド", "敵単体に風属性ダメージ", "", 1,
+//                {
+//                    {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WIND, {150, 200}}
+//                }
+//            },
+//            {"スナッチ", "敵単体のAPを-1する / 自分のAPを+1する", "", 3,
+//                {
+//                    {EffectType::AP_DOWN, TargetType::ENEMY_ONE, ElementType::WEAPON, {1, 1}},
+//                    {EffectType::AP_UP, TargetType::OWN, ElementType::WEAPON, {1, 1}}
+//                }
+//            },
+//            {"ワイルドラッシュ", "敵単体に武器属性ダメージ / ターゲットランダムで4回繰り返す", "", 3,
+//                {
+//                    {EffectType::DAMAGE, TargetType::ENEMY_RANDOM_4, ElementType::WEAPON, {125, 150}}
+//                }
+//            },
+//        },
+//    }},
+    {11, {"ばうわう", "11", -1, 50000, 300, 3, ElementType::WIND, {WeaponType::ENEMY},
+        {"ストームブラスト", "", "", 3,
+            {
+                {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::WEAPON, {150, 200}},
+            }
+        },
+    }},
+    {12, {"あるみらじ", "12", 1, 4000, 200, 4, ElementType::FIRE, {WeaponType::ENEMY},
+        {"とっしん", "", "", 4,
+            {
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {250, 300}},
+                {EffectType::AP_DOWN, TargetType::ENEMY_ONE, ElementType::WEAPON, {1, 1}}
+            }
+        },
+    }},
+    {13, {"きのこりお", "13", 1, 2000, 150, 2, ElementType::WATER, {WeaponType::ENEMY},
+        {"たいあたり", "", "", 2,
+            {
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {150, 200}}
             }
         },
     }},
 };
 
 const std::unordered_map<int, const WeaponData> weaponDatas = {
-    {0, {"なし", WeaponType::ENEMY, ElementType::WEAPON, 0, 0, 0, 0, 0 }},
-    {1, {"バトルアクス", WeaponType::AX, ElementType::FIRE, 200, 150, 80, 8, 1 }},
-    {2, {"ロングケーン", WeaponType::CANE, ElementType::EARTH, 80, 240, 96, 4, 2 }},
-    {3, {"トライデント", WeaponType::LANCE, ElementType::WATER, 320, 120, 88, 4, 3}},
-    {4, {"ククリナイフ", WeaponType::KNIFE, ElementType::WIND, 100, 120, 96, 16, 4}},
+    { 0, {"なし", WeaponType::ENEMY, ElementType::WEAPON, 0, 0, {0} }},
+    { 1, {"せんしのおの", WeaponType::AX, ElementType::FIRE, 200, 200, {1, 2, 3} }},
+    { 2, {"もりびとのゆみ", WeaponType::ARCH, ElementType::WIND, 150, 250, {4, 5, 6} }},
+    { 3, {"あめふりのつえ", WeaponType::CANE, ElementType::WATER, 100, 300, {7, 8, 9}}},
 };
 
-const std::unordered_map<int, const CommandData> weaponBurstDatas = {
-    { 0, {"ストライク", "敵単体に武器属性ダメージ", "", 100,
+const std::unordered_map<int, const CommandData> commandDatas = {
+    { 0, {"こうげき", "", "", 0,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {100, 150}},
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {95, 105}}
         }
     }},
-    { 1, {"ファイアブリッツ", "敵単体に火属性ダメージ(中) / 攻撃後、自分のATKを30%アップ(1ターン)", "", 100,
+    { 1, {"ぶったぎり", "敵単体に武器属性ダメージ(小)", "", 1,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::FIRE, {500, 600}},
-            {EffectType::ATK_UP, TargetType::OWN, ElementType::FIRE, {30, 1}}
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {125, 150}}
         }
     }},
-    { 2, {"アースクエイク", "敵全体に土属性ダメージ(小) / APを-1する", "", 100,
+    { 2, {"おたけび", "味方全体のATを25%アップ(2ターン)", "", 2,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::EARTH, {300, 350}},
-            {EffectType::AP_DOWN, TargetType::ENEMY_ALL, ElementType::EARTH, {1, 1}}
+            {EffectType::ATK_UP, TargetType::PARTY_ALL, ElementType::WEAPON, {25, 2}},
         }
     }},
-    { 3, {"アクアスラスト", "敵単体に水属性ダメージ(中) / 攻撃後、自分にダメージカット40%を付与(1ターン)", "", 100,
+    { 3, {"あばれまわる", "敵全体に武器属性ダメージ(中)", "", 3,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WATER, {500, 600}},
-            {EffectType::DAMAGE_CUT, TargetType::OWN, ElementType::WATER, {40, 1}}
+            {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::WEAPON, {200, 250}}
         }
     }},
-    { 4, {"ゲイルストライク", "敵単体に風属性ダメージ(大)", "", 100,
+    { 4, {"どくや", "敵単体に武器属性ダメージ(小) / 対象に3ターンの継続ダメージ", "", 2,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WIND, {800, 900}}
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {125, 150}},
+            {EffectType::POISON, TargetType::ENEMY_ONE, ElementType::WEAPON, {35, 3}}
+        }
+    }},
+    { 5, {"かげぬい", "敵単体に武器属性ダメージ(小) / 対象のAPを-1する", "", 3,
+        {
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WEAPON, {125, 150}},
+            {EffectType::AP_DOWN, TargetType::ENEMY_ONE, ElementType::WEAPON, {1, 1}},
+        }
+    }},
+    { 6, {"やのあらし", "敵全体に武器属性ダメージ(中)", "", 3,
+        {
+            {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::WEAPON, {200, 250}}
+        }
+    }},
+    { 7, {"いのちのみず", "現在のＨＰが一番少ない味方単体のＨＰを回復(小)", "", 2,
+        {
+            {EffectType::HEAL, TargetType::PARTY_ONE, ElementType::WATER, {125, 150}}
+        }
+    }},
+    { 8, {"こおりのやいば", "敵単体に水属性ダメージ(中)", "", 2,
+        {
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WATER, {200, 250}}
+        }
+    }},
+    { 9, {"いやしのあめ", "味方全体のＨＰを回復(中)", "", 3,
+        {
+            {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, {200, 250}}
+        }
+    }},
+    {10, {"みだれうち", "敵単体に風属性ダメージ(小) / ターゲットランダムで4回繰り返す", "", 3,
+        {
+            {EffectType::DAMAGE, TargetType::ENEMY_RANDOM_4, ElementType::WEAPON, {125, 150}}
+        }
+    }},
+    {11, {"まぼろしのきり", "自分が受けるダメージを0にする(1ターン)", "", 1,
+        {
+            {EffectType::DAMAGE_CUT, TargetType::OWN, ElementType::WEAPON, {100, 1}}
         }
     }},
 };

@@ -2,10 +2,6 @@
   <PropertyGroup Name="UIParts" Type="Plist" ID="ba938c65-8512-4ae6-85cc-5fa3ec55b950" Version="3.10.0.0" />
   <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="2" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="Images/Party/character_1_thumbnail.png" />
-      <FilePathData Path="Images/Party/character_2_thumbnail.png" />
-      <FilePathData Path="Images/Party/character_3_thumbnail.png" />
-      <FilePathData Path="Images/Party/character_4_thumbnail.png" />
       <FilePathData Path="Images/UIParts/icon_skill.png" />
       <FilePathData Path="Images/UIParts/icon_skill_off.png" />
       <FilePathData Path="Images/UIParts/bg_lucent.png" />
@@ -17,14 +13,6 @@
       <FilePathData Path="Images/UIParts/icon024.png" />
       <FilePathData Path="Images/UIParts/icon025.png" />
       <FilePathData Path="Images/UIParts/icon030.png" />
-      <FilePathData Path="Images/Party/character_1.png" />
-      <FilePathData Path="Images/Party/character_2.png" />
-      <FilePathData Path="Images/Party/character_3.png" />
-      <FilePathData Path="Images/Party/character_4.png" />
-      <FilePathData Path="Images/Party/character_1_large.png" />
-      <FilePathData Path="Images/Party/character_2_large.png" />
-      <FilePathData Path="Images/Party/character_3_large.png" />
-      <FilePathData Path="Images/Party/character_4_large.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

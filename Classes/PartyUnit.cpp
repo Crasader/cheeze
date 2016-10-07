@@ -38,6 +38,7 @@ void PartyUnit::appendTo(ListView* list, const int position, Node* avatar)
 {
     init();
     setAvatar(avatar);
+    getAvatar()->setFlippedX(true);
     setPosition(position);
 
     list->addChild(getCsb());
@@ -46,14 +47,16 @@ void PartyUnit::appendTo(ListView* list, const int position, Node* avatar)
 void PartyUnit::setThumbnail()
 {
     auto thumbnail = getCsb()->getChildByName<ImageView*>("Thumbnail");
-    ImageManager::loadTexture(thumbnail, "Images/" + getUnitData().code + "_thumbnail.png");
+    ImageManager::loadTexture(thumbnail, "Images/Character/" + getUnitData().code + ".png");
+    auto bgThumbnail = getCsb()->getChildByName<ImageView*>("BgThumbnail");
+    bgThumbnail->setColor(elementCodes.at(getUnitData().element).color);
 }
 
 void PartyUnit::setTP()
 {
     auto currentTp = getTP();
     auto node = getCsb()->getChildByName("TP");
-    auto tpLabel = node->getChildByName<Text*>("Label");
+    auto tpLabel = node->getChildByName<TextBMFont*>("Label");
     tpLabel->setString("TP: " + std::to_string(currentTp) + "%");
     auto tpBar = node->getChildByName<LoadingBar*>("Bar");
     tpBar->setPercent(getTpPercent());
@@ -70,15 +73,16 @@ void PartyUnit::setCommands()
 void PartyUnit::setCommand(const int number)
 {
     auto commandButton = getCsb()->getChildByName<Button*>("Command_" + std::to_string(number));
-    auto needAPLabel = commandButton->getChildByName<Text*>("Label");
+    auto nameLabel = commandButton->getChildByName<TextBMFont*>("Name");
+    auto needAPLabel = commandButton->getChildByName<TextBMFont*>("Label");
 
     auto needAP = 0;
     auto battleCommand = getBattleCommands()[number];
-    commandButton->setTitleText(battleCommand->getName());
+    nameLabel->setString(battleCommand->getName());
     needAP = battleCommand->getAp();
     if (number == 4) {
         needAPLabel->setString("TP:" + std::to_string(needAP) + "%");
-        needAPLabel->setColor(Color3B(0, 255, 68));
+        needAPLabel->setColor(Color3B(136, 255, 136));
         if (getTP() >= 100) {
             commandButton->setBright(true);
             commandButton->setEnabled(true);
@@ -86,18 +90,16 @@ void PartyUnit::setCommand(const int number)
             commandButton->setBright(false);
             commandButton->setEnabled(false);
         }
-    } else if (number != 0) {
+    } else {
         needAPLabel->setString("AP:" + std::to_string(needAP));
-        needAPLabel->setColor(Color3B(255, 0, 68));
-        if (needAP > 0 && getAP() >= needAP) {
+        needAPLabel->setColor(Color3B(255, 136, 136));
+        if (getAP() >= needAP) {
             commandButton->setBright(true);
             commandButton->setEnabled(true);
         } else {
             commandButton->setBright(false);
             commandButton->setEnabled(false);
         }
-    } else {
-        needAPLabel->setVisible(false);
     }
     onTouch(commandButton, [&, number](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");

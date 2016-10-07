@@ -1,0 +1,20 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="Characters" Type="Plist" ID="e9bf97a2-9940-425d-ad61-f2049a4a4bb1" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="Images/Character/1.png" />
+      <FilePathData Path="Images/Character/2.png" />
+      <FilePathData Path="Images/Character/3.png" />
+      <FilePathData Path="Images/Character/11.png" />
+      <FilePathData Path="Images/Character/12.png" />
+      <FilePathData Path="Images/Character/13.png" />
+      <FilePathData Path="Images/Character/14.png" />
+      <FilePathData Path="Images/Character/15.png" />
+      <FilePathData Path="Images/Character/16.png" />
+      <FilePathData Path="Images/Character/17.png" />
+      <FilePathData Path="Images/Character/18.png" />
+      <FilePathData Path="Images/Character/19.png" />
+    </ImageFiles>
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>

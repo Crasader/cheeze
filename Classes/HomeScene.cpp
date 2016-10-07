@@ -34,7 +34,7 @@ bool HomeScene::init()
             auto scene = BattleScene::createScene();
             auto fade = TransitionFade::create(2.0f, scene);
             Director::getInstance()->replaceScene(fade);
-        }, 3.0f, "loading");
+        }, 2.0f, "loading");
         auto loading = LoadingLayer::create();
         addChild(loading);
     });
@@ -46,13 +46,13 @@ void HomeScene::onEnter()
 {
     BaseScene::onEnter();
     
-    BGMPlayer::stopAll();
-    BGMPlayer::play("Sounds/PerituneMaterial_OverWorld3.mp3");
+//    BGMPlayer::stopAll();
+//    BGMPlayer::play("Sounds/pumpkin_dance.mp3");
 }
 
 void HomeScene::setPartyMembers()
 {
-    for (auto i = 1; i <= 4; i++) {
+    for (auto i = 1; i <= 3; i++) {
         auto member = std::make_shared<MemberStatusBox>();
         member->appendTo(getPartyList(), i);
         _party.push_back(member);
