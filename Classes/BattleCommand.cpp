@@ -14,6 +14,11 @@ void BattleCommand::init()
 {
 }
 
+const bool BattleCommand::isAttack() const 
+{
+    return getAp() == 0;
+}
+
 const std::string BattleCommand::getName() const
 {
     return getCommandData().name;
@@ -31,5 +36,5 @@ const int BattleCommand::getAp() const
 
 const std::vector<EffectData> BattleCommand::getEffects() const
 {
-    return getCommandData().effects;
+    return getCommandData().effect_datas;
 }

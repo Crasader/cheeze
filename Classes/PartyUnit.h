@@ -19,11 +19,19 @@ public:
     : BattleUnit(unitId, weaponId, false, csb) {}
     virtual void appendTo(ListView* list, const int position, Node* avatar);
     virtual ~PartyUnit() = default;
+    inline void updateHP(const int point) {
+        BattleUnit::updateHP(point);
+        setHP();
+    };
     inline void updateTP(const int point = random(9, 12)) { _tp += point; if(_tp > 100) _tp = 100; if(_tp < 0) _tp = 0; setTP(); };
+    void attack();
+    void damaged(const int damage, const bool weak, const WeaponType weaponType);
+    void healed(const int heal);
     void turnChange();
 private:
     void init();
     void setThumbnail();
+    void setHP();
     void setTP();
     void setCommands();
     void setCommand(const int number);
@@ -34,6 +42,9 @@ private:
         float percent = 100.0f * _tp / 100.0f;
         return percent;
     }
+    inline void setTouchable() { _untouchable->setVisible(false); };
+    inline void setUntouchable() { _untouchable->setVisible(true); };
+    ImageView* _untouchable;
 };
 
 #endif /* defined(__cheeze__PartyUnit__) */

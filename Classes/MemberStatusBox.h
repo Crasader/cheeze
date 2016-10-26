@@ -33,6 +33,9 @@ private:
     const WeaponData& getWeaponData() const;
     inline const int getPosition() const { return _position; }
     int _position { -1 };
+    Node* _menuLabels { nullptr };
+    Node* _basicLabels { nullptr };
+    Node* _labels { nullptr };
 };
 
 #endif /* defined(__cheeze__MemberStatusBox__) */

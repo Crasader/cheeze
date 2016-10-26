@@ -19,7 +19,7 @@ public:
     virtual ~TitleScene();
     bool init();
     void onEnter();
-    //    void onEnterTransitionDidFinish();
+    void onEnterTransitionDidFinish();
 private:
 };
 

@@ -61,9 +61,10 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		7224D5951D09A67F009A9A5E /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7224D5941D09A67F009A9A5E /* HomeScene.cpp */; };
+		7277DD201DA55A9100D52302 /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7277DD1F1DA55A9100D52302 /* StageData.cpp */; };
 		72B85EE31D6E0A5800772D3E /* BattleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */; };
 		72B85EEF1D6EA65300772D3E /* BattleUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */; };
-		72D0BDDA1D699D670052FA49 /* Default in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDD41D699D670052FA49 /* Default */; };
+		72C7A6DD1DADEBBE00B3AB33 /* BattleMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72C7A6DC1DADEBBE00B3AB33 /* BattleMenuLayer.cpp */; };
 		72D0BDDC1D699D670052FA49 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDD61D699D670052FA49 /* Images */; };
 		72D0BDE11D699DF20052FA49 /* Csbs in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDE01D699DF20052FA49 /* Csbs */; };
 		72D0BDE31D699E2D0052FA49 /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BDE21D699E2D0052FA49 /* Particles */; };
@@ -211,11 +212,14 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7224D5901D09A66D009A9A5E /* HomeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
 		7224D5941D09A67F009A9A5E /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HomeScene.cpp; sourceTree = "<group>"; };
+		7277DD1F1DA55A9100D52302 /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
+		7277DD241DA55A9900D52302 /* StageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StageData.h; sourceTree = "<group>"; };
 		72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCommand.cpp; sourceTree = "<group>"; };
 		72B85EE71D6E0A6100772D3E /* BattleCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleCommand.h; sourceTree = "<group>"; };
 		72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleUnit.cpp; sourceTree = "<group>"; };
 		72B85EF01D6EA65D00772D3E /* BattleUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleUnit.h; sourceTree = "<group>"; };
-		72D0BDD41D699D670052FA49 /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
+		72C7A6DC1DADEBBE00B3AB33 /* BattleMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMenuLayer.cpp; sourceTree = "<group>"; };
+		72C7A6E11DADEBCC00B3AB33 /* BattleMenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleMenuLayer.h; sourceTree = "<group>"; };
 		72D0BDD61D699D670052FA49 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		72D0BDE01D699DF20052FA49 /* Csbs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Csbs; sourceTree = "<group>"; };
 		72D0BDE21D699E2D0052FA49 /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Particles; sourceTree = "<group>"; };
@@ -471,7 +475,6 @@
 				72D0BDE41D699FB10052FA49 /* Sounds */,
 				72D0BDE21D699E2D0052FA49 /* Particles */,
 				72D0BDE01D699DF20052FA49 /* Csbs */,
-				72D0BDD41D699D670052FA49 /* Default */,
 				72D0BDD61D699D670052FA49 /* Images */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
@@ -563,6 +566,8 @@
 				72D0BE521D6C9D9E0052FA49 /* EnemyUnit.h */,
 				72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */,
 				72B85EE71D6E0A6100772D3E /* BattleCommand.h */,
+				72C7A6DC1DADEBBE00B3AB33 /* BattleMenuLayer.cpp */,
+				72C7A6E11DADEBCC00B3AB33 /* BattleMenuLayer.h */,
 			);
 			name = Battle;
 			sourceTree = "<group>";
@@ -579,6 +584,8 @@
 			children = (
 				72D0BE331D6BCFFB0052FA49 /* UnitData.cpp */,
 				72D0BE321D6BCFEC0052FA49 /* UnitData.h */,
+				7277DD1F1DA55A9100D52302 /* StageData.cpp */,
+				7277DD241DA55A9900D52302 /* StageData.h */,
 			);
 			name = Schema;
 			sourceTree = "<group>";
@@ -638,6 +645,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 9Q97Q8Z684;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cheeze" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -728,7 +740,6 @@
 				72D0BDE11D699DF20052FA49 /* Csbs in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
-				72D0BDDA1D699D670052FA49 /* Default in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
@@ -783,9 +794,11 @@
 				72D0BE3B1D6BDD0D0052FA49 /* MemberStatusBox.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				7224D5951D09A67F009A9A5E /* HomeScene.cpp in Sources */,
+				7277DD201DA55A9100D52302 /* StageData.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				72D0BDEC1D69BE410052FA49 /* TitleScene.cpp in Sources */,
+				72C7A6DD1DADEBBE00B3AB33 /* BattleMenuLayer.cpp in Sources */,
 				72D0BE571D6C9DAC0052FA49 /* EnemyUnit.cpp in Sources */,
 				72D0BE211D6B65280052FA49 /* PartyUnit.cpp in Sources */,
 				72D0BDF21D69C27A0052FA49 /* LoadingLayer.cpp in Sources */,
@@ -826,6 +839,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 9Q97Q8Z684;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -867,6 +881,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 9Q97Q8Z684;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
