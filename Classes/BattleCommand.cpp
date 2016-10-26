@@ -14,6 +14,11 @@ void BattleCommand::init()
 {
 }
 
+const bool BattleCommand::isAttack() const 
+{
+    return getAp() == 0;
+}
+
 const std::string BattleCommand::getName() const
 {
     return getCommandData().name;

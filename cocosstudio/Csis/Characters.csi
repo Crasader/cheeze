@@ -14,6 +14,12 @@
       <FilePathData Path="Images/Character/17.png" />
       <FilePathData Path="Images/Character/18.png" />
       <FilePathData Path="Images/Character/19.png" />
+      <FilePathData Path="Images/Character/Attack/1.png" />
+      <FilePathData Path="Images/Character/Attack/2.png" />
+      <FilePathData Path="Images/Character/Attack/3.png" />
+      <FilePathData Path="Images/Character/Normal/1.png" />
+      <FilePathData Path="Images/Character/Normal/2.png" />
+      <FilePathData Path="Images/Character/Normal/3.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

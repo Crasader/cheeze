@@ -6,11 +6,11 @@
         <Folder Name="Csbs">
           <Folder Name="Battle">
             <Project Name="EnemyUnit.csd" Type="Node" />
+            <Project Name="MenuLayer.csd" Type="Layer" />
             <Project Name="PartyUnit.csd" Type="Node" />
           </Folder>
           <Folder Name="Home">
             <Project Name="MemberStatusPageBox.csd" Type="Node" />
-            <Project Name="MemberStatusPageBox_old.csd" Type="Node" />
             <Project Name="StorySelectBoard.csd" Type="Node" />
           </Folder>
           <Project Name="BattleScene.csd" Type="Scene" />
@@ -29,6 +29,16 @@
         </Folder>
         <Folder Name="Images">
           <Folder Name="Character">
+            <Folder Name="Attack">
+              <Image Name="1.png" />
+              <Image Name="2.png" />
+              <Image Name="3.png" />
+            </Folder>
+            <Folder Name="Normal">
+              <Image Name="1.png" />
+              <Image Name="2.png" />
+              <Image Name="3.png" />
+            </Folder>
             <Image Name="1.png" />
             <Image Name="11.png" />
             <Image Name="12.png" />
@@ -42,24 +52,36 @@
             <Image Name="2.png" />
             <Image Name="3.png" />
           </Folder>
-          <Folder Name="sample">
-            <Image Name="bg_sample.png" />
-          </Folder>
           <Folder Name="UIParts">
+            <Image Name="bar.png" />
+            <Image Name="bg_battle.png" />
+            <Image Name="bg_image.png" />
             <Image Name="bg_lucent.png" />
-            <Image Name="button_command_d.png" />
-            <Image Name="button_command_n.png" />
-            <Image Name="button_command_p.png" />
-            <Image Name="button_frame.png" />
+            <Image Name="bg_main.png" />
+            <Image Name="bg_title.png" />
+            <Image Name="bg_title_board.png" />
+            <Image Name="button_command.png" />
+            <Image Name="button_d.png" />
+            <Image Name="button_n.png" />
+            <Image Name="button_p.png" />
+            <Image Name="icon_arch.png" />
+            <Image Name="icon_cane.png" />
+            <Image Name="icon_chest.png" />
+            <Image Name="icon_coin.png" />
+            <Image Name="icon_fire.png" />
             <Image Name="icon_skill.png" />
             <Image Name="icon_skill_off.png" />
-            <Image Name="icon016.png" />
-            <Image Name="icon020.png" />
-            <Image Name="icon024.png" />
-            <Image Name="icon025.png" />
-            <Image Name="icon030.png" />
+            <Image Name="icon_soul.png" />
+            <Image Name="icon_sword.png" />
+            <Image Name="icon_water.png" />
+            <Image Name="icon_wind.png" />
+            <Image Name="item_escape_wing.png" />
+            <Image Name="item_lucky_clover.png" />
+            <Image Name="item_potion_heal.png" />
+            <Image Name="item_potion_heal_all.png" />
+            <Image Name="item_potion_raise.png" />
             <Image Name="pipo-battlebg001b.jpg" />
-            <Image Name="pipo-battlebg021b.jpg" />
+            <Image Name="title_logo.png" />
           </Folder>
         </Folder>
       </RootFolder>

@@ -52,13 +52,6 @@ void BattleUnit::setHP()
     auto hpNode = getCsb()->getChildByName("HP");
     auto hpBar = hpNode->getChildByName<LoadingBar*>("Bar");
     hpBar->setPercent(getHpPercent());
-    std::stringstream hpSS;
-    hpSS << " HP: ";
-    hpSS << getHP();
-    hpSS << " / ";
-    hpSS << getHPMax();
-    auto hpLabel = hpNode->getChildByName<TextBMFont*>("Label");
-    hpLabel->setString(hpSS.str());
 }
 
 void BattleUnit::setAP()
@@ -77,18 +70,6 @@ void BattleUnit::setAP()
     }
 }
 
-void BattleUnit::attack()
-{
-    auto point = -60;
-    if (isEnemy()) { point *= -1; }
-    auto jump = JumpBy::create(0.2f, Vec2(point, 0), 30, 1);
-    auto wait = DelayTime::create(0.4f);
-    auto finish = CallFunc::create([&]{
-    });
-    auto action = Sequence::create(jump, wait, jump->reverse(), finish, nullptr);
-    getAvatar()->runAction(action);
-}
-
 const int BattleUnit::getHPMax()
 {
     return getUnitData().hp + getWeaponData().hp;
@@ -97,95 +78,6 @@ const int BattleUnit::getHPMax()
 const int BattleUnit::getAtk()
 {
     return getUnitData().attack + getWeaponData().attack;
-}
-
-void BattleUnit::damaged(const int damage, const bool weak, const WeaponType weaponType)
-{
-    auto particleAnimation = CallFuncN::create([&, weaponType](Node* node){
-        auto fileName = "Particles/attack_" + weaponCodes.at(weaponType).code + ".plist";
-        if (FileUtils::getInstance()->isFileExist(fileName)) {
-            auto particle = ParticleSystemQuad::create(fileName);
-            particle->setPosition(getRandomPosition(node));
-            particle->setRotationSkewY(-180.0f);
-            particle->setScale(1.0f);
-            node->getParent()->addChild(particle);
-            particle->setAutoRemoveOnFinish(true);
-        };
-    });
-    auto labelAnimation = CallFuncN::create([&, damage, weak](Node* node){
-        auto damageLabel = TextBMFont::create(std::to_string(damage), "Fonts/DamageLabel.fnt");
-        damageLabel->setPosition(getRandomPosition(node));
-        damageLabel->setScale(0.5f);
-        node->getParent()->addChild(damageLabel);
-        animationLabel(damageLabel);
-        if (weak) {
-            auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
-            weakLabel->setScale(0.5f);
-            auto size = node->getContentSize();
-            auto pos = Vec2(size.width / 2, size.height / 2);
-            weakLabel->setPosition(pos);
-            node->addChild(weakLabel);
-            auto move   = MoveBy::create(0.5f, Point(0, 80));
-            auto wait   = DelayTime::create(0.4f);
-            auto finish = CallFuncN::create([&](Node* node){
-                node->removeFromParent();
-            });
-            auto action = Sequence::create(move, wait, finish, nullptr);
-            weakLabel->runAction(action);
-        }
-    });
-    auto damageColor = CallFuncN::create([&](Node* node){
-        node->setColor(Color3B(255, 68, 68));
-    });
-    auto hpBarDown = CallFunc::create([&, damage](){
-        updateHP(-damage);
-    });
-    auto se = CallFunc::create([&]{
-        BGMPlayer::play2d("Sounds/se_damage_human.mp3");
-    });
-    auto keepColor = DelayTime::create(0.1f);
-    auto finish = CallFuncN::create([&](Node* node){
-        node->setColor(Color3B(255, 255, 255));
-    });
-    auto action = Sequence::create(particleAnimation, labelAnimation, se, hpBarDown, damageColor, keepColor, finish, nullptr);
-    getAvatar()->runAction(action);
-}
-
-void BattleUnit::healed(const int heal)
-{
-    auto particleAnimation = CallFuncN::create([&](Node* node){
-        auto fileName = "Particles/heal_0.plist";
-        if (FileUtils::getInstance()->isFileExist(fileName)) {
-            auto particle = ParticleSystemQuad::create(fileName);
-            particle->setPosition(getRandomPosition(node));
-            particle->setRotationSkewY(-180.0f);
-            particle->setScale(1.0f);
-            node->getParent()->addChild(particle);
-            particle->setAutoRemoveOnFinish(true);
-        };
-    });
-    auto labelAnimation = CallFuncN::create([&, heal](Node* node){
-        auto healLabel = TextBMFont::create(std::to_string(heal), "Fonts/HealLabel.fnt");
-        healLabel->setPosition(getRandomPosition(node));
-        healLabel->setScale(0.5f);
-        node->getParent()->addChild(healLabel);
-        animationLabel(healLabel);
-    });
-    auto healColor = CallFuncN::create([&](Node* node){
-        node->setColor(Color3B(68, 255, 68));
-    });
-    auto hpBarUp = CallFunc::create([&, heal](){
-        updateHP(heal);
-    });
-    auto se = CallFunc::create([&]{
-        BGMPlayer::play2d("Sounds/se_heal.mp3");
-    });
-    auto keepColor = DelayTime::create(0.1f);
-    auto finish = CallFuncN::create([&](Node* node){
-        node->setColor(Color3B(255, 255, 255));
-    });
-    auto action = Sequence::create(particleAnimation, labelAnimation, se, hpBarUp, healColor, keepColor, finish, nullptr);
-    getAvatar()->runAction(action);
 }
 
 const ElementType BattleUnit::getElementType()
@@ -201,8 +93,8 @@ const WeaponType BattleUnit::getWeaponType()
 const Vec2 BattleUnit::getRandomPosition(const Node* node)
 {
     auto size = node->getContentSize();
-    auto x = random(-size.width / 3, size.width / 3);
-    auto y = random(size.height / 3, size.height / 3 * 2);
+    auto x = random(-size.width / 6, size.width / 6);
+    auto y = random(size.height / 6, size.height / 6 * 2);
     auto pos = Vec2(x, y);
     return pos;
 }
@@ -216,6 +108,56 @@ void BattleUnit::animationLabel(TextBMFont* label)
     });
     auto action = Sequence::create(jump, wait, finish, nullptr);
     label->runAction(action);
+}
+
+void BattleUnit::updateAP(const int point)
+{
+    _ap += point;
+    if(_ap > getAPMax()) _ap = getAPMax();
+    auto labelAnimation = CallFuncN::create([&, point](Node* node){
+        if (point != 0) {
+            std::stringstream ss;
+            ss << "AP";
+            if (point > 0) {
+                ss << "+";
+            }
+            ss << point;
+            auto apLabel = TextBMFont::create(ss.str(), "Fonts/BasicLabel.fnt");
+            apLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
+            apLabel->setPosition(Vec2::ZERO);
+            apLabel->setScale(0.5f);
+            if (point > 0) {
+                ss << "+";
+                apLabel->setColor(Color3B(136, 238, 255));
+            } else {
+                apLabel->setColor(Color3B(255, 136, 136));
+            }
+            node->getParent()->addChild(apLabel);
+            animationLabel(apLabel);
+        }
+    });
+    auto wait = DelayTime::create(0.1f);
+    auto finish = CallFuncN::create([&, point](Node* node){
+        setAP();
+    });
+    auto action = Sequence::create(labelAnimation, wait, finish, nullptr);
+    getAvatar()->runAction(action);
+}
+
+void BattleUnit::attack()
+{
+}
+
+void BattleUnit::damaged(const int damage, const bool weak, const WeaponType weaponType)
+{
+}
+
+void BattleUnit::healed(const int heal)
+{
+}
+
+void BattleUnit::turnChange()
+{
 }
 
 const UnitData& BattleUnit::getUnitData() const

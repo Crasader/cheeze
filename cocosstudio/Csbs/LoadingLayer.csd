@@ -16,16 +16,45 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="MarkedSubImage" Path="Images/UIParts/bg_lucent.png" Plist="Csis/UIParts.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text" ActionTag="-596442624" Tag="289" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="186.5000" RightMargin="186.5000" TopMargin="545.5000" BottomMargin="545.5000" FontSize="40" LabelText="Now Loading..." ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="267.0000" Y="45.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="320.0000" Y="568.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+          <AbstractNodeData Name="LabelLoading" ActionTag="-1160950633" Tag="140" IconVisible="False" LeftMargin="40.0000" RightMargin="146.0000" TopMargin="1024.0000" BottomMargin="20.0000" LabelText="Now Loading" ctype="TextBMFontObjectData">
+            <Size X="454.0000" Y="92.0000" />
+            <AnchorPoint />
+            <Position X="40.0000" Y="20.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.4172" Y="0.0396" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <PrePosition X="0.0625" Y="0.0176" />
+            <PreSize X="0.7094" Y="0.0810" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Dot_1" ActionTag="821603062" Tag="597" IconVisible="False" LeftMargin="269.9998" RightMargin="334.0002" TopMargin="1024.0000" BottomMargin="20.0000" LabelText="." ctype="TextBMFontObjectData">
+            <Size X="36.0000" Y="92.0000" />
+            <AnchorPoint />
+            <Position X="269.9998" Y="20.0000" />
+            <Scale ScaleX="0.4500" ScaleY="0.4500" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4219" Y="0.0176" />
+            <PreSize X="0.0562" Y="0.0810" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Dot_2" ActionTag="-725242444" Tag="598" IconVisible="False" LeftMargin="284.9999" RightMargin="319.0001" TopMargin="1024.0000" BottomMargin="20.0000" LabelText="." ctype="TextBMFontObjectData">
+            <Size X="36.0000" Y="92.0000" />
+            <AnchorPoint />
+            <Position X="284.9999" Y="20.0000" />
+            <Scale ScaleX="0.4500" ScaleY="0.4500" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4453" Y="0.0176" />
+            <PreSize X="0.0562" Y="0.0810" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Dot_3" ActionTag="-287606506" Tag="599" IconVisible="False" LeftMargin="300.0000" RightMargin="304.0000" TopMargin="1024.0000" BottomMargin="20.0000" LabelText="." ctype="TextBMFontObjectData">
+            <Size X="36.0000" Y="92.0000" />
+            <AnchorPoint />
+            <Position X="300.0000" Y="20.0000" />
+            <Scale ScaleX="0.4500" ScaleY="0.4500" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4688" Y="0.0176" />
+            <PreSize X="0.0562" Y="0.0810" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

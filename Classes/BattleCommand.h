@@ -25,6 +25,7 @@ public:
         init();
     }
     virtual ~BattleCommand() = default;
+    const bool isAttack() const;
     const std::string getName() const;
     const std::string getExplain() const;
     const int getAp() const;

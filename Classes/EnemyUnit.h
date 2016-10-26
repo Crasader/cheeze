@@ -20,6 +20,9 @@ public:
     virtual void appendTo(Node* node, const int position);
     virtual ~EnemyUnit() = default;
     inline bool isSkill() { return getAP() >= getAPMax(); };
+    void attack();
+    void damaged(const int damage, const bool weak, const WeaponType weaponType);
+    void healed(const int heal);
     void turnChange();
 private:
     void init();

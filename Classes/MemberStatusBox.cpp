@@ -22,33 +22,20 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
     tmpl->retain();
     _csb = tmpl->clone();
 
-    auto weapon = getCsb()->getChildByName("Weapon");
-    weapon->setVisible(false);
-    auto command = getCsb()->getChildByName("Command");
-    command->setVisible(false);
-    onTouch(static_cast<Widget*>(getCsb()), [&](Ref* ref){
-        BGMPlayer::play2d("Sounds/se_ok.mp3");
-        auto status = getCsb()->getChildByName("Status");
-        status->setVisible(!status->isVisible());
-//        auto weapon = getCsb()->getChildByName("Weapon");
-//        weapon->setVisible(!weapon->isVisible());
-        auto command = getCsb()->getChildByName("Command");
-        command->setVisible(!command->isVisible());
-    });
-    
-    auto avatar = getCsb()->getChildByName("Avatar");
-    avatar->removeAllChildren();
+    auto csb = getCsb();
     auto& data = getUnitData();
-    auto filePath = "Images/Character/" + data.code + ".png";
-    auto image = ImageManager::create(filePath);
-    image->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
-    image->setPosition(Vec2::ZERO);
-    image->setFlippedX(true);
-    avatar->addChild(image);
+
+    auto avatar = csb->getChildByName<ImageView*>("Avatar");
+    auto filePath = "Images/Character/Normal/" + data.code + ".png";
+    ImageManager::loadTexture(avatar, filePath);
+
+    _menuLabels = csb->getChildByName("MenuLabels");
+    _basicLabels = csb->getChildByName("BasicLabels");
+    _labels = csb->getChildByName("Labels");
 
     setStatus();
     setWeapon();
-    setCommands();
+//    setCommands();
     
     pageView->addChild(getCsb());
     tmpl->release();
@@ -57,106 +44,84 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
 void MemberStatusBox::setStatus()
 {
     auto& data = getUnitData();
-    auto node = getCsb()->getChildByName("Status");
-    
-    auto bgImage = node->getChildByName<ImageView*>("BgLucent");
-    bgImage->setColor(elementCodes.at(data.element).color);
-//    auto image = node->getChildByName<ImageView*>("Image");
-//    auto filePath = "Images/Character/" + data.code + ".png";
-//    ImageManager::loadTexture(image, filePath);
-    
-    auto parameter = node->getChildByName<Text*>("Parameter");
-    std::stringstream parameterSS;
-    parameterSS << data.name;
-    parameterSS << "\n";
-    parameterSS << "Lv.";
-    parameterSS << 99;
-    parameterSS << " / Next ";
-    parameterSS << 99999;
-    parameterSS << "\n";
-    parameterSS << "HP : ";
-    parameterSS << data.hp;
-    parameterSS << "+";
-    parameterSS << getWeaponData().hp;
-    parameterSS << "\n";
-    parameterSS << "ATK : ";
-    parameterSS << data.attack;
-    parameterSS << "+";
-    parameterSS << getWeaponData().attack;
-    parameterSS << "\n";
-    parameterSS << "\n";
-    parameterSS << "武器 : ";
-    auto n = 0;
-    for (auto& weaponType : data.weaponTypes) {
-        parameterSS << weaponCodes.at(weaponType).name;
-        n++;
-        if (n < data.weaponTypes.size()) {
-            parameterSS << "・";
-        }
-    }
-    parameter->setString(parameterSS.str());
+    auto& spCommand = data.command_data;
+    auto icon = getCsb()->getChildByName<ImageView*>("IconElementType");
+    ImageManager::loadTexture(icon, "Images/UIParts/icon_" + elementCodes.at(data.element).code + ".png");
+    auto name = _menuLabels->getChildByName<TextBMFont*>("Name");
+    name->setString(data.name);
+    auto level = _basicLabels->getChildByName<TextBMFont*>("Level");
+    level->setString("Lv." + std::to_string(1) + "/" + std::to_string(30));
+    auto hp = _basicLabels->getChildByName<TextBMFont*>("HP");
+    hp->setString(std::to_string(data.hp));
+    auto attack = _basicLabels->getChildByName<TextBMFont*>("Attack");
+    attack->setString(std::to_string(data.attack));
+    auto spName = _basicLabels->getChildByName<TextBMFont*>("Special");
+    spName->setString(spCommand.name);
+    auto spExplain = _labels->getChildByName<Text*>("Special");
+    spExplain->setString(spCommand.explain);
+//    std::stringstream parameterSS;
+//    auto n = 0;
+//    for (auto& weaponType : data.weapon_types) {
+//        parameterSS << weaponCodes.at(weaponType).name;
+//        n++;
+//        if (n < data.weapon_types.size()) {
+//            parameterSS << "・";
+//        }
+//    }
+//    parameter->setString(parameterSS.str());
 }
 
 void MemberStatusBox::setWeapon()
 {
     auto& data = getWeaponData();
-    auto node = getCsb()->getChildByName("Weapon");
-    auto bgImage = node->getChildByName<ImageView*>("BgLucent");
-    bgImage->setColor(elementCodes.at(data.element).color);
-    
-    auto parameter = node->getChildByName<Text*>("Parameter");
-    std::stringstream parameterSS;
-    parameterSS << "【";
-    parameterSS << weaponCodes.at(data.type).name;
-    parameterSS << " / ";
-    parameterSS << elementCodes.at(data.element).name;
-    parameterSS << "】";
-    parameterSS << data.name;
-    parameterSS << "+";
-    parameterSS << random(1, 5);
-    parameterSS << "\n";
-    parameterSS << "HP : ";
-    parameterSS << data.hp;
-    parameterSS << " / ATK : ";
-    parameterSS << data.attack;
-    parameterSS << "\n";
-    parameterSS << "命中 : ";
-    parameterSS << data.accuracy;
-    parameterSS << "% / ";
-    parameterSS << "クリティカル : ";
-    parameterSS << data.critical;
-    parameterSS << "%";
-    parameter->setString(parameterSS.str());
-    
-    auto burst = node->getChildByName<Text*>("WeaponBurst");
-    auto& burstData = weaponBurstDatas.at(data.burstId);
-    std::stringstream burstSS;
-    burstSS << "ウェポンバースト : ";
-    burstSS << burstData.name;
-    burstSS << "\n→";
-    burstSS << burstData.explain;
-    burst->setString(burstSS.str());
+    auto icon = getCsb()->getChildByName<ImageView*>("IconWeaponType");
+    ImageManager::loadTexture(icon, "Images/UIParts/icon_" + weaponCodes.at(data.type).code + ".png");
+    auto name = _menuLabels->getChildByName<TextBMFont*>("WeaponName");
+    name->setString(data.name);
+    auto hp = _basicLabels->getChildByName<TextBMFont*>("WeaponHP");
+    hp->setString("(+" + std::to_string(data.hp) + ")");
+    auto attack = _basicLabels->getChildByName<TextBMFont*>("WeaponAT");
+    attack->setString("(+" + std::to_string(data.attack) + ")");
+
+    auto commandIds = data.command_ids;
+    auto i = 1;
+    for (auto commandId : commandIds) {
+        auto& command = commandDatas.at(commandId);
+        std::stringstream nameSS;
+        nameSS << "コマンド";
+        nameSS << i;
+        nameSS << " : ";
+        nameSS << command.name;
+        nameSS << " [AP:";
+        nameSS << command.ap;
+        nameSS << "]";
+        auto name = _basicLabels->getChildByName<TextBMFont*>("Command_" + std::to_string(i));
+        name->setString(nameSS.str());
+        auto text = _labels->getChildByName<Text*>("Command_" + std::to_string(i));
+        text->setString(command.explain);
+        i++;
+    }
 }
 
 void MemberStatusBox::setCommands()
 {
-    auto commands = getUnitData().commands;
-    auto node = getCsb()->getChildByName("Command");
-    for (auto n = 1; n <= 3; n++) {
-        auto& command = commands.at(n);
-        auto text = node->getChildByName<Text*>("Text_" + std::to_string(n));
-        std::stringstream textSS;
-        textSS << "コマンド";
-        textSS << n;
-        textSS << " : ";
-        textSS << command.name;
-        textSS << " [AP:";
-        textSS << command.ap;
-        textSS << "]\n→";
-        textSS << command.explain;
-        text->setString(textSS.str());
-    }
-    
+    auto& data = getWeaponData();
+//    auto commands = data.commands;
+//    for (auto n = 1; n <= 3; n++) {
+//        auto& command = commands.at(n);
+//        auto text = node->getChildByName<Text*>("Text_" + std::to_string(n));
+//        std::stringstream textSS;
+//        textSS << "コマンド";
+//        textSS << n;
+//        textSS << " : ";
+//        textSS << command.name;
+//        textSS << " [AP:";
+//        textSS << command.ap;
+//        textSS << "]\n→";
+//        textSS << command.explain;
+//        text->setString(textSS.str());
+//    }
+//    
 }
 
 const UnitData& MemberStatusBox::getUnitData() const

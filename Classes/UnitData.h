@@ -18,13 +18,15 @@ enum class WeaponType : int {
     ENEMY, SWORD, LANCE, ARCH, KNIFE, AX, CANE, BOOK
 };
 enum class ElementType : int {
-    WEAPON, FIRE, WATER, WIND, EARTH,
+    SELF, FIRE, WATER, WIND,
+//    EARTH,
 };
 enum class TargetType : int {
-    OWN, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ALL, ENEMY_RANDOM_4
+    OWN, SAME, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ALL
 };
 enum class EffectType : int {
-    WEAPON_BURST, DAMAGE, ATK_UP, ATK_DOWN, DAMAGE_CUT, AP_UP, AP_DOWN, POISON, REGENE, INVICIBLE, REFRESH, TP_UP, TP_DOWN, HEAL, RESURRECTION
+    DAMAGE, ATK_UP, ATK_DOWN, DAMAGE_CUT, AP_UP, AP_DOWN, POISON, REGENE, INVICIBLE, REFRESH,
+    TP_UP, TP_DOWN, HEAL, RESURRECTION
 };
 
 typedef struct EffectData {
@@ -37,7 +39,6 @@ typedef struct EffectData {
 typedef struct WeaponData {
     const std::string name;
     const WeaponType type;
-    const ElementType element;
     const int hp;
     const int attack;
     const std::vector<int> command_ids;

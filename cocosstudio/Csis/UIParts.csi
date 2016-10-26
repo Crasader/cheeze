@@ -5,14 +5,26 @@
       <FilePathData Path="Images/UIParts/icon_skill.png" />
       <FilePathData Path="Images/UIParts/icon_skill_off.png" />
       <FilePathData Path="Images/UIParts/bg_lucent.png" />
-      <FilePathData Path="Images/UIParts/button_command_d.png" />
-      <FilePathData Path="Images/UIParts/button_command_n.png" />
-      <FilePathData Path="Images/UIParts/button_command_p.png" />
-      <FilePathData Path="Images/UIParts/icon016.png" />
-      <FilePathData Path="Images/UIParts/icon020.png" />
-      <FilePathData Path="Images/UIParts/icon024.png" />
-      <FilePathData Path="Images/UIParts/icon025.png" />
-      <FilePathData Path="Images/UIParts/icon030.png" />
+      <FilePathData Path="Images/UIParts/icon_coin.png" />
+      <FilePathData Path="Images/UIParts/icon_fire.png" />
+      <FilePathData Path="Images/UIParts/icon_soul.png" />
+      <FilePathData Path="Images/UIParts/icon_water.png" />
+      <FilePathData Path="Images/UIParts/icon_wind.png" />
+      <FilePathData Path="Images/UIParts/item_potion_heal.png" />
+      <FilePathData Path="Images/UIParts/item_potion_heal_all.png" />
+      <FilePathData Path="Images/UIParts/item_potion_raise.png" />
+      <FilePathData Path="Images/UIParts/icon_arch.png" />
+      <FilePathData Path="Images/UIParts/icon_cane.png" />
+      <FilePathData Path="Images/UIParts/icon_chest.png" />
+      <FilePathData Path="Images/UIParts/icon_sword.png" />
+      <FilePathData Path="Images/UIParts/bg_title_board.png" />
+      <FilePathData Path="Images/UIParts/item_escape_wing.png" />
+      <FilePathData Path="Images/UIParts/item_lucky_clover.png" />
+      <FilePathData Path="Images/UIParts/button_d.png" />
+      <FilePathData Path="Images/UIParts/button_n.png" />
+      <FilePathData Path="Images/UIParts/button_p.png" />
+      <FilePathData Path="Images/UIParts/bar.png" />
+      <FilePathData Path="Images/UIParts/button_command.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

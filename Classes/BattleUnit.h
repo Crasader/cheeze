@@ -58,7 +58,8 @@ public:
         if(_hp < 0) _hp = 0;
         setHP();
     };
-    inline void updateAP(const int point = 1) { _ap += point; if(_ap > getAPMax()) _ap = getAPMax(); setAP(); };
+    void updateAP(const int point = 1);
+    void setHP();
     inline const int getHP() const { return _hp; }
     inline const int getHPMax() const { return _hpMax; }
     inline const int getAP() const { return _ap; }
@@ -72,13 +73,12 @@ public:
     inline Node* getCsb(){ return _csb; };
     const UnitData& getUnitData() const;
     const WeaponData& getWeaponData() const;
+    const Vec2 getRandomPosition(const Node* node);
+    void animationLabel(TextBMFont* label);
 private:
     void setName();
     void setElementColor();
-    void setHP();
     void setAP();
-    const Vec2 getRandomPosition(const Node* node);
-    void animationLabel(TextBMFont* label);
     
     ImageView* _avatar { nullptr };
     Node* _csb;
