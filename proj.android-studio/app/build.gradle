@@ -17,7 +17,7 @@ android {
         res.srcDir "res"
         jniLibs.srcDir "libs"
         manifest.srcFile "AndroidManifest.xml"
-        assets.srcDir "assets"
+        assets.srcDirs = ['../../Resources']
     }
 
     signingConfigs {
@@ -40,6 +40,24 @@ android {
                 signingConfig signingConfigs.release
             }
         }
+    }
+
+    def cpu_num = { Runtime.getRuntime().availableProcessors() }
+
+    task compileDebugJavaWithJavacNDK(type:Exec) {
+        commandLine 'ndk-build', "-j${cpu_num()}", "NDK_DEBUG=1"
+    }
+
+    task compileReleaseJavaWithJavacNDK(type:Exec) {
+        commandLine 'ndk-build', "-j${cpu_num()}", "NDK_DEBUG=0"
+    }
+
+    tasks.withType(JavaCompile) {
+      compileTask -> compileTask.dependsOn "${compileTask.name}NDK"
+    }
+
+    task ndkClean(type:Exec) {
+        commandLine 'ndk-build', 'clean'
     }
 }
 
