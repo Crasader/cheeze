@@ -8,6 +8,7 @@
 
 #include "MemberStatusBox.h"
 #include "UnitData.h"
+#include "ItemData.h"
 
 #include "ImageManager.h"
 #include "BGMPlayer.h"

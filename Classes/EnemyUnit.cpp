@@ -16,7 +16,7 @@
 #include "editor-support/cocostudio/CocoStudio.h"
 using namespace cocostudio;
 
-void EnemyUnit::appendTo(Node* node, const int position)
+void EnemyUnit::appendTo(Node* node, const int position, const float scale)
 {
     if (getUnitId() < 1) {
         getCsb()->setVisible(false);
@@ -24,7 +24,7 @@ void EnemyUnit::appendTo(Node* node, const int position)
     }
     getCsb()->setVisible(true);
     setAvatar(node);
-    getAvatar()->setScale(0.5f);
+    getAvatar()->setScale(scale);
     getAvatar()->setFlippedX(true);
     setPosition(position);
     node->addChild(getCsb());
@@ -44,6 +44,17 @@ void EnemyUnit::init()
 void EnemyUnit::attack()
 {
     auto start = CallFunc::create([&]{
+        if (isSkill()) {
+            BGMPlayer::play2d("Sounds/se_skill_ghost_default.mp3");
+            auto particle = ParticleSystemQuad::create("Particles/skill_boot.plist");
+            getCsb()->addChild(particle);
+            auto callback = CallFuncN::create([&](Node* node){
+                node->setPosition(Vec2::ZERO);
+                node->setScale(0.75f);
+                static_cast<ParticleSystemQuad*>(node)->setAutoRemoveOnFinish(true);
+            });
+            particle->runAction(callback);
+        }
     });
     auto jump = JumpBy::create(0.15f, Vec2(60, 0), 30, 1);
     auto wait = DelayTime::create(0.4f);
@@ -74,7 +85,7 @@ void EnemyUnit::damaged(const int damage, const bool weak, const WeaponType weap
         animationLabel(damageLabel);
         if (weak) {
             auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
-            weakLabel->setScale(0.5f);
+            weakLabel->setScale(0.75f);
             auto size = node->getContentSize();
             auto pos = Vec2(size.width / 4, size.height / 4);
             weakLabel->setPosition(pos);

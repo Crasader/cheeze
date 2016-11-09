@@ -8,6 +8,7 @@
 
 #include "BattleUnit.h"
 #include "UnitData.h"
+#include "ItemData.h"
 #include "BattleCommand.h"
 
 #include "ImageManager.h"

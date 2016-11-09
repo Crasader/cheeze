@@ -100,13 +100,25 @@ void BattleScene::setPartyMembers()
 void BattleScene::setEnemys()
 {
     _enemys.clear();
+    _round++;
+    auto battleStatus = getChildByName("BattleStatus");
+    auto roundLabel = battleStatus->getChildByName<TextBMFont*>("Round");
+    roundLabel->setString("Round " + std::to_string(_round));
+
     auto window = getChildByName("Window");
+    BGMPlayer::play("Sounds/no_3_Trick_or_Treat.mp3");
     for (auto i = 1; i <= 3; i++) {
         auto key = "Enemy_" + std::to_string(i);
         auto csb = CSLoader::createNode("Csbs/Battle/EnemyUnit.csb");
         auto no = 10 + random(1, 9);
+        auto scale = 0.5f;
+        if (_round % 3 == 0 && i == 3) {
+            BGMPlayer::play("Sounds/no_2_Pumpkin_King_Appears.mp3");
+            no = 20;
+            scale = 0.75f;
+        }
         auto enemy = std::make_shared<EnemyUnit>(no, csb);
-        enemy->appendTo(window->getChildByName(key), i);
+        enemy->appendTo(window->getChildByName(key), i, scale);
         _enemys.push_back(enemy);
     }
 }
@@ -176,7 +188,6 @@ void BattleScene::playerAttack(const int count)
             auto ap = command->getAp();
             if (ap == 100) {
                 attacker->updateTP(-ap);
-                attacker->updateAP(-1);
             } else {
                 attacker->updateTP();
                 attacker->updateAP(-ap);

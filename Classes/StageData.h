@@ -10,11 +10,10 @@
 #define StageData_h
 
 typedef struct StageData {
-    const std::array<int, 3> enemy_ids;
-    const int hp;
-    const int attack;
-    const int ap;
+    const std::vector<int> enemy_ids;
+    const int boss_id;
 } StageData;
 
+extern const std::unordered_map<int, const StageData> stageDatas;
 
 #endif /* StageData_h */

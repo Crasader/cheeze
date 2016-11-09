@@ -63,6 +63,7 @@ private:
     const Enemys getAliveEnemys();
     const Party selectTargetParty(const TargetType targetType, const std::shared_ptr<PartyUnit> member);
     const Enemys selectTargetEnemys(const TargetType targetType);
+    int _round{0};
 };
 
 #endif /* defined(__cheeze__BattleScene__) */

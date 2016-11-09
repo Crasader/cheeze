@@ -12,6 +12,8 @@
           <Folder Name="Home">
             <Project Name="MemberStatusPageBox.csd" Type="Node" />
             <Project Name="StorySelectBoard.csd" Type="Node" />
+            <Project Name="ItemListBoard.csd" Type="Node" />
+            <Project Name="ItemListBox.csd" Type="Node" />
           </Folder>
           <Project Name="BattleScene.csd" Type="Scene" />
           <Project Name="HomeScene.csd" Type="Scene" />
@@ -50,6 +52,7 @@
             <Image Name="18.png" />
             <Image Name="19.png" />
             <Image Name="2.png" />
+            <Image Name="20.png" />
             <Image Name="3.png" />
           </Folder>
           <Folder Name="UIParts">
@@ -75,12 +78,11 @@
             <Image Name="icon_sword.png" />
             <Image Name="icon_water.png" />
             <Image Name="icon_wind.png" />
-            <Image Name="item_escape_wing.png" />
+            <Image Name="item_ap_wing.png" />
             <Image Name="item_lucky_clover.png" />
             <Image Name="item_potion_heal.png" />
             <Image Name="item_potion_heal_all.png" />
             <Image Name="item_potion_raise.png" />
-            <Image Name="pipo-battlebg001b.jpg" />
             <Image Name="title_logo.png" />
           </Folder>
         </Folder>

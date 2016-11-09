@@ -13,6 +13,7 @@
 #include "BaseScene.h"
 
 class MemberStatusBox;
+class ItemListBoard;
 
 class HomeScene : public BaseScene<HomeScene>
 {
@@ -23,6 +24,7 @@ public:
     void onEnter();
 //    void onEnterTransitionDidFinish();
 private:
+    void setUIParts();
     void setPartyMembers();
     
     using Party = std::vector<std::shared_ptr<MemberStatusBox>>;
@@ -30,6 +32,9 @@ private:
     Party _party;
     inline PageView* getPartyList() const { return _partyList; }
     PageView* _partyList;
+
+    std::unique_ptr<ItemListBoard> _itemListBoard { nullptr };
+    inline std::unique_ptr<ItemListBoard>& getItemListBoard(){ return _itemListBoard; }
 };
 
 #endif /* defined(__cheeze__HomeScene__) */

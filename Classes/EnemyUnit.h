@@ -17,7 +17,7 @@ class EnemyUnit : public BattleUnit
 public:
     EnemyUnit(const int unitId, Node* csb)
     : BattleUnit(unitId, 0, true, csb) {}
-    virtual void appendTo(Node* node, const int position);
+    virtual void appendTo(Node* node, const int position, const float scale = 0.5f);
     virtual ~EnemyUnit() = default;
     inline bool isSkill() { return getAP() >= getAPMax(); };
     void attack();

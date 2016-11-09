@@ -39,7 +39,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Party" ActionTag="-373701138" Tag="96" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="320.0000" RightMargin="320.0000" TopMargin="216.0000" BottomMargin="920.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Party" ActionTag="-373701138" Tag="96" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="320.0000" RightMargin="320.0000" TopMargin="976.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Member_1" ActionTag="1976715443" Tag="548" IconVisible="True" LeftMargin="-160.0000" RightMargin="160.0000" ctype="SingleNodeObjectData">
@@ -107,10 +107,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="320.0000" Y="920.0000" />
+            <Position X="320.0000" Y="160.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.8099" />
+            <PrePosition X="0.5000" Y="0.1408" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="PlayerStatus" ActionTag="-1136680528" Tag="271" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="1076.0000" TouchEnable="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -186,7 +186,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Item" ActionTag="1699814802" VisibleForFrame="False" Tag="373" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="405.0000" RightMargin="-5.0000" TopMargin="20.0000" BottomMargin="20.0000" TouchEnable="True" FontSize="40" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Item" ActionTag="1699814802" Tag="373" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="405.0000" RightMargin="-5.0000" TopMargin="20.0000" BottomMargin="20.0000" TouchEnable="True" FontSize="40" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="240.0000" Y="120.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="525.0000" Y="80.0000" />
@@ -226,7 +226,7 @@
                 <PreSize X="0.3969" Y="0.5750" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="LabelItem" ActionTag="1245109321" VisibleForFrame="False" Tag="371" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="436.5000" RightMargin="26.5000" TopMargin="34.0000" BottomMargin="34.0000" LabelText="ITEM" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="LabelItem" ActionTag="1245109321" Tag="371" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="436.5000" RightMargin="26.5000" TopMargin="34.0000" BottomMargin="34.0000" LabelText="ITEM" ctype="TextBMFontObjectData">
                 <Size X="177.0000" Y="92.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="525.0000" Y="80.0000" />

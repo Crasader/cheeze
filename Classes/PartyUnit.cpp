@@ -9,6 +9,7 @@
 #include "PartyUnit.h"
 #include "BattleUnit.h"
 #include "UnitData.h"
+#include "ItemData.h"
 #include "BattleCommand.h"
 
 #include "ImageManager.h"
@@ -176,7 +177,7 @@ void PartyUnit::damaged(const int damage, const bool weak, const WeaponType weap
         animationLabel(damageLabel);
         if (weak) {
             auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
-            weakLabel->setScale(1.0f);
+            weakLabel->setScale(1.5f);
             auto size = node->getContentSize();
             auto pos = Vec2(size.width / 4, size.height / 4);
             weakLabel->setPosition(pos);

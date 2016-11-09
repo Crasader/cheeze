@@ -20,6 +20,7 @@
       <FilePathData Path="Images/Character/Normal/1.png" />
       <FilePathData Path="Images/Character/Normal/2.png" />
       <FilePathData Path="Images/Character/Normal/3.png" />
+      <FilePathData Path="Images/Character/20.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

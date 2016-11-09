@@ -257,7 +257,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1607" Y="0.5000" />
                     <PreSize X="0.1607" Y="0.7500" />
-                    <FileData Type="MarkedSubImage" Path="Images/UIParts/item_escape_wing.png" Plist="Csis/UIParts.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/UIParts/item_ap_wing.png" Plist="Csis/UIParts.plist" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="PotionName" ActionTag="-178885141" Tag="207" IconVisible="False" LeftMargin="140.0000" RightMargin="-230.0000" TopMargin="-3.0000" BottomMargin="27.0000" LabelText="だっしゅつのはね" ctype="TextBMFontObjectData">
                     <Size X="650.0000" Y="96.0000" />

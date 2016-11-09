@@ -90,6 +90,9 @@
 		72D0BE3B1D6BDD0D0052FA49 /* MemberStatusBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE3A1D6BDD0D0052FA49 /* MemberStatusBox.cpp */; };
 		72D0BE571D6C9DAC0052FA49 /* EnemyUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D0BE561D6C9DAC0052FA49 /* EnemyUnit.cpp */; };
 		72D0BE5C1D6CB42F0052FA49 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 72D0BE5B1D6CB42F0052FA49 /* Fonts */; };
+		72EC85901DD33AFA00CD495B /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC858F1DD33AFA00CD495B /* ItemData.cpp */; };
+		72EC85931DD33C5800CD495B /* CommonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC85921DD33C5800CD495B /* CommonData.cpp */; };
+		72EC85A51DD34B0C00CD495B /* ItemListBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -270,6 +273,12 @@
 		72D0BE521D6C9D9E0052FA49 /* EnemyUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnemyUnit.h; sourceTree = "<group>"; };
 		72D0BE561D6C9DAC0052FA49 /* EnemyUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyUnit.cpp; sourceTree = "<group>"; };
 		72D0BE5B1D6CB42F0052FA49 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		72EC858B1DD33AE600CD495B /* ItemData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemData.h; sourceTree = "<group>"; };
+		72EC858F1DD33AFA00CD495B /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
+		72EC85911DD33B6800CD495B /* CommonData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonData.h; sourceTree = "<group>"; };
+		72EC85921DD33C5800CD495B /* CommonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonData.cpp; sourceTree = "<group>"; };
+		72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemListBoard.cpp; sourceTree = "<group>"; };
+		72EC85A41DD34B0C00CD495B /* ItemListBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListBoard.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -584,8 +593,12 @@
 			children = (
 				72D0BE331D6BCFFB0052FA49 /* UnitData.cpp */,
 				72D0BE321D6BCFEC0052FA49 /* UnitData.h */,
+				72EC858F1DD33AFA00CD495B /* ItemData.cpp */,
+				72EC858B1DD33AE600CD495B /* ItemData.h */,
 				7277DD1F1DA55A9100D52302 /* StageData.cpp */,
 				7277DD241DA55A9900D52302 /* StageData.h */,
+				72EC85921DD33C5800CD495B /* CommonData.cpp */,
+				72EC85911DD33B6800CD495B /* CommonData.h */,
 			);
 			name = Schema;
 			sourceTree = "<group>";
@@ -595,6 +608,8 @@
 			children = (
 				72D0BE3A1D6BDD0D0052FA49 /* MemberStatusBox.cpp */,
 				72D0BE391D6BDCFD0052FA49 /* MemberStatusBox.h */,
+				72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */,
+				72EC85A41DD34B0C00CD495B /* ItemListBoard.h */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -785,7 +800,9 @@
 				72D0BE131D6B62710052FA49 /* CentralClient.cpp in Sources */,
 				72D0BE151D6B62710052FA49 /* DoNotBackup.mm in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				72EC85A51DD34B0C00CD495B /* ItemListBoard.cpp in Sources */,
 				72B85EEF1D6EA65300772D3E /* BattleUnit.cpp in Sources */,
+				72EC85901DD33AFA00CD495B /* ItemData.cpp in Sources */,
 				72D0BE191D6B62710052FA49 /* PlayerBase.cpp in Sources */,
 				72D0BE1A1D6B62710052FA49 /* RestClient.cpp in Sources */,
 				72D0BE1C1D6B62710052FA49 /* Touchable.cpp in Sources */,
@@ -793,6 +810,7 @@
 				72D0BE121D6B62710052FA49 /* BGMPlayer.cpp in Sources */,
 				72D0BE3B1D6BDD0D0052FA49 /* MemberStatusBox.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				72EC85931DD33C5800CD495B /* CommonData.cpp in Sources */,
 				7224D5951D09A67F009A9A5E /* HomeScene.cpp in Sources */,
 				7277DD201DA55A9100D52302 /* StageData.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

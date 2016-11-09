@@ -29,22 +29,22 @@
                 <PreSize X="2.6672" Y="1.0000" />
                 <FileData Type="Normal" Path="Images/UIParts/bg_battle.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Character_1" ActionTag="-634718174" Tag="77" IconVisible="True" LeftMargin="460.0000" RightMargin="180.0000" TopMargin="319.9996" BottomMargin="320.0004" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Character_1" ActionTag="-634718174" Tag="77" IconVisible="True" LeftMargin="480.0000" RightMargin="160.0000" TopMargin="319.9996" BottomMargin="320.0004" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="460.0000" Y="320.0004" />
+                <Position X="480.0000" Y="320.0004" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7188" Y="0.5000" />
+                <PrePosition X="0.7500" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Character_2" ActionTag="1169291092" Tag="78" IconVisible="True" LeftMargin="510.0000" RightMargin="130.0000" TopMargin="440.0000" BottomMargin="200.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Character_2" ActionTag="1169291092" Tag="78" IconVisible="True" LeftMargin="520.0000" RightMargin="120.0000" TopMargin="440.0000" BottomMargin="200.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="510.0000" Y="200.0000" />
+                <Position X="520.0000" Y="200.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7969" Y="0.3125" />
+                <PrePosition X="0.8125" Y="0.3125" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="Character_3" ActionTag="-1175957950" Tag="79" IconVisible="True" LeftMargin="560.0002" RightMargin="79.9998" TopMargin="560.0000" BottomMargin="80.0000" ctype="SingleNodeObjectData">
@@ -56,31 +56,31 @@
                 <PrePosition X="0.8750" Y="0.1250" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Enemy_1" ActionTag="-941001083" Tag="1330" IconVisible="True" LeftMargin="180.0000" RightMargin="460.0000" TopMargin="319.9994" BottomMargin="320.0006" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Enemy_1" ActionTag="-941001083" Tag="1330" IconVisible="True" LeftMargin="300.0000" RightMargin="340.0000" TopMargin="319.9994" BottomMargin="320.0006" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="180.0000" Y="320.0006" />
+                <Position X="300.0000" Y="320.0006" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2813" Y="0.5000" />
+                <PrePosition X="0.4688" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Enemy_2" ActionTag="491010691" Tag="1331" IconVisible="True" LeftMargin="319.9999" RightMargin="320.0001" TopMargin="460.0000" BottomMargin="180.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Enemy_2" ActionTag="491010691" Tag="1331" IconVisible="True" LeftMargin="280.0000" RightMargin="360.0000" TopMargin="520.0000" BottomMargin="120.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="319.9999" Y="180.0000" />
+                <Position X="280.0000" Y="120.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.2813" />
+                <PrePosition X="0.4375" Y="0.1875" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Enemy_3" ActionTag="1811008158" Tag="1332" IconVisible="True" LeftMargin="100.0000" RightMargin="540.0000" TopMargin="520.0000" BottomMargin="120.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Enemy_3" ActionTag="1811008158" Tag="1332" IconVisible="True" LeftMargin="120.0000" RightMargin="520.0000" TopMargin="400.0000" BottomMargin="240.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="100.0000" Y="120.0000" />
+                <Position X="120.0000" Y="240.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1563" Y="0.1875" />
+                <PrePosition X="0.1875" Y="0.3750" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>

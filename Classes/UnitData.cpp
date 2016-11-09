@@ -20,11 +20,11 @@ const std::array<int, 2> HEAL_L_LARGE =   {250, 300};
 
 const std::unordered_map<int, const UnitData> unitDatas = {
     {1, {"キラリ", "1", 3, 1800, 650, 5, ElementType::FIRE, {WeaponType::SWORD, WeaponType::KNIFE, WeaponType::AX},
-        {"トライアドスター", "敵全体に火属性ダメージ(大) / 水属性の追加ダメージ(中) / 風属性の追加ダメージ(中)", "", 100,
+        {"トライアドスター", "敵全体に火属性ダメージ(大) / 水属性の追加ダメージ(大) / 風属性の追加ダメージ(大)", "", 100,
             {
                 {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::FIRE,  DAMAGE_LARGE},
-                {EffectType::DAMAGE, TargetType::SAME, ElementType::WATER, DAMAGE_MIDDLE},
-                {EffectType::DAMAGE, TargetType::SAME, ElementType::WIND,  DAMAGE_MIDDLE}
+                {EffectType::DAMAGE, TargetType::SAME, ElementType::WATER, DAMAGE_LARGE},
+                {EffectType::DAMAGE, TargetType::SAME, ElementType::WIND,  DAMAGE_LARGE}
             }
         },
     }},
@@ -37,10 +37,10 @@ const std::unordered_map<int, const UnitData> unitDatas = {
         },
     }},
     {3, {"サラリ", "3", 1, 1500, 400, 5, ElementType::WATER, {WeaponType::CANE},
-        {"めいきょうしすい", "味方全体のＨＰを回復(特大) / 気絶した仲間を復活させる(HP:50%)", "", 100,
+        {"めいきょうしすい", "味方全体のＨＰを回復(特大) / 気絶している仲間も対象となる", "", 100,
             {
+                {EffectType::RESURRECTION, TargetType::PARTY_ALL, ElementType::WATER, {1, 1}},
                 {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, HEAL_L_LARGE},
-                {EffectType::RESURRECTION, TargetType::PARTY_ALL, ElementType::WATER, {45, 55}},
             }
         },
     }},
@@ -76,14 +76,14 @@ const std::unordered_map<int, const UnitData> unitDatas = {
         {"げんわくのこな", "", "", 3,
             {
                 {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::SELF, DAMAGE_NORMAL},
-                {EffectType::AP_DOWN, TargetType::ENEMY_ALL, ElementType::SELF, {1, 3}}
+                {EffectType::AP_DOWN, TargetType::ENEMY_ALL, ElementType::SELF, {0, 2}}
             }
         },
     }},
-    {16, {"さるっちゃ", "16", 1, 8000, 260, 3, ElementType::FIRE, {WeaponType::ENEMY},
-        {"あばれまわる", "", "", 3,
+    {16, {"さるっちゃ", "16", 1, 8000, 260, 4, ElementType::FIRE, {WeaponType::ENEMY},
+        {"あばれまわる", "", "", 4,
             {
-                {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::SELF, DAMAGE_MIDDLE}
+                {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::SELF, DAMAGE_SMALL}
             }
         },
     }},
@@ -107,7 +107,8 @@ const std::unordered_map<int, const UnitData> unitDatas = {
     {19, {"ごれむん", "19", 1, 9000, 240, 3, ElementType::WATER, {WeaponType::ENEMY},
         {"のしかかる", "", "", 3,
             {
-                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_LARGE}
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_MIDDLE},
+                {EffectType::AP_DOWN, TargetType::SAME, ElementType::SELF, {0, 2}}
             }
         },
     }},
@@ -119,19 +120,6 @@ const std::unordered_map<int, const UnitData> unitDatas = {
             }
         },
     }},
-};
-
-const std::unordered_map<int, const WeaponData> weaponDatas = {
-    { 0, {"なし　　　　　　", WeaponType::ENEMY,   0,   0, {0} }},
-    { 1, {"バスタードソード", WeaponType::SWORD, 100, 300, { 1,  18,  3} }},
-    { 2, {"もりびとのゆみ　", WeaponType::ARCH,  150, 250, {12, 5, 10} }},
-    { 3, {"あめふりのつえ　", WeaponType::CANE,  200, 200, {7, 8, 9}}},
-    { 4, {"きしのつるぎ　　", WeaponType::SWORD, 250, 150, {13, 14, 15} }},
-    { 5, {"てんかいのやり　", WeaponType::ARCH,  200, 200, {12, 5, 6} }},
-    { 6, {"ほしよみのつえ　", WeaponType::CANE,  200, 200, {13, 14, 15} }},
-    { 7, {"とうぞくのけん　", WeaponType::SWORD, 150, 150, {12, 16, 17} }},
-    { 8, {"マスケットじゅう", WeaponType::ARCH,  350,  50, { 4,  5, 11} }},
-    { 9, {"そよかぜのハープ", WeaponType::CANE,  200, 200, {13, 14, 15} }},
 };
 
 const std::unordered_map<int, const CommandData> commandDatas = {
@@ -244,21 +232,3 @@ const std::unordered_map<int, const CommandData> commandDatas = {
         }
     }},
 };
-
-const std::unordered_map<WeaponType, const CodeName> weaponCodes = {
-    {WeaponType::SWORD, {"けん", "sword"}},
-    {WeaponType::LANCE, {"やり", "lance"}},
-    {WeaponType::ARCH,  {"ゆみ", "arch"}},
-    {WeaponType::CANE,  {"つえ", "cane"}},
-    {WeaponType::AX,    {"おの", "ax"}},
-    {WeaponType::KNIFE, {"ないふ", "knife"}},
-    {WeaponType::ENEMY, {"", "enemy"}},
-};
-
-const std::unordered_map<ElementType, const CodeName> elementCodes = {
-    {ElementType::FIRE,  {"ほのお", "fire", Color3B(138, 0, 0)}},
-    {ElementType::WATER, {"み　ず", "water", Color3B(0, 0, 138)}},
-//    {ElementType::EARTH, {"だいち", "earth", Color3B(138, 68, 0)}},
-    {ElementType::WIND,  {"か　ぜ", "wind", Color3B(0, 138, 0)}},
-};
-

@@ -222,8 +222,8 @@
               <AbstractNodeData Name="Labels" ActionTag="887333271" Tag="361" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" RightMargin="640.0000" TopMargin="640.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Special" ActionTag="1468265488" Tag="112" IconVisible="False" LeftMargin="65.0000" RightMargin="-310.0000" TopMargin="-392.5000" BottomMargin="307.5000" IsCustomSize="True" FontSize="20" LabelText="敵単体に武器属性の特大ダメージ / 時々クリティカルが発動する&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="245.0000" Y="85.0000" />
+                  <AbstractNodeData Name="Special" ActionTag="1468265488" Tag="112" IconVisible="False" LeftMargin="65.0000" RightMargin="-345.0000" TopMargin="-392.5000" BottomMargin="307.5000" IsCustomSize="True" FontSize="20" LabelText="敵単体に武器属性の特大ダメージ / 時々クリティカルが発動する&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="280.0000" Y="85.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="65.0000" Y="350.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
