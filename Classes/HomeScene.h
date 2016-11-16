@@ -14,6 +14,8 @@
 
 class MemberStatusBox;
 class ItemListBoard;
+class WeaponListBoard;
+enum class WeaponType : int;
 
 class HomeScene : public BaseScene<HomeScene>
 {
@@ -23,9 +25,9 @@ public:
     bool init();
     void onEnter();
 //    void onEnterTransitionDidFinish();
+    void setPartyMembers();
 private:
     void setUIParts();
-    void setPartyMembers();
     
     using Party = std::vector<std::shared_ptr<MemberStatusBox>>;
     inline const Party getParty() const { return _party; }
@@ -35,6 +37,8 @@ private:
 
     std::unique_ptr<ItemListBoard> _itemListBoard { nullptr };
     inline std::unique_ptr<ItemListBoard>& getItemListBoard(){ return _itemListBoard; }
+    std::unique_ptr<WeaponListBoard> _weaponListBoard { nullptr };
+    inline std::unique_ptr<WeaponListBoard>& getWeaponListBoard(){ return _weaponListBoard; }
 };
 
 #endif /* defined(__cheeze__HomeScene__) */

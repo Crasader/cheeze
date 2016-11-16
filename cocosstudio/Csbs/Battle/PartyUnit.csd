@@ -104,13 +104,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Command_1" ActionTag="1115554004" Tag="753" IconVisible="False" LeftMargin="315.0009" RightMargin="174.9991" TopMargin="79.9968" BottomMargin="10.0032" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Command_1" ActionTag="1115554004" Tag="753" IconVisible="False" LeftMargin="145.0000" RightMargin="345.0000" TopMargin="80.0000" BottomMargin="10.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="150.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="390.0009" Y="35.0032" />
+                <Position X="220.0000" Y="35.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6094" Y="0.2500" />
+                <PrePosition X="0.3438" Y="0.2500" />
                 <PreSize X="0.2344" Y="0.3571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="MarkedSubImage" Path="Images/UIParts/button_command.png" Plist="Csis/UIParts.plist" />
@@ -119,13 +119,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Command_2" ActionTag="1507480945" Tag="754" IconVisible="False" LeftMargin="479.9998" RightMargin="10.0002" TopMargin="14.9997" BottomMargin="75.0003" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Command_2" ActionTag="1507480945" Tag="754" IconVisible="False" LeftMargin="315.0000" RightMargin="175.0000" TopMargin="80.0000" BottomMargin="10.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="150.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="554.9998" Y="100.0003" />
+                <Position X="390.0000" Y="35.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8672" Y="0.7143" />
+                <PrePosition X="0.6094" Y="0.2500" />
                 <PreSize X="0.2344" Y="0.3571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="MarkedSubImage" Path="Images/UIParts/button_command.png" Plist="Csis/UIParts.plist" />
@@ -149,13 +149,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Command_4" ActionTag="-820157452" Tag="765" IconVisible="False" LeftMargin="145.0000" RightMargin="345.0000" TopMargin="79.9999" BottomMargin="10.0001" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Command_4" ActionTag="-820157452" Tag="765" IconVisible="False" LeftMargin="480.0000" RightMargin="10.0000" TopMargin="15.0000" BottomMargin="75.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="150.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="220.0000" Y="35.0001" />
+                <Position X="555.0000" Y="100.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3438" Y="0.2500" />
+                <PrePosition X="0.8672" Y="0.7143" />
                 <PreSize X="0.2344" Y="0.3571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="MarkedSubImage" Path="Images/UIParts/button_command.png" Plist="Csis/UIParts.plist" />
@@ -172,7 +172,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1094" Y="0.5000" />
                 <PreSize X="0.1563" Y="0.7143" />
-                <FileData Type="MarkedSubImage" Path="Images/Character/1.png" Plist="Csis/Characters.plist" />
+                <FileData Type="MarkedSubImage" Path="Images/Character/kiraly.png" Plist="Csis/Units.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="AP_1" ActionTag="1517465317" Tag="758" IconVisible="False" LeftMargin="13.4998" RightMargin="601.5002" TopMargin="112.5000" BottomMargin="2.5000" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="50" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="25.0000" />
@@ -299,23 +299,23 @@
                 <PreSize X="0.2719" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="APCommand_1" ActionTag="-1452598156" Tag="621" IconVisible="False" LeftMargin="306.5008" RightMargin="166.4992" TopMargin="72.0000" BottomMargin="-28.0000" LabelText="AP:1" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="APCommand_1" ActionTag="-1452598156" Tag="621" IconVisible="False" LeftMargin="136.5000" RightMargin="336.5000" TopMargin="72.0000" BottomMargin="-28.0000" LabelText="AP:1" ctype="TextBMFontObjectData">
                 <Size X="167.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="390.0008" Y="20.0000" />
+                <Position X="220.0000" Y="20.0000" />
                 <Scale ScaleX="0.3000" ScaleY="0.3000" />
                 <CColor A="255" R="255" G="238" B="136" />
-                <PrePosition X="0.6094" Y="0.1429" />
+                <PrePosition X="0.3438" Y="0.1429" />
                 <PreSize X="0.2609" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="APCommand_2" ActionTag="557827282" Tag="623" IconVisible="False" LeftMargin="471.5012" RightMargin="1.4988" TopMargin="6.9999" BottomMargin="37.0001" LabelText="AP:1" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="APCommand_2" ActionTag="557827282" Tag="623" IconVisible="False" LeftMargin="306.5000" RightMargin="166.5000" TopMargin="72.0000" BottomMargin="-28.0000" LabelText="AP:1" ctype="TextBMFontObjectData">
                 <Size X="167.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="555.0012" Y="85.0001" />
+                <Position X="390.0000" Y="20.0000" />
                 <Scale ScaleX="0.3000" ScaleY="0.3000" />
                 <CColor A="255" R="255" G="238" B="136" />
-                <PrePosition X="0.8672" Y="0.6071" />
+                <PrePosition X="0.6094" Y="0.1429" />
                 <PreSize X="0.2609" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
@@ -329,13 +329,13 @@
                 <PreSize X="0.2609" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="APCommand_4" ActionTag="-2023576841" Tag="624" IconVisible="False" LeftMargin="71.0001" RightMargin="270.9999" TopMargin="71.9999" BottomMargin="-27.9999" LabelText="TP:100%" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="APCommand_4" ActionTag="-2023576841" Tag="624" IconVisible="False" LeftMargin="406.0000" RightMargin="-64.0000" TopMargin="7.0000" BottomMargin="37.0000" LabelText="TP:100%" ctype="TextBMFontObjectData">
                 <Size X="298.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="220.0001" Y="20.0001" />
+                <Position X="555.0000" Y="85.0000" />
                 <Scale ScaleX="0.3000" ScaleY="0.3000" />
                 <CColor A="255" R="136" G="255" B="136" />
-                <PrePosition X="0.3438" Y="0.1429" />
+                <PrePosition X="0.8672" Y="0.6071" />
                 <PreSize X="0.4656" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
@@ -349,23 +349,23 @@
                 <PreSize X="0.5000" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameCommand_1" ActionTag="-919651016" Tag="626" IconVisible="False" LeftMargin="206.5010" RightMargin="66.4990" TopMargin="47.0000" BottomMargin="-3.0000" LabelText="コマンド1" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="NameCommand_1" ActionTag="-919651016" Tag="626" IconVisible="False" LeftMargin="36.5000" RightMargin="236.5000" TopMargin="47.0000" BottomMargin="-3.0000" LabelText="コマンド1" ctype="TextBMFontObjectData">
                 <Size X="367.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="390.0010" Y="45.0000" />
+                <Position X="220.0000" Y="45.0000" />
                 <Scale ScaleX="0.3000" ScaleY="0.3000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6094" Y="0.3214" />
+                <PrePosition X="0.3438" Y="0.3214" />
                 <PreSize X="0.5734" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameCommand_2" ActionTag="822585141" Tag="627" IconVisible="False" LeftMargin="369.4992" RightMargin="-100.4992" TopMargin="-18.0002" BottomMargin="62.0002" LabelText="コマンド2" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="NameCommand_2" ActionTag="822585141" Tag="627" IconVisible="False" LeftMargin="204.5000" RightMargin="64.5000" TopMargin="47.0000" BottomMargin="-3.0000" LabelText="コマンド2" ctype="TextBMFontObjectData">
                 <Size X="371.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="554.9992" Y="110.0002" />
+                <Position X="390.0000" Y="45.0000" />
                 <Scale ScaleX="0.3000" ScaleY="0.3000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8672" Y="0.7857" />
+                <PrePosition X="0.6094" Y="0.3214" />
                 <PreSize X="0.5797" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
@@ -379,13 +379,13 @@
                 <PreSize X="0.5813" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameCommand_4" ActionTag="131601368" Tag="629" IconVisible="False" LeftMargin="-97.0000" RightMargin="103.0000" TopMargin="46.9999" BottomMargin="-2.9999" LabelText="ウェポンバースト" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="NameCommand_4" ActionTag="131601368" Tag="629" IconVisible="False" LeftMargin="238.0000" RightMargin="-232.0000" TopMargin="-18.0000" BottomMargin="62.0000" LabelText="ウェポンバースト" ctype="TextBMFontObjectData">
                 <Size X="634.0000" Y="96.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="220.0000" Y="45.0001" />
+                <Position X="555.0000" Y="110.0000" />
                 <Scale ScaleX="0.2500" ScaleY="0.2500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3438" Y="0.3214" />
+                <PrePosition X="0.8672" Y="0.7857" />
                 <PreSize X="0.9906" Y="0.6857" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>

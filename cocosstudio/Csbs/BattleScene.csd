@@ -19,7 +19,7 @@
           <AbstractNodeData Name="Window" ActionTag="-1654432867" Tag="745" IconVisible="False" PositionPercentYEnabled="True" BottomMargin="496.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="640.0000" Y="640.0000" />
             <Children>
-              <AbstractNodeData Name="Background" ActionTag="748096127" Tag="744" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-533.5000" RightMargin="-533.5000" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="1285" Scale9Height="218" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Background" ActionTag="748096127" Tag="744" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-533.5000" RightMargin="-533.5000" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="1285" Scale9Height="218" ctype="ImageViewObjectData">
                 <Size X="1707.0000" Y="640.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                 <Position X="320.0000" Y="640.0000" />
@@ -29,22 +29,22 @@
                 <PreSize X="2.6672" Y="1.0000" />
                 <FileData Type="Normal" Path="Images/UIParts/bg_battle.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Character_1" ActionTag="-634718174" Tag="77" IconVisible="True" LeftMargin="480.0000" RightMargin="160.0000" TopMargin="319.9996" BottomMargin="320.0004" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Character_1" ActionTag="-634718174" Tag="77" IconVisible="True" LeftMargin="500.0000" RightMargin="140.0000" TopMargin="319.9996" BottomMargin="320.0004" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="480.0000" Y="320.0004" />
+                <Position X="500.0000" Y="320.0004" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7500" Y="0.5000" />
+                <PrePosition X="0.7813" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Character_2" ActionTag="1169291092" Tag="78" IconVisible="True" LeftMargin="520.0000" RightMargin="120.0000" TopMargin="440.0000" BottomMargin="200.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Character_2" ActionTag="1169291092" Tag="78" IconVisible="True" LeftMargin="529.9996" RightMargin="110.0004" TopMargin="439.9999" BottomMargin="200.0001" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="520.0000" Y="200.0000" />
+                <Position X="529.9996" Y="200.0001" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8125" Y="0.3125" />
+                <PrePosition X="0.8281" Y="0.3125" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="Character_3" ActionTag="-1175957950" Tag="79" IconVisible="True" LeftMargin="560.0002" RightMargin="79.9998" TopMargin="560.0000" BottomMargin="80.0000" ctype="SingleNodeObjectData">

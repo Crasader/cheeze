@@ -16,6 +16,7 @@
 class UnitData;
 class WeaponData;
 class BattleCommand;
+enum class WeaponId : int;
 enum class WeaponType : int;
 enum class ElementType : int;
 
@@ -25,7 +26,7 @@ using namespace cocostudio;
 class BattleUnit : public Touchable
 {
 public:
-    BattleUnit(const int unitId, const int weaponId, const bool enemy, Node* csb)
+    BattleUnit(const int unitId, const WeaponId weaponId, const bool enemy, Node* csb)
     : _unitId(unitId)
     , _weaponId(weaponId)
     , _enemy(enemy)
@@ -65,7 +66,7 @@ public:
     inline const int getAP() const { return _ap; }
     inline const int getAPMax() const { return _apMax; }
     inline const int getUnitId() const { return _unitId; }
-    inline const int getWeaponId() const { return _weaponId; }
+    inline const WeaponId getWeaponId() const { return _weaponId; }
     void setAvatar(Node* node);
     inline ImageView* getAvatar(){ return _avatar; };
     inline void setPosition(const int position) { _position = position; }
@@ -83,9 +84,9 @@ private:
     ImageView* _avatar { nullptr };
     Node* _csb;
 
-    int _unitId;
-    int _weaponId;
-    bool _enemy;
+    int _unitId { 0 };
+    WeaponId _weaponId { static_cast<WeaponId>(0) };
+    bool _enemy { false };
     int _position { 0 };
 
     inline float getHpPercent(){

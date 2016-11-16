@@ -61,6 +61,7 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		7224D5951D09A67F009A9A5E /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7224D5941D09A67F009A9A5E /* HomeScene.cpp */; };
+		726AEFD71DDA118D00E18BA4 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 726AEFD61DDA118D00E18BA4 /* Player.cpp */; };
 		7277DD201DA55A9100D52302 /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7277DD1F1DA55A9100D52302 /* StageData.cpp */; };
 		72B85EE31D6E0A5800772D3E /* BattleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */; };
 		72B85EEF1D6EA65300772D3E /* BattleUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B85EEE1D6EA65300772D3E /* BattleUnit.cpp */; };
@@ -93,6 +94,7 @@
 		72EC85901DD33AFA00CD495B /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC858F1DD33AFA00CD495B /* ItemData.cpp */; };
 		72EC85931DD33C5800CD495B /* CommonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC85921DD33C5800CD495B /* CommonData.cpp */; };
 		72EC85A51DD34B0C00CD495B /* ItemListBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */; };
+		72EC85AF1DD38F2F00CD495B /* WeaponListBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72EC85AE1DD38F2F00CD495B /* WeaponListBoard.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -215,6 +217,8 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7224D5901D09A66D009A9A5E /* HomeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
 		7224D5941D09A67F009A9A5E /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HomeScene.cpp; sourceTree = "<group>"; };
+		726AEFD61DDA118D00E18BA4 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		726AEFDB1DDA119600E18BA4 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		7277DD1F1DA55A9100D52302 /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
 		7277DD241DA55A9900D52302 /* StageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StageData.h; sourceTree = "<group>"; };
 		72B85EE21D6E0A5800772D3E /* BattleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCommand.cpp; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 		72EC85921DD33C5800CD495B /* CommonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonData.cpp; sourceTree = "<group>"; };
 		72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemListBoard.cpp; sourceTree = "<group>"; };
 		72EC85A41DD34B0C00CD495B /* ItemListBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListBoard.h; sourceTree = "<group>"; };
+		72EC85AE1DD38F2F00CD495B /* WeaponListBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponListBoard.cpp; sourceTree = "<group>"; };
+		72EC85B31DD38F5100CD495B /* WeaponListBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeaponListBoard.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -584,6 +590,8 @@
 		72D0BE271D6B66A30052FA49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				726AEFD61DDA118D00E18BA4 /* Player.cpp */,
+				726AEFDB1DDA119600E18BA4 /* Player.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -610,6 +618,8 @@
 				72D0BE391D6BDCFD0052FA49 /* MemberStatusBox.h */,
 				72EC85A31DD34B0C00CD495B /* ItemListBoard.cpp */,
 				72EC85A41DD34B0C00CD495B /* ItemListBoard.h */,
+				72EC85AE1DD38F2F00CD495B /* WeaponListBoard.cpp */,
+				72EC85B31DD38F5100CD495B /* WeaponListBoard.h */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -796,6 +806,7 @@
 				72B85EE31D6E0A5800772D3E /* BattleCommand.cpp in Sources */,
 				72D0BE341D6BCFFB0052FA49 /* UnitData.cpp in Sources */,
 				72D0BE161D6B62710052FA49 /* ImageManager.cpp in Sources */,
+				726AEFD71DDA118D00E18BA4 /* Player.cpp in Sources */,
 				72D0BE181D6B62710052FA49 /* PageBoard.cpp in Sources */,
 				72D0BE131D6B62710052FA49 /* CentralClient.cpp in Sources */,
 				72D0BE151D6B62710052FA49 /* DoNotBackup.mm in Sources */,
@@ -808,6 +819,7 @@
 				72D0BE1C1D6B62710052FA49 /* Touchable.cpp in Sources */,
 				72D0BDE91D69AAB90052FA49 /* BattleScene.cpp in Sources */,
 				72D0BE121D6B62710052FA49 /* BGMPlayer.cpp in Sources */,
+				72EC85AF1DD38F2F00CD495B /* WeaponListBoard.cpp in Sources */,
 				72D0BE3B1D6BDD0D0052FA49 /* MemberStatusBox.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				72EC85931DD33C5800CD495B /* CommonData.cpp in Sources */,

@@ -26,14 +26,14 @@
             <PreSize X="1.7750" Y="1.0000" />
             <FileData Type="Normal" Path="Images/UIParts/bg_main.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PageView" ActionTag="-1193173631" Tag="143" IconVisible="False" PositionPercentXEnabled="True" TopMargin="218.0000" BottomMargin="278.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
-            <Size X="640.0000" Y="640.0000" />
+          <AbstractNodeData Name="PageView" ActionTag="-1193173631" Tag="143" IconVisible="False" PositionPercentXEnabled="True" TopMargin="76.0000" BottomMargin="260.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
+            <Size X="640.0000" Y="800.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="320.0000" Y="598.0000" />
+            <Position X="320.0000" Y="660.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5264" />
-            <PreSize X="1.0000" Y="0.5634" />
+            <PrePosition X="0.5000" Y="0.5810" />
+            <PreSize X="1.0000" Y="0.7042" />
             <SingleColor A="255" R="150" G="150" B="100" />
             <FirstColor A="255" R="150" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
@@ -53,7 +53,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/1.png" Plist="Csis/Characters.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/Character/kiraly.png" Plist="Csis/Units.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -74,7 +74,7 @@
                     <CColor A="255" R="136" G="136" B="136" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/2.png" Plist="Csis/Characters.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/Character/hiraly.png" Plist="Csis/Units.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -95,7 +95,7 @@
                     <CColor A="255" R="136" G="136" B="136" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/3.png" Plist="Csis/Characters.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/Character/saraly.png" Plist="Csis/Units.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -116,14 +116,14 @@
           <AbstractNodeData Name="PlayerStatus" ActionTag="-1136680528" Tag="271" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="1076.0000" TouchEnable="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="640.0000" Y="60.0000" />
             <Children>
-              <AbstractNodeData Name="IconCoin" ActionTag="-406856580" Tag="310" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="440.0000" RightMargin="160.0000" TopMargin="10.0000" BottomMargin="10.0000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
-                <Size X="40.0000" Y="40.0000" />
+              <AbstractNodeData Name="IconCoin" ActionTag="-406856580" Tag="310" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="570.0000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="60.0000" Y="60.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="440.0000" Y="30.0000" />
+                <Position X="10.0000" Y="30.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6875" Y="0.5000" />
-                <PreSize X="0.0625" Y="0.6667" />
+                <PrePosition X="0.0156" Y="0.5000" />
+                <PreSize X="0.0938" Y="1.0000" />
                 <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_coin.png" Plist="Csis/UIParts.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="LabelRank" ActionTag="-1156449734" VisibleForFrame="False" Tag="145" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="20.0000" RightMargin="376.0000" TopMargin="-16.0000" BottomMargin="-16.0000" LabelText="Rank 1" ctype="TextBMFontObjectData">
@@ -146,13 +146,13 @@
                 <PreSize X="0.6484" Y="1.6000" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="LabelCoin" ActionTag="-986531995" Tag="143" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="327.0000" RightMargin="20.0000" TopMargin="-18.0000" BottomMargin="-18.0000" LabelText="9999999" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="LabelCoin" ActionTag="-986531995" Tag="143" IconVisible="False" LeftMargin="70.0000" RightMargin="277.0000" TopMargin="-13.0000" BottomMargin="-23.0000" LabelText="9999999" ctype="TextBMFontObjectData">
                 <Size X="293.0000" Y="96.0000" />
-                <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-                <Position X="620.0000" Y="30.0000" />
-                <Scale ScaleX="0.4500" ScaleY="0.4500" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="70.0000" Y="25.0000" />
+                <Scale ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9688" Y="0.5000" />
+                <PrePosition X="0.1094" Y="0.4167" />
                 <PreSize X="0.4578" Y="1.6000" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>

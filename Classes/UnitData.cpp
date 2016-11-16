@@ -19,28 +19,28 @@ const std::array<int, 2> HEAL_LARGE =     {160, 200};
 const std::array<int, 2> HEAL_L_LARGE =   {250, 300};
 
 const std::unordered_map<int, const UnitData> unitDatas = {
-    {1, {"キラリ", "1", 3, 1800, 650, 5, ElementType::FIRE, {WeaponType::SWORD, WeaponType::KNIFE, WeaponType::AX},
+    {1, {"キラリ", "kiraly", 3, 1800, 650, 5, ElementType::FIRE, {WeaponType::SWORD, WeaponType::AX},
         {"トライアドスター", "敵全体に火属性ダメージ(大) / 水属性の追加ダメージ(大) / 風属性の追加ダメージ(大)", "", 100,
             {
-                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::FIRE,  DAMAGE_LARGE},
-                {EffectType::DAMAGE, TargetType::SAME, ElementType::WATER, DAMAGE_LARGE},
-                {EffectType::DAMAGE, TargetType::SAME, ElementType::WIND,  DAMAGE_LARGE}
+                {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::FIRE,  {325, 400}},
+                {EffectType::DAMAGE, TargetType::SAME, ElementType::WATER, {325, 400}},
+                {EffectType::DAMAGE, TargetType::SAME, ElementType::WIND,  {325, 400}}
             }
         },
     }},
-    {2, {"ヒラリ", "2", 2, 1600, 500, 5, ElementType::WIND, {WeaponType::ARCH},
-        {"しんぴのかぜ", "味方全員のAPを+5する", "", 100,
+    {2, {"ヒラリ", "hiraly", 2, 1600, 500, 5, ElementType::WIND, {WeaponType::ARCH, WeaponType::LANCE},
+        {"しんぴのかぜ", "味方全体のHPを3ターン継続回復する / 味方全員のAPを+5する", "", 100,
             {
                 {EffectType::REGENE, TargetType::PARTY_ALL, ElementType::WIND, {50, 3}},
                 {EffectType::AP_UP, TargetType::PARTY_ALL, ElementType::WIND, {5, 5}}
             }
         },
     }},
-    {3, {"サラリ", "3", 1, 1500, 400, 5, ElementType::WATER, {WeaponType::CANE},
-        {"めいきょうしすい", "味方全体のＨＰを回復(特大) / 気絶している仲間も対象となる", "", 100,
+    {3, {"サラリ", "saraly", 1, 1500, 400, 5, ElementType::WATER, {WeaponType::CANE, WeaponType::MUSIC},
+        {"めいきょうしすい", "気絶している仲間を復活させる / 味方全体のＨＰを回復(特大)", "", 100,
             {
                 {EffectType::RESURRECTION, TargetType::PARTY_ALL, ElementType::WATER, {1, 1}},
-                {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, HEAL_L_LARGE},
+                {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, {250, 300}},
             }
         },
     }},
@@ -125,110 +125,12 @@ const std::unordered_map<int, const UnitData> unitDatas = {
 const std::unordered_map<int, const CommandData> commandDatas = {
     { 0, {"こうげき", "", "", 0,
         {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_NORMAL}
-        }
-    }},
-    { 1, {"ぶったぎり", "敵単体に自属性ダメージ(小)", "", 1,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL}
+            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, { 95, 105}}
         }
     }},
     { 2, {"おたけび", "味方全体のATを25%アップ(2ターン)", "", 2,
         {
             {EffectType::ATK_UP, TargetType::PARTY_ALL, ElementType::SELF, {25, 2}},
-        }
-    }},
-    { 3, {"らんぺーじ", "敵単体に自属性ダメージ(中) / 3回繰り返す", "", 4,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_MIDDLE},
-            {EffectType::DAMAGE, TargetType::SAME, ElementType::SELF, DAMAGE_MIDDLE},
-            {EffectType::DAMAGE, TargetType::SAME, ElementType::SELF, DAMAGE_MIDDLE}
-        }
-    }},
-    { 4, {"どくや", "敵単体に自属性ダメージ(小) / 対象に3ターンの継続ダメージ", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::POISON, TargetType::SAME, ElementType::SELF, {35, 3}}
-        }
-    }},
-    { 5, {"あしどめのや", "敵単体に武器属性ダメージ(小) / 対象のAPを-1する", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::AP_DOWN, TargetType::SAME, ElementType::SELF, {1, 1}},
-        }
-    }},
-    { 6, {"やのあらし", "敵全体に自属性ダメージ(中)", "", 3,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::SELF, DAMAGE_MIDDLE}
-        }
-    }},
-    { 7, {"いのちのみず", "現在のＨＰが一番少ない味方単体のＨＰを回復(小)", "", 1,
-        {
-            {EffectType::HEAL, TargetType::PARTY_ONE, ElementType::WATER, HEAL_SMALL}
-        }
-    }},
-    { 8, {"みずでっぽう", "敵単体に水属性ダメージ(大)", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::WATER, DAMAGE_LARGE}
-        }
-    }},
-    { 9, {"いやしのあめ", "味方全体のＨＰを回復(中)", "", 3,
-        {
-            {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::WATER, HEAL_MIDDLE}
-        }
-    }},
-    {10, {"みだれうち", "敵単体に自属性ダメージ(小) / ターゲットランダムで4回繰り返す", "", 3,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL}
-        }
-    }},
-    {11, {"まぼろしのきり", "自分が受けるダメージを0にする(1ターン)", "", 1,
-        {
-            {EffectType::DAMAGE_CUT, TargetType::OWN, ElementType::SELF, {100, 1}}
-        }
-    }},
-    {12, {"しんこきゅう", "自分のAPを+2する", "", 1,
-        {
-            {EffectType::AP_UP, TargetType::OWN, ElementType::SELF, {2, 2}}
-        }
-    }},
-    {13, {"じゅうじぎり", "敵単体に自属性ダメージ(小) / 自属性の追加ダメージ(小)", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::SAME, ElementType::SELF, DAMAGE_SMALL}
-        }
-    }},
-    {14, {"まもりのかまえ", "味方全体が受けるダメージを50%カット(1ターン)", "", 3,
-        {
-            {EffectType::DAMAGE_CUT, TargetType::PARTY_ALL, ElementType::SELF, {50, 1}},
-        }
-    }},
-    {15, {"いやしのひかり", "味方全体のＨＰを回復(小)", "", 3,
-        {
-            {EffectType::HEAL, TargetType::PARTY_ALL, ElementType::SELF, HEAL_SMALL},
-        }
-    }},
-    {16, {"どろぼうぎり", "敵単体に自属性ダメージ(小) / 対象のAPを-1する / 自分のAPを+1する", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::AP_DOWN, TargetType::SAME, ElementType::SELF, {1, 1}},
-            {EffectType::AP_UP, TargetType::OWN, ElementType::SELF, {1, 1}},
-        }
-    }},
-    {17, {"みだれぎり", "敵単体に自属性ダメージ(小) / ターゲットランダムで4回繰り返す", "", 3,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL},
-            {EffectType::DAMAGE, TargetType::ENEMY_ONE, ElementType::SELF, DAMAGE_SMALL}
-        }
-    }},
-    {18, {"ぶんまわす", "敵全体に自属性ダメージ(小)", "", 2,
-        {
-            {EffectType::DAMAGE, TargetType::ENEMY_ALL, ElementType::SELF, DAMAGE_SMALL}
         }
     }},
 };

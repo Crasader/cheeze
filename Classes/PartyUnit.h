@@ -15,7 +15,7 @@
 class PartyUnit : public BattleUnit
 {
 public:
-    PartyUnit(const int unitId, const int weaponId, Node* csb)
+    PartyUnit(const int unitId, const WeaponId weaponId, Node* csb)
     : BattleUnit(unitId, weaponId, false, csb) {}
     virtual void appendTo(ListView* list, const int position, Node* avatar);
     virtual ~PartyUnit() = default;
@@ -45,6 +45,7 @@ private:
     inline void setTouchable() { _untouchable->setVisible(false); };
     inline void setUntouchable() { _untouchable->setVisible(true); };
     ImageView* _untouchable;
+    const std::string getImagePath();
 };
 
 #endif /* defined(__cheeze__PartyUnit__) */

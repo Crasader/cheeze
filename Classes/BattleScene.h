@@ -31,6 +31,7 @@ private:
     void playerAttack(const int count = 1);
     void enemyAttack();
     void nextTurn();
+    void moveBgImage();
     const bool isWeakElement(const ElementType atkType, const ElementType defType);
 
     inline ListView* getPartyList() const { return _partyList; }

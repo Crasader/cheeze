@@ -14,8 +14,9 @@
 #include "BattleCommand.h"
 #include "UnitData.h"
 
-#include "ImageManager.h"
+#include "Player.h"
 #include "BGMPlayer.h"
+#include "ImageManager.h"
 
 using Party = std::vector<std::shared_ptr<PartyUnit>>;
 using Enemys = std::vector<std::shared_ptr<EnemyUnit>>;
@@ -84,13 +85,15 @@ void BattleScene::onEnterTransitionDidFinish()
 
 void BattleScene::setPartyMembers()
 {
+    auto player = Player::getInstance();
     auto tmpl = CSLoader::createNode("Csbs/Battle/PartyUnit.csb")->getChildByName<Widget*>("Template");
     tmpl->retain();
     auto window = getChildByName("Window");
     for (auto i = 1; i <= 3; i++) {
         auto key = "Character_" + std::to_string(i);
         auto csb = tmpl->clone();
-        auto partyUnit = std::make_shared<PartyUnit>(i, i, csb);
+        auto weaponId = static_cast<WeaponId>(player->getCharacterWeaponId(i));
+        auto partyUnit = std::make_shared<PartyUnit>(i, weaponId, csb);
         partyUnit->appendTo(getPartyList(), i, window->getChildByName<ImageView*>(key));
         _party.push_back(partyUnit);
     }
@@ -210,6 +213,8 @@ void BattleScene::enemyAttack()
     Vector<FiniteTimeAction*> actions;
     if (getAliveEnemys().size() <= 0) {
         actions.pushBack(DelayTime::create(0.2f));
+        actions.pushBack(CallFunc::create([&](){ moveBgImage(); }));
+        actions.pushBack(DelayTime::create(1.0f));
         actions.pushBack(CallFunc::create([&](){ setEnemys(); }));
      } else {
         for (auto& attacker : getAliveEnemys()) {
@@ -269,6 +274,15 @@ void BattleScene::enemyAttack()
         nextTurn();
     }));
     this->runAction(Sequence::create(actions));
+}
+
+void BattleScene::moveBgImage()
+{
+    auto window = getChildByName("Window");
+    auto bgImage = window->getChildByName<ImageView*>("Background");
+    auto move = MoveBy::create(1.0f, Vec2(200, 0));
+    bgImage->runAction(move);
+    
 }
 
 void BattleScene::nextTurn()

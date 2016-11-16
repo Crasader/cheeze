@@ -14,6 +14,8 @@
 
 class UnitData;
 class WeaponData;
+enum class WeaponId : int;
+enum class WeaponType : int;
 
 using namespace cocos2d;
 
@@ -22,11 +24,11 @@ class MemberStatusBox : private Touchable
 public:
     virtual void appendTo(PageView* pageView, const int position);
     virtual ~MemberStatusBox() = default;
+    void setAction(const std::string name, const Callback& action);
 private:
     void init();
     void setStatus();
     void setWeapon();
-    void setCommands();
     inline Node* getCsb(){ return _csb; };
     Node* _csb { nullptr };
     const UnitData& getUnitData() const;
@@ -36,6 +38,11 @@ private:
     Node* _menuLabels { nullptr };
     Node* _basicLabels { nullptr };
     Node* _labels { nullptr };
+    
+    inline const int getCharacterId() const { return _characterId; }
+    inline const WeaponId getWeaponId() const { return _weaponId; }
+    int _characterId { 0 };
+    WeaponId _weaponId { static_cast<WeaponId>(0) };
 };
 
 #endif /* defined(__cheeze__MemberStatusBox__) */

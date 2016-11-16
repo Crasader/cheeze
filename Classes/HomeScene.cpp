@@ -11,7 +11,9 @@
 #include "LoadingLayer.h"
 #include "MemberStatusBox.h"
 #include "ItemListBoard.h"
+#include "WeaponListBoard.h"
 #include "PlayerBase.h"
+#include "CommonData.h"
 
 #include "BGMPlayer.h"
 
@@ -24,6 +26,7 @@ bool HomeScene::init()
     
     _partyList = getChildByName<PageView*>("PageView");
     _itemListBoard = std::make_unique<ItemListBoard>(this, CSLoader::createNode("Csbs/Home/ItemListBoard.csb"));
+    _weaponListBoard = std::make_unique<WeaponListBoard>(this, CSLoader::createNode("Csbs/Home/WeaponListBoard.csb"));
 
     setUIParts();
     
@@ -39,9 +42,18 @@ void HomeScene::onEnter()
 
 void HomeScene::setPartyMembers()
 {
+    _party.clear();
+    getPartyList()->removeAllItems();
     for (auto i = 1; i <= 3; i++) {
         auto member = std::make_shared<MemberStatusBox>();
         member->appendTo(getPartyList(), i);
+        member->setAction("LevelUp", [&, i](Ref* ref){
+            BGMPlayer::play2d("Sounds/se_ok.mp3");
+        });
+        member->setAction("Equip", [&, i](Ref* ref){
+            BGMPlayer::play2d("Sounds/se_ok.mp3");
+            getWeaponListBoard()->setWeaponList(i);
+        });
         _party.push_back(member);
     }
 }
@@ -49,7 +61,6 @@ void HomeScene::setPartyMembers()
 void HomeScene::setUIParts()
 {
     getPartyList()->setBounceEnabled(true);
-    getPartyList()->removeAllItems();
     getPartyList()->addEventListener([&](Ref* ref, PageView::EventType eventType){
         if(eventType == PageView::EventType::TURNING){
             auto page = static_cast<int>(static_cast<PageView*>(ref)->getCurrentPageIndex());
@@ -94,7 +105,7 @@ void HomeScene::setUIParts()
     auto itemButton = menu->getChildByName<Button*>("Item");
     BaseScene::onTouch(itemButton, [&](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");
-        getItemListBoard()->show();
+        getItemListBoard()->setItemList(ItemType::BATTLE);
     });
     
     auto image = getChildByName<ImageView*>("BgMain");
@@ -115,4 +126,3 @@ void HomeScene::setUIParts()
     auto actionL = RepeatForever::create(seqL);
     arrowL->runAction(actionL);
 }
-

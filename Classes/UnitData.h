@@ -11,14 +11,6 @@
 
 #include "CommonData.h"
 
-typedef struct CommandData {
-    const std::string name;
-    const std::string explain;
-    const std::string code;
-    const int ap;
-    const std::vector<EffectData> effect_datas;
-} CommandData;
-
 typedef struct UnitData {
     const std::string name;
     const std::string code;

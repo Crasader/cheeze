@@ -49,6 +49,33 @@
             <PreSize X="0.8188" Y="0.0810" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Reset" ActionTag="-769349458" Tag="141" IconVisible="False" LeftMargin="440.0000" RightMargin="-40.0000" TopMargin="1016.0000" TouchEnable="True" FontSize="40" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="240.0000" Y="120.0000" />
+            <Children>
+              <AbstractNodeData Name="Label" ActionTag="-35091990" Tag="140" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="13.5000" RightMargin="13.5000" TopMargin="14.0000" BottomMargin="14.0000" LabelText="RESET" ctype="TextBMFontObjectData">
+                <Size X="213.0000" Y="92.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="120.0000" Y="60.0000" />
+                <Scale ScaleX="0.8000" ScaleY="0.8000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.8875" Y="0.7667" />
+                <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="560.0000" Y="60.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8750" Y="0.0528" />
+            <PreSize X="0.3750" Y="0.1056" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="MarkedSubImage" Path="Images/UIParts/button_d.png" Plist="Csis/UIParts.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="Images/UIParts/button_p.png" Plist="Csis/UIParts.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="Images/UIParts/button_n.png" Plist="Csis/UIParts.plist" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

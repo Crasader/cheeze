@@ -12,6 +12,7 @@
 #include "ListBoard.h"
 
 class ItemData;
+enum class ItemType : int;
 
 class ItemListBoard : public ListBoard
 {
@@ -22,10 +23,9 @@ public:
         init();
     }
     virtual ~ItemListBoard() = default;
-    void show();
+    void setItemList(const ItemType type);
 private:
     void init();
-    void setItemList();
     void setListBox(Node* node, ItemData data);
 };
 

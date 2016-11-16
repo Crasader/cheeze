@@ -10,7 +10,9 @@
 #include "HomeScene.h"
 #include "LoadingLayer.h"
 
+#include "Player.h"
 #include "BGMPlayer.h"
+#include "CentralClient.h"
 
 TitleScene::TitleScene() = default;
 TitleScene::~TitleScene() = default;
@@ -18,6 +20,9 @@ TitleScene::~TitleScene() = default;
 bool TitleScene::init()
 {
     BaseScene::init();
+
+    Player::getInstance()->reset();
+//    CentralClient::getInstance()->init(Player::getInstance(), [&](){});
 
     auto homeButton = getChildByName<Widget*>("Touch");
     BaseScene::onTouch(homeButton, [&](Ref* ref){
@@ -33,6 +38,16 @@ bool TitleScene::init()
         addChild(loading);
     });
     
+    auto buttonReset = getChildByName<Button*>("Reset");
+    buttonReset->setVisible(false);
+#if COCOS2D_DEBUG
+    buttonReset->setVisible(true);
+    onLongTouch(buttonReset, [&](Ref* ref){
+        BGMPlayer::play2d("Sounds/se_ok.mp3");
+        Player::getInstance()->reset();
+    });
+#endif
+
     return true;
 }
 

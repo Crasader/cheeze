@@ -7,6 +7,8 @@
 //
 
 #include "MemberStatusBox.h"
+#include "WeaponListBoard.h"
+#include "Player.h"
 #include "UnitData.h"
 #include "ItemData.h"
 
@@ -18,7 +20,11 @@ using namespace cocostudio;
 
 void MemberStatusBox::appendTo(PageView* pageView, const int position)
 {
+    auto player = Player::getInstance();
     _position = position;
+    _characterId = position;
+    _weaponId = static_cast<WeaponId>(player->getCharacterWeaponId(_characterId));
+    
     auto tmpl = CSLoader::createNode("Csbs/Home/MemberStatusPageBox.csb")->getChildByName<Widget*>("Template");
     tmpl->retain();
     _csb = tmpl->clone();
@@ -27,7 +33,7 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
     auto& data = getUnitData();
 
     auto avatar = csb->getChildByName<ImageView*>("Avatar");
-    auto filePath = "Images/Character/Normal/" + data.code + ".png";
+    auto filePath = "Images/Character/Normal/" + data.code + "_" + getWeaponData().code + ".png";
     ImageManager::loadTexture(avatar, filePath);
 
     _menuLabels = csb->getChildByName("MenuLabels");
@@ -36,7 +42,6 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
 
     setStatus();
     setWeapon();
-//    setCommands();
     
     pageView->addChild(getCsb());
     tmpl->release();
@@ -60,16 +65,6 @@ void MemberStatusBox::setStatus()
     spName->setString(spCommand.name);
     auto spExplain = _labels->getChildByName<Text*>("Special");
     spExplain->setString(spCommand.explain);
-//    std::stringstream parameterSS;
-//    auto n = 0;
-//    for (auto& weaponType : data.weapon_types) {
-//        parameterSS << weaponCodes.at(weaponType).name;
-//        n++;
-//        if (n < data.weapon_types.size()) {
-//            parameterSS << "・";
-//        }
-//    }
-//    parameter->setString(parameterSS.str());
 }
 
 void MemberStatusBox::setWeapon()
@@ -84,10 +79,9 @@ void MemberStatusBox::setWeapon()
     auto attack = _basicLabels->getChildByName<TextBMFont*>("WeaponAT");
     attack->setString("(+" + std::to_string(data.attack) + ")");
 
-    auto commandIds = data.command_ids;
+    auto commands = data.commands;
     auto i = 1;
-    for (auto commandId : commandIds) {
-        auto& command = commandDatas.at(commandId);
+    for (auto& command : commands) {
         std::stringstream nameSS;
         nameSS << "コマンド";
         nameSS << i;
@@ -104,34 +98,20 @@ void MemberStatusBox::setWeapon()
     }
 }
 
-void MemberStatusBox::setCommands()
+void MemberStatusBox::setAction(const std::string name, const Callback& action)
 {
-    auto& data = getWeaponData();
-//    auto commands = data.commands;
-//    for (auto n = 1; n <= 3; n++) {
-//        auto& command = commands.at(n);
-//        auto text = node->getChildByName<Text*>("Text_" + std::to_string(n));
-//        std::stringstream textSS;
-//        textSS << "コマンド";
-//        textSS << n;
-//        textSS << " : ";
-//        textSS << command.name;
-//        textSS << " [AP:";
-//        textSS << command.ap;
-//        textSS << "]\n→";
-//        textSS << command.explain;
-//        text->setString(textSS.str());
-//    }
-//    
+    onTouch(getCsb()->getChildByName<Button*>(name), [&, action](Ref* ref){
+        action(ref);
+    });
 }
 
 const UnitData& MemberStatusBox::getUnitData() const
 {
-    return unitDatas.at(getPosition());
+    return unitDatas.at(getCharacterId());
 }
 
 const WeaponData& MemberStatusBox::getWeaponData() const
 {
-    return weaponDatas.at(getPosition());
+    return weaponDatas.at(getWeaponId());
 }
 

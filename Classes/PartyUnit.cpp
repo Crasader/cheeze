@@ -21,15 +21,14 @@ using BattleCommands = std::vector<std::shared_ptr<BattleCommand>>;
 void PartyUnit::init()
 {
     BattleUnit::init();
-    
+
     _untouchable = getCsb()->getChildByName<ImageView*>("Untouchable");
     setTouchable();
 
     auto attackCommand = std::make_shared<BattleCommand>(commandDatas.at(0));
     addCommand(attackCommand);
     auto& weaponData = getWeaponData();
-    for (auto& commandId : weaponData.command_ids) {
-        auto command = commandDatas.at(commandId);
+    for (auto& command : weaponData.commands) {
         auto battleCommand = std::make_shared<BattleCommand>(command);
         addCommand(battleCommand);
     }
@@ -38,6 +37,8 @@ void PartyUnit::init()
     setHP();
     setTP();
     setThumbnail();
+    auto filePath = "Images/Character/Normal/" + getImagePath() + ".png";
+    ImageManager::loadTexture(getAvatar(), filePath);
 }
 
 void PartyUnit::appendTo(ListView* list, const int position, Node* avatar)
@@ -53,7 +54,7 @@ void PartyUnit::appendTo(ListView* list, const int position, Node* avatar)
 void PartyUnit::setThumbnail()
 {
     auto thumbnail = getCsb()->getChildByName<ImageView*>("Thumbnail");
-    ImageManager::loadTexture(thumbnail, "Images/Character/Normal/" + getUnitData().code + ".png");
+    ImageManager::loadTexture(thumbnail, "Images/Character/" + getUnitData().code + ".png");
 }
 
 void PartyUnit::setHP()
@@ -143,13 +144,13 @@ void PartyUnit::selectCommands(const int number)
 void PartyUnit::attack()
 {
     auto start = CallFunc::create([&]{
-        auto filePath = "Images/Character/Attack/" + getUnitData().code + ".png";
+        auto filePath = "Images/Character/Attack/" + getImagePath() + ".png";
         ImageManager::loadTexture(getAvatar(), filePath);
     });
     auto jump = JumpBy::create(0.15f, Vec2(-60, 0), 30, 1);
     auto wait = DelayTime::create(0.4f);
     auto finish = CallFunc::create([&]{
-        auto filePath = "Images/Character/Normal/" + getUnitData().code + ".png";
+        auto filePath = "Images/Character/Normal/" + getImagePath() + ".png";
         ImageManager::loadTexture(getAvatar(), filePath);
     });
     auto action = Sequence::create(start, jump, wait, jump->reverse(), finish, nullptr);
@@ -256,4 +257,9 @@ void PartyUnit::turnChange()
     }
     updateAP();
     setCommands();
+}
+
+const std::string PartyUnit::getImagePath()
+{
+    return getUnitData().code + "_" + getWeaponData().code;
 }

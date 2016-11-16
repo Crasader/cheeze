@@ -10,10 +10,12 @@
             <Project Name="PartyUnit.csd" Type="Node" />
           </Folder>
           <Folder Name="Home">
-            <Project Name="MemberStatusPageBox.csd" Type="Node" />
-            <Project Name="StorySelectBoard.csd" Type="Node" />
             <Project Name="ItemListBoard.csd" Type="Node" />
             <Project Name="ItemListBox.csd" Type="Node" />
+            <Project Name="MemberStatusPageBox.csd" Type="Node" />
+            <Project Name="StorySelectBoard.csd" Type="Node" />
+            <Project Name="WeaponListBoard.csd" Type="Node" />
+            <Project Name="WeaponListBox.csd" Type="Node" />
           </Folder>
           <Project Name="BattleScene.csd" Type="Scene" />
           <Project Name="HomeScene.csd" Type="Scene" />
@@ -23,6 +25,7 @@
         <Folder Name="Csis">
           <PlistInfo Name="Characters.csi" Type="Plist" />
           <PlistInfo Name="UIParts.csi" Type="Plist" />
+          <PlistInfo Name="Units.csi" Type="Plist" />
         </Folder>
         <Folder Name="Fonts">
           <TTF Name="APJapanesefontT.ttf" />
@@ -32,16 +35,34 @@
         <Folder Name="Images">
           <Folder Name="Character">
             <Folder Name="Attack">
-              <Image Name="1.png" />
-              <Image Name="2.png" />
-              <Image Name="3.png" />
+              <Image Name="hiraly_forest.png" />
+              <Image Name="hiraly_masket.png" />
+              <Image Name="hiraly_pumpkin_bow.png" />
+              <Image Name="hiraly_valkyrie.png" />
+              <Image Name="kiraly_bustered.png" />
+              <Image Name="kiraly_knight.png" />
+              <Image Name="kiraly_pumpkin_ax.png" />
+              <Image Name="kiraly_thief.png" />
+              <Image Name="saraly_pumpkin_rod.png" />
+              <Image Name="saraly_rain.png" />
+              <Image Name="saraly_star.png" />
+              <Image Name="saraly_wind_harp.png" />
             </Folder>
             <Folder Name="Normal">
-              <Image Name="1.png" />
-              <Image Name="2.png" />
-              <Image Name="3.png" />
+              <Image Name="hiraly_forest.png" />
+              <Image Name="hiraly_masket.png" />
+              <Image Name="hiraly_pumpkin_bow.png" />
+              <Image Name="hiraly_valkyrie.png" />
+              <Image Name="kiraly_bustered.png" />
+              <Image Name="kiraly_knight.png" />
+              <Image Name="kiraly_pumpkin_ax.png" />
+              <Image Name="kiraly_thief.png" />
+              <Image Name="saraly_pumpkin_rod.png" />
+              <Image Name="saraly_rain.png" />
+              <Image Name="saraly_star.png" />
+              <Image Name="saraly_wind_harp.png" />
             </Folder>
-            <Image Name="1.png" />
+            <Image Name="kiraly.png" />
             <Image Name="11.png" />
             <Image Name="12.png" />
             <Image Name="13.png" />
@@ -51,9 +72,9 @@
             <Image Name="17.png" />
             <Image Name="18.png" />
             <Image Name="19.png" />
-            <Image Name="2.png" />
+            <Image Name="hiraly.png" />
             <Image Name="20.png" />
-            <Image Name="3.png" />
+            <Image Name="saraly.png" />
           </Folder>
           <Folder Name="UIParts">
             <Image Name="bar.png" />
@@ -68,10 +89,14 @@
             <Image Name="button_n.png" />
             <Image Name="button_p.png" />
             <Image Name="icon_arch.png" />
+            <Image Name="icon_ax.png" />
             <Image Name="icon_cane.png" />
             <Image Name="icon_chest.png" />
             <Image Name="icon_coin.png" />
+            <Image Name="icon_coin_pumpkin.png" />
             <Image Name="icon_fire.png" />
+            <Image Name="icon_lance.png" />
+            <Image Name="icon_music.png" />
             <Image Name="icon_skill.png" />
             <Image Name="icon_skill_off.png" />
             <Image Name="icon_soul.png" />

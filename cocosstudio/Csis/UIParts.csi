@@ -25,6 +25,10 @@
       <FilePathData Path="Images/UIParts/button_p.png" />
       <FilePathData Path="Images/UIParts/bar.png" />
       <FilePathData Path="Images/UIParts/button_command.png" />
+      <FilePathData Path="Images/UIParts/icon_ax.png" />
+      <FilePathData Path="Images/UIParts/icon_lance.png" />
+      <FilePathData Path="Images/UIParts/icon_music.png" />
+      <FilePathData Path="Images/UIParts/icon_coin_pumpkin.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

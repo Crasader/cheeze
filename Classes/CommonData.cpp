@@ -14,7 +14,7 @@ const std::unordered_map<WeaponType, const CodeName> weaponCodes = {
     {WeaponType::ARCH,  {"ゆみ", "arch"}},
     {WeaponType::CANE,  {"つえ", "cane"}},
     {WeaponType::AX,    {"おの", "ax"}},
-    {WeaponType::KNIFE, {"ないふ", "knife"}},
+    {WeaponType::MUSIC, {"がっき", "music"}},
     {WeaponType::ENEMY, {"", "enemy"}},
 };
 
