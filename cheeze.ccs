@@ -6,7 +6,6 @@
         <Folder Name="Csbs">
           <Folder Name="Battle">
             <Project Name="EnemyUnit.csd" Type="Node" />
-            <Project Name="MenuLayer.csd" Type="Layer" />
             <Project Name="PartyUnit.csd" Type="Node" />
           </Folder>
           <Folder Name="Home">
@@ -25,7 +24,6 @@
         <Folder Name="Csis">
           <PlistInfo Name="Characters.csi" Type="Plist" />
           <PlistInfo Name="UIParts.csi" Type="Plist" />
-          <PlistInfo Name="Units.csi" Type="Plist" />
         </Folder>
         <Folder Name="Fonts">
           <TTF Name="APJapanesefontT.ttf" />
@@ -62,19 +60,16 @@
               <Image Name="saraly_star.png" />
               <Image Name="saraly_wind_harp.png" />
             </Folder>
-            <Image Name="kiraly.png" />
-            <Image Name="11.png" />
-            <Image Name="12.png" />
-            <Image Name="13.png" />
-            <Image Name="14.png" />
-            <Image Name="15.png" />
-            <Image Name="16.png" />
-            <Image Name="17.png" />
-            <Image Name="18.png" />
-            <Image Name="19.png" />
-            <Image Name="hiraly.png" />
-            <Image Name="20.png" />
-            <Image Name="saraly.png" />
+            <Image Name="1.png" />
+            <Image Name="10.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="5.png" />
+            <Image Name="6.png" />
+            <Image Name="7.png" />
+            <Image Name="8.png" />
+            <Image Name="9.png" />
           </Folder>
           <Folder Name="UIParts">
             <Image Name="bar.png" />
@@ -84,10 +79,12 @@
             <Image Name="bg_main.png" />
             <Image Name="bg_title.png" />
             <Image Name="bg_title_board.png" />
+            <Image Name="icon_arrow_down.png" />
             <Image Name="button_command.png" />
             <Image Name="button_d.png" />
             <Image Name="button_n.png" />
             <Image Name="button_p.png" />
+            <Image Name="hiraly.png" />
             <Image Name="icon_arch.png" />
             <Image Name="icon_ax.png" />
             <Image Name="icon_cane.png" />
@@ -108,6 +105,28 @@
             <Image Name="item_potion_heal.png" />
             <Image Name="item_potion_heal_all.png" />
             <Image Name="item_potion_raise.png" />
+            <Image Name="kiraly.png" />
+            <Image Name="saraly.png" />
+            <Image Name="sweets_cake.png" />
+            <Image Name="sweets_cake_chocolate.png" />
+            <Image Name="sweets_cake_roll.png" />
+            <Image Name="sweets_candy.png" />
+            <Image Name="sweets_candy_lollipop.png" />
+            <Image Name="sweets_chocolate.png" />
+            <Image Name="sweets_cookie.png" />
+            <Image Name="sweets_donut.png" />
+            <Image Name="sweets_donut_chocolate.png" />
+            <Image Name="sweets_ice_cream.png" />
+            <Image Name="sweets_jelly.png" />
+            <Image Name="sweets_macaroon_blue.png" />
+            <Image Name="sweets_macaroon_brown.png" />
+            <Image Name="sweets_macaroon_green.png" />
+            <Image Name="sweets_macaroon_purple.png" />
+            <Image Name="sweets_macaroon_red.png" />
+            <Image Name="sweets_macaroon_yellow.png" />
+            <Image Name="sweets_montblanc.png" />
+            <Image Name="sweets_panna_cotta.png" />
+            <Image Name="sweets_pudding.png" />
             <Image Name="title_logo.png" />
           </Folder>
         </Folder>

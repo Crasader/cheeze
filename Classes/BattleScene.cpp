@@ -71,7 +71,7 @@ void BattleScene::onEnter()
     
     BGMPlayer::stopAll();
     BGMPlayer::play("Sounds/no_3_Trick_or_Treat.mp3");
-    
+
     setPartyMembers();
     setEnemys();
     nextTurn();
@@ -81,6 +81,8 @@ void BattleScene::onEnterTransitionDidFinish()
 {
     BaseScene::onEnterTransitionDidFinish();
 
+    animationNextRound();
+    animationAppearEnemys();
 }
 
 void BattleScene::setPartyMembers()
@@ -106,7 +108,7 @@ void BattleScene::setEnemys()
     _round++;
     auto battleStatus = getChildByName("BattleStatus");
     auto roundLabel = battleStatus->getChildByName<TextBMFont*>("Round");
-    roundLabel->setString("Round " + std::to_string(_round));
+    roundLabel->setString("Trick " + std::to_string(_round) + "/" + std::to_string(3));
 
     auto window = getChildByName("Window");
     BGMPlayer::play("Sounds/no_3_Trick_or_Treat.mp3");
@@ -114,7 +116,7 @@ void BattleScene::setEnemys()
         auto key = "Enemy_" + std::to_string(i);
         auto csb = CSLoader::createNode("Csbs/Battle/EnemyUnit.csb");
         auto no = 10 + random(1, 9);
-        auto scale = 0.5f;
+        auto scale = 0.45f;
         if (_round % 3 == 0 && i == 3) {
             BGMPlayer::play("Sounds/no_2_Pumpkin_King_Appears.mp3");
             no = 20;
@@ -126,11 +128,12 @@ void BattleScene::setEnemys()
     }
 }
 
-void BattleScene::playerAttack(const int count)
+void BattleScene::playerAttack(const int position)
 {
     setUntouchable();
     Vector<FiniteTimeAction*> actions;
-    for (auto& attacker : getAliveParty()) {
+    auto attacker = getParty().at(position);
+    if (!attacker->isDead()) {
         actions.pushBack(CallFunc::create([&, attacker](){ attacker->attack(); }));
         actions.pushBack(DelayTime::create(0.2f));
         auto& command = attacker->getBattleCommand();
@@ -159,9 +162,20 @@ void BattleScene::playerAttack(const int count)
                     break;
                 case EffectType::HEAL :
                     for (auto& member : selectTargetParty(effect.target, attacker)) {
-                        auto heal = attacker->getAtk() * random(effect.power[0], effect.power[1]) / 100.0f;
+                        auto heal = attacker->getAtk() * random(effect.power[0], effect.power[1]) / 200.0f;
                         actions.pushBack(CallFunc::create([&, member, heal](){
                             member->healed(heal);
+                        }));
+                        actions.pushBack(DelayTime::create(0.2f));
+                    }
+                    break;
+                case EffectType::RESURRECTION :
+                    for (auto& member : getParty()) {
+                        auto heal = attacker->getAtk() * random(effect.power[0], effect.power[1]) / 200.0f;
+                        actions.pushBack(CallFunc::create([&, member, heal](){
+                            member->healed(heal);
+                            member->getAvatar()->setVisible(true);
+                            member->getAvatar()->runAction(FadeIn::create(0.5f));
                         }));
                         actions.pushBack(DelayTime::create(0.2f));
                     }
@@ -169,7 +183,7 @@ void BattleScene::playerAttack(const int count)
                 case EffectType::AP_UP :
                     for (auto& member : selectTargetParty(effect.target, attacker)) {
                         actions.pushBack(CallFunc::create([&, member, effect](){
-                            member->updateAP(random(effect.power[0], effect.power[1]));
+                            member->updateAP(random(effect.power[0], effect.power[1]), true);
                             BGMPlayer::play2d("Sounds/se_ap_up.mp3");
                         }));
                         actions.pushBack(DelayTime::create(0.2f));
@@ -178,7 +192,7 @@ void BattleScene::playerAttack(const int count)
                 case EffectType::AP_DOWN :
                     for (auto& member : selectTargetEnemys(effect.target)) {
                         actions.pushBack(CallFunc::create([&, member, effect](){
-                            member->updateAP(random(effect.power[0], effect.power[1]) * -1);
+                            member->updateAP(random(effect.power[0], effect.power[1]) * -1, true);
                         }));
                         actions.pushBack(DelayTime::create(0.2f));
                     }
@@ -201,88 +215,131 @@ void BattleScene::playerAttack(const int count)
             actions.pushBack(CallFunc::create([&](){ hideSkillBoard(); }));
         }
     }
-    actions.pushBack(DelayTime::create(0.4f));
-    actions.pushBack(CallFunc::create([&](){
-        enemyAttack();
-    }));
+    auto next = position + 1;
+    if (getParty().size() == next) {
+        actions.pushBack(DelayTime::create(0.4f));
+        actions.pushBack(CallFunc::create([&](){
+            enemyAttack();
+        }));
+    } else {
+        actions.pushBack(CallFunc::create([&, next](){
+            playerAttack(next);
+        }));
+    }
     this->runAction(Sequence::create(actions));
 }
 
-void BattleScene::enemyAttack()
+void BattleScene::enemyAttack(const int position)
 {
     Vector<FiniteTimeAction*> actions;
-    if (getAliveEnemys().size() <= 0) {
+    auto attacker = getEnemys().at(position);
+    if (!attacker->isDead()) {
+        actions.pushBack(CallFunc::create([&, attacker](){ attacker->attack(); }));
         actions.pushBack(DelayTime::create(0.2f));
-        actions.pushBack(CallFunc::create([&](){ moveBgImage(); }));
-        actions.pushBack(DelayTime::create(1.0f));
-        actions.pushBack(CallFunc::create([&](){ setEnemys(); }));
-     } else {
-        for (auto& attacker : getAliveEnemys()) {
-            actions.pushBack(CallFunc::create([&, attacker](){ attacker->attack(); }));
-            actions.pushBack(DelayTime::create(0.2f));
-            auto& command = attacker->getBattleCommand();
-            if (!command->isAttack()) {
-                actions.pushBack(CallFunc::create([&, command](){ showSkillBoard(command->getName()); }));
-            } else {
-                actions.pushBack(CallFunc::create([&](){ hideSkillBoard(); }));
-            }
-            auto& effects = command->getEffects();
-            for (auto& effect : effects) {
-                switch (effect.type) {
-                    case EffectType::DAMAGE :
-                        for (auto& target : selectTargetParty(effect.target, nullptr)) {
-                            auto damage = attacker->getAtk() * random(effect.power[0], effect.power[1]) / 100.0f;
-                            auto element = effect.element;
-                            if (element == ElementType::SELF) {
-                                element = attacker->getElementType();
-                            }
-                            auto weak = isWeakElement(element, attacker->getElementType());
-                            if (weak) {
-                                damage *= 1.5f;
-                            }
-                            actions.pushBack(CallFunc::create([&, target, damage, weak, attacker](){
-                                target->damaged(damage, weak, attacker->getWeaponType());
-                            }));
-                            actions.pushBack(DelayTime::create(0.2f));
+        auto& command = attacker->getBattleCommand();
+        if (!command->isAttack()) {
+            actions.pushBack(CallFunc::create([&, command](){ showSkillBoard(command->getName()); }));
+        } else {
+            actions.pushBack(CallFunc::create([&](){ hideSkillBoard(); }));
+        }
+        auto& effects = command->getEffects();
+        for (auto& effect : effects) {
+            switch (effect.type) {
+                case EffectType::DAMAGE :
+                    for (auto& target : selectTargetParty(effect.target, nullptr)) {
+                        auto damage = attacker->getAtk() * random(effect.power[0], effect.power[1]) / 100.0f;
+                        auto element = effect.element;
+                        if (element == ElementType::SELF) {
+                            element = attacker->getElementType();
                         }
-                        break;
-                    case EffectType::AP_DOWN :
-                        for (auto& member : selectTargetParty(effect.target, nullptr)) {
-                            actions.pushBack(CallFunc::create([&, member, effect](){
-                                member->updateAP(random(effect.power[0], effect.power[1]) * -1);
-                            }));
-                            actions.pushBack(DelayTime::create(0.2f));
+                        auto weak = isWeakElement(element, target->getElementType());
+                        if (weak) {
+                            damage *= 1.5f;
                         }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            actions.pushBack(CallFunc::create([&, attacker, command](){
-                auto ap = command->getAp();
-                attacker->updateAP(-ap);
-            }));
-            actions.pushBack(DelayTime::create(0.6f));
-            if (!command->isAttack()) {
-                actions.pushBack(CallFunc::create([&](){ hideSkillBoard(); }));
+                        actions.pushBack(CallFunc::create([&, target, damage, weak, attacker](){
+                            target->damaged(damage, weak, attacker->getWeaponType());
+                        }));
+                        actions.pushBack(DelayTime::create(0.2f));
+                    }
+                    break;
+                case EffectType::AP_DOWN :
+                    for (auto& member : selectTargetParty(effect.target, nullptr)) {
+                        actions.pushBack(CallFunc::create([&, member, effect](){
+                            member->updateAP(random(effect.power[0], effect.power[1]) * -1, true);
+                        }));
+                        actions.pushBack(DelayTime::create(0.2f));
+                    }
+                    break;
+                default:
+                    break;
             }
         }
+        actions.pushBack(CallFunc::create([&, attacker, command](){
+            auto ap = command->getAp();
+            attacker->updateAP(-ap);
+        }));
+        actions.pushBack(DelayTime::create(0.6f));
+        if (!command->isAttack()) {
+            actions.pushBack(CallFunc::create([&](){ hideSkillBoard(); }));
+        }
     }
-    actions.pushBack(DelayTime::create(0.4f));
-    actions.pushBack(CallFunc::create([&](){
-        BGMPlayer::play2d("Sounds/se_ap_up.mp3");
-        nextTurn();
-    }));
+    auto next = position + 1;
+    if (getEnemys().size() == next) {
+        if (getAliveEnemys().size() <= 0) {
+            actions.pushBack(DelayTime::create(0.2f));
+            actions.pushBack(CallFunc::create([&](){ animationNextRound(); }));
+            actions.pushBack(DelayTime::create(1.0f));
+            actions.pushBack(CallFunc::create([&](){ setEnemys(); }));
+            actions.pushBack(CallFunc::create([&](){ animationAppearEnemys(); }));
+            actions.pushBack(DelayTime::create(0.4f));
+        }
+        actions.pushBack(DelayTime::create(0.4f));
+        actions.pushBack(CallFunc::create([&](){
+            BGMPlayer::play2d("Sounds/se_ap_up.mp3");
+            nextTurn();
+        }));
+    } else {
+        actions.pushBack(CallFunc::create([&, next](){
+            enemyAttack(next);
+        }));
+    }
     this->runAction(Sequence::create(actions));
 }
 
-void BattleScene::moveBgImage()
+void BattleScene::animationNextRound()
 {
+    auto rankUpLabel = getChildByName<TextBMFont*>("LabelRound")->clone();
+    rankUpLabel->setVisible(true);
+    rankUpLabel->setScale(5.0f);
+    this->addChild(rankUpLabel);
+    auto rotate = RotateBy::create(0.9f, 1800);
+    auto scale1 = ScaleTo::create(0.6f, 0.0f);
+    auto scale2 = ScaleTo::create(0.3f, 1.0f);
+    auto scale  = Sequence::create(scale1, scale2, nullptr);
+    auto spawn  = Spawn::create(rotate, scale, nullptr);
+    auto wait   = DelayTime::create(1.0f);
+    auto fade   = FadeOut::create(0.4f);
+    auto finish = CallFuncN::create([&](Node* node){
+        node->removeFromParent();
+    });
+    auto action = Sequence::create(spawn, wait, fade, finish, nullptr);
+    rankUpLabel->runAction(action);
+
     auto window = getChildByName("Window");
     auto bgImage = window->getChildByName<ImageView*>("Background");
-    auto move = MoveBy::create(1.0f, Vec2(200, 0));
+    auto move = MoveBy::create(1.0f, Vec2(300, 0));
     bgImage->runAction(move);
     
+    for (auto& unit : getParty()) {
+        unit->animationAppear();
+    }
+}
+
+void BattleScene::animationAppearEnemys()
+{
+    for (auto& enemy : getEnemys()) {
+        enemy->animationAppear();
+    }
 }
 
 void BattleScene::nextTurn()
@@ -302,6 +359,7 @@ void BattleScene::nextTurn()
                 Director::getInstance()->replaceScene(fade);
             }, 3.0f, "loading");
             auto loading = LoadingLayer::create();
+            loading->gameOver();
             addChild(loading);
             return;
         } else {
@@ -429,11 +487,6 @@ const bool BattleScene::isWeakElement(const ElementType atkType, const ElementTy
                 check = true;
             }
             break;
-//        case ElementType::EARTH :
-//            if (defType == ElementType::WATER) {
-//                check = true;
-//            }
-//            break;
         default:
             break;
     }

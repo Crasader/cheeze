@@ -28,6 +28,7 @@ public:
     void damaged(const int damage, const bool weak, const WeaponType weaponType);
     void healed(const int heal);
     void turnChange();
+    void animationAppear();
 private:
     void init();
     void setThumbnail();

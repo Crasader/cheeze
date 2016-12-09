@@ -39,17 +39,16 @@ bool LoadingLayer::init()
     }), DelayTime::create(seq * 2),
                                   nullptr);
     getCsb()->runAction(RepeatForever::create(jumps));
-//    auto image = getCsb()->getChildByName<ImageView*>("Image");
-//    ImageManager::loadTexture(image, filePath.str());
-//    auto scale1 = ScaleTo::create(0.15f, 1.0f, 1.2f);
-//    auto scale2 = ScaleTo::create(0.15f, 1.1f, 1.2f);
-//    auto scale3 = ScaleTo::create(0.15f, 1.1f, 1.0f);
-//    auto scale4 = ScaleTo::create(0.15f, 1.0f, 1.0f);
-//    auto scaleSeq = Sequence::create(scale1, scale2, scale3, scale4, nullptr);
-//    auto imageSeq = Sequence::create(scaleSeq, scaleSeq, DelayTime::create(0.6f), nullptr);
-//    auto action = RepeatForever::create(imageSeq);
-//    image->runAction(RepeatForever::create(action));
+    
+    auto gameOver = getCsb()->getChildByName("LabelGameOver");
+    gameOver->setVisible(false);
     
     useTouchMaker(this);
     return true;
+}
+
+void LoadingLayer::gameOver()
+{
+    auto gameOver = getCsb()->getChildByName("LabelGameOver");
+    gameOver->setVisible(true);
 }

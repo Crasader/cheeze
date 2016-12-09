@@ -19,6 +19,7 @@ class LoadingLayer : public Layer, private Touchable
 public:
     bool init();
     CREATE_FUNC(LoadingLayer);
+    void gameOver();
 private:
     inline Node* getCsb(){ return _csb; };
     Node* _csb;

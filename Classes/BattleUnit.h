@@ -19,6 +19,7 @@ class BattleCommand;
 enum class WeaponId : int;
 enum class WeaponType : int;
 enum class ElementType : int;
+enum class UnitAnimationType : int;
 
 using namespace cocos2d;
 using namespace cocostudio;
@@ -59,7 +60,7 @@ public:
         if(_hp < 0) _hp = 0;
         setHP();
     };
-    void updateAP(const int point = 1);
+    void updateAP(const int point = 1, const bool animation = false);
     void setHP();
     inline const int getHP() const { return _hp; }
     inline const int getHPMax() const { return _hpMax; }
@@ -75,7 +76,8 @@ public:
     const UnitData& getUnitData() const;
     const WeaponData& getWeaponData() const;
     const Vec2 getRandomPosition(const Node* node);
-    void animationLabel(TextBMFont* label);
+    void animationLabel(TextBMFont* label, const int x = 0);
+    const UnitAnimationType getAnimationType();
 private:
     void setName();
     void setElementColor();

@@ -19,8 +19,7 @@ const std::unordered_map<WeaponType, const CodeName> weaponCodes = {
 };
 
 const std::unordered_map<ElementType, const CodeName> elementCodes = {
-    {ElementType::FIRE,  {"ほのお", "fire", Color3B(138, 0, 0)}},
-    {ElementType::WATER, {"み　ず", "water", Color3B(0, 0, 138)}},
-    //    {ElementType::EARTH, {"だいち", "earth", Color3B(138, 68, 0)}},
-    {ElementType::WIND,  {"か　ぜ", "wind", Color3B(0, 138, 0)}},
+    {ElementType::FIRE,  {"ほのお", "fire", Color3B(138, 0, 0), Color3B(255, 138, 138)}},
+    {ElementType::WATER, {"み　ず", "water", Color3B(0, 0, 138), Color3B(138, 238, 255)}},
+    {ElementType::WIND,  {"か　ぜ", "wind", Color3B(0, 138, 0), Color3B(138, 255, 138)}},
 };

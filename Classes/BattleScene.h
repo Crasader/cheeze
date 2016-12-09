@@ -28,10 +28,11 @@ public:
 private:
     void setPartyMembers();
     void setEnemys();
-    void playerAttack(const int count = 1);
-    void enemyAttack();
+    void playerAttack(const int position = 0);
+    void enemyAttack(const int position = 0);
     void nextTurn();
-    void moveBgImage();
+    void animationNextRound();
+    void animationAppearEnemys();
     const bool isWeakElement(const ElementType atkType, const ElementType defType);
 
     inline ListView* getPartyList() const { return _partyList; }

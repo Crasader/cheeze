@@ -2,16 +2,40 @@
   <PropertyGroup Name="Characters" Type="Plist" ID="e9bf97a2-9940-425d-ad61-f2049a4a4bb1" Version="3.10.0.0" />
   <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="Images/Character/11.png" />
-      <FilePathData Path="Images/Character/12.png" />
-      <FilePathData Path="Images/Character/13.png" />
-      <FilePathData Path="Images/Character/14.png" />
-      <FilePathData Path="Images/Character/15.png" />
-      <FilePathData Path="Images/Character/16.png" />
-      <FilePathData Path="Images/Character/17.png" />
-      <FilePathData Path="Images/Character/18.png" />
-      <FilePathData Path="Images/Character/19.png" />
-      <FilePathData Path="Images/Character/20.png" />
+      <FilePathData Path="Images/Character/Attack/hiraly_forest.png" />
+      <FilePathData Path="Images/Character/Attack/hiraly_masket.png" />
+      <FilePathData Path="Images/Character/Attack/hiraly_pumpkin_bow.png" />
+      <FilePathData Path="Images/Character/Attack/hiraly_valkyrie.png" />
+      <FilePathData Path="Images/Character/Attack/kiraly_bustered.png" />
+      <FilePathData Path="Images/Character/Attack/kiraly_knight.png" />
+      <FilePathData Path="Images/Character/Attack/kiraly_pumpkin_ax.png" />
+      <FilePathData Path="Images/Character/Attack/kiraly_thief.png" />
+      <FilePathData Path="Images/Character/Attack/saraly_pumpkin_rod.png" />
+      <FilePathData Path="Images/Character/Attack/saraly_rain.png" />
+      <FilePathData Path="Images/Character/Attack/saraly_star.png" />
+      <FilePathData Path="Images/Character/Attack/saraly_wind_harp.png" />
+      <FilePathData Path="Images/Character/Normal/hiraly_forest.png" />
+      <FilePathData Path="Images/Character/Normal/hiraly_masket.png" />
+      <FilePathData Path="Images/Character/Normal/hiraly_pumpkin_bow.png" />
+      <FilePathData Path="Images/Character/Normal/hiraly_valkyrie.png" />
+      <FilePathData Path="Images/Character/Normal/kiraly_bustered.png" />
+      <FilePathData Path="Images/Character/Normal/kiraly_knight.png" />
+      <FilePathData Path="Images/Character/Normal/kiraly_pumpkin_ax.png" />
+      <FilePathData Path="Images/Character/Normal/kiraly_thief.png" />
+      <FilePathData Path="Images/Character/Normal/saraly_pumpkin_rod.png" />
+      <FilePathData Path="Images/Character/Normal/saraly_rain.png" />
+      <FilePathData Path="Images/Character/Normal/saraly_star.png" />
+      <FilePathData Path="Images/Character/Normal/saraly_wind_harp.png" />
+      <FilePathData Path="Images/Character/1.png" />
+      <FilePathData Path="Images/Character/10.png" />
+      <FilePathData Path="Images/Character/2.png" />
+      <FilePathData Path="Images/Character/3.png" />
+      <FilePathData Path="Images/Character/4.png" />
+      <FilePathData Path="Images/Character/5.png" />
+      <FilePathData Path="Images/Character/6.png" />
+      <FilePathData Path="Images/Character/7.png" />
+      <FilePathData Path="Images/Character/8.png" />
+      <FilePathData Path="Images/Character/9.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

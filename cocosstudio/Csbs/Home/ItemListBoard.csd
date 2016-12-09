@@ -16,6 +16,16 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="Images/UIParts/bg_lucent.png" Plist="Csis/UIParts.plist" />
           </AbstractNodeData>
+          <AbstractNodeData Name="BgMessage" ActionTag="-80837698" Tag="250" IconVisible="False" LeftMargin="-320.0000" RightMargin="-320.0000" TopMargin="285.0000" BottomMargin="-335.0000" TouchEnable="True" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="218" Scale9Height="218" ctype="ImageViewObjectData">
+            <Size X="640.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position Y="-310.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="0" G="0" B="0" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="Images/UIParts/bg_lucent.png" Plist="Csis/UIParts.plist" />
+          </AbstractNodeData>
           <AbstractNodeData Name="ListView" ActionTag="-2124134512" Tag="164" IconVisible="False" LeftMargin="-320.0000" RightMargin="-320.0000" TopMargin="-360.0000" BottomMargin="-280.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
             <Size X="640.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -44,7 +54,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Coin" ActionTag="-954504970" Tag="306" IconVisible="False" LeftMargin="125.0000" RightMargin="-275.0000" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Medal" ActionTag="-954504970" Tag="306" IconVisible="False" LeftMargin="125.0000" RightMargin="-275.0000" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="150.0000" Y="50.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="-370.0000" />
@@ -59,7 +69,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Battle" ActionTag="1202022287" Tag="304" IconVisible="False" LeftMargin="-275.0001" RightMargin="125.0000" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Battle" ActionTag="1202022287" Tag="304" IconVisible="False" LeftMargin="-275.0000" RightMargin="125.0000" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="150.0000" Y="50.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-200.0000" Y="-370.0000" />
@@ -74,7 +84,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Snack" ActionTag="-198693007" Tag="132" IconVisible="False" LeftMargin="-75.0001" RightMargin="-74.9999" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Sweets" ActionTag="-198693007" Tag="132" IconVisible="False" LeftMargin="-75.0001" RightMargin="-74.9999" TopMargin="345.0000" BottomMargin="-395.0000" TouchEnable="True" FontSize="12" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="150.0000" Y="50.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-0.0001" Y="-370.0000" />
@@ -109,8 +119,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="LabelCoin" ActionTag="-2073168121" Tag="307" IconVisible="False" LeftMargin="93.4999" RightMargin="-306.4999" TopMargin="324.0004" BottomMargin="-416.0004" LabelText="COINS" ctype="TextBMFontObjectData">
-            <Size X="213.0000" Y="92.0000" />
+          <AbstractNodeData Name="LabelMedal" ActionTag="-2073168121" Tag="307" IconVisible="False" LeftMargin="76.9999" RightMargin="-322.9999" TopMargin="324.0004" BottomMargin="-416.0004" LabelText="メダル" ctype="TextBMFontObjectData">
+            <Size X="246.0000" Y="92.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="199.9999" Y="-370.0004" />
             <Scale ScaleX="0.4500" ScaleY="0.4500" />
@@ -119,32 +129,32 @@
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="LabelBattle" ActionTag="1203153766" Tag="308" IconVisible="False" LeftMargin="-327.0001" RightMargin="73.0000" TopMargin="323.9997" BottomMargin="-415.9997" LabelText="BATTLE" ctype="TextBMFontObjectData">
-            <Size X="254.0000" Y="92.0000" />
+          <AbstractNodeData Name="LabelBattle" ActionTag="1203153766" Tag="308" IconVisible="False" LeftMargin="-323.0000" RightMargin="77.0000" TopMargin="323.9997" BottomMargin="-415.9997" LabelText="バトル" ctype="TextBMFontObjectData">
+            <Size X="246.0000" Y="92.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-200.0000" Y="-369.9997" />
-            <Scale ScaleX="0.4500" ScaleY="0.4000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="LabelSnack" ActionTag="953456708" Tag="133" IconVisible="False" LeftMargin="-126.5001" RightMargin="-126.4999" TopMargin="324.0004" BottomMargin="-416.0004" LabelText="SNACKS" ctype="TextBMFontObjectData">
-            <Size X="253.0000" Y="92.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-0.0001" Y="-370.0004" />
             <Scale ScaleX="0.4500" ScaleY="0.4500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Description" ActionTag="-432426672" Tag="134" IconVisible="False" LeftMargin="-300.0000" RightMargin="-300.0000" TopMargin="295.0000" BottomMargin="-325.0000" IsCustomSize="True" FontSize="30" LabelText="バトルの時に利用するアイテムの一覧です" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="LabelSweets" ActionTag="953456708" Tag="134" IconVisible="False" LeftMargin="-120.0001" RightMargin="-119.9999" TopMargin="324.0004" BottomMargin="-416.0004" LabelText="おかし" ctype="TextBMFontObjectData">
+            <Size X="240.0000" Y="92.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-0.0001" Y="-370.0004" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Description" ActionTag="-432426672" Tag="134" IconVisible="False" LeftMargin="-299.9998" RightMargin="-300.0002" TopMargin="294.9998" BottomMargin="-324.9998" IsCustomSize="True" FontSize="30" LabelText="バトルで使用するアイテムの一覧です" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="600.0000" Y="30.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="-310.0000" />
+            <Position X="0.0002" Y="-309.9998" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="255" G="136" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="Fonts/APJapanesefontT.ttf" Plist="" />

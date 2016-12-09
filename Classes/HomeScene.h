@@ -24,7 +24,7 @@ public:
     virtual ~HomeScene();
     bool init();
     void onEnter();
-//    void onEnterTransitionDidFinish();
+    void onEnterTransitionDidFinish();
     void setPartyMembers();
 private:
     void setUIParts();

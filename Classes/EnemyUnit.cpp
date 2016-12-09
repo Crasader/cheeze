@@ -22,7 +22,9 @@ void EnemyUnit::appendTo(Node* node, const int position, const float scale)
         getCsb()->setVisible(false);
         return;
     }
-    getCsb()->setVisible(true);
+    for (auto& child : getCsb()->getChildren()) {
+        child->setVisible(false);
+    }
     setAvatar(node);
     getAvatar()->setScale(scale);
     getAvatar()->setFlippedX(true);
@@ -85,11 +87,24 @@ void EnemyUnit::damaged(const int damage, const bool weak, const WeaponType weap
         animationLabel(damageLabel);
         if (weak) {
             auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
-            weakLabel->setScale(0.75f);
+            weakLabel->setScale(1.0f);
             auto size = node->getContentSize();
-            auto pos = Vec2(size.width / 4, size.height / 4);
+            auto pos = Vec2(size.width / 2, size.height * 3 / 4);
             weakLabel->setPosition(pos);
             weakLabel->setFlippedX(true);
+            switch (getElementType()) {
+                case ElementType::FIRE :
+                    weakLabel->setColor(elementCodes.at(ElementType::WATER).text_color);
+                    break;
+                case ElementType::WIND :
+                    weakLabel->setColor(elementCodes.at(ElementType::FIRE).text_color);
+                    break;
+                case ElementType::WATER :
+                    weakLabel->setColor(elementCodes.at(ElementType::WIND).text_color);
+                    break;
+                default:
+                    break;
+            }
             node->addChild(weakLabel);
             auto move   = MoveBy::create(0.5f, Point(0, 80));
             auto wait   = DelayTime::create(0.4f);
@@ -105,6 +120,10 @@ void EnemyUnit::damaged(const int damage, const bool weak, const WeaponType weap
     });
     auto hpBarDown = CallFunc::create([&, damage](){
         updateHP(-damage);
+        if (isDead()) {
+            getAvatar()->runAction(FadeOut::create(0.4f));
+            getCsb()->setVisible(false);
+        }
     });
     auto se = CallFunc::create([&]{
         BGMPlayer::play2d("Sounds/se_damage_human.mp3");
@@ -169,4 +188,38 @@ void EnemyUnit::turnChange()
     } else {
         setCommandNumber(0);
     }
+}
+
+void EnemyUnit::animationAppear()
+{
+    Vector<FiniteTimeAction*> actions;
+    switch (getAnimationType()) {
+        case UnitAnimationType::WALK :
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setPosition(Vec2(-450, 0)); }) );
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setVisible(true); }) );
+            actions.pushBack( DelayTime::create(random(0.0f, 0.5f)) );
+            actions.pushBack( JumpBy::create(1.0f, Vec2(450, 0), 30, 5) );
+            break;
+        case UnitAnimationType::FLY :
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setPosition(Vec2(-600, 960)); }) );
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setVisible(true); }) );
+            actions.pushBack( DelayTime::create(random(0.4f, 0.9f)) );
+            actions.pushBack( JumpTo::create(0.6f, Vec2::ZERO, -120, 1) );
+            break;
+        case UnitAnimationType::FALL :
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setPosition(Vec2(-80, 960)); }) );
+            actions.pushBack( CallFuncN::create([&](Node* node){ node->setVisible(true); }) );
+            actions.pushBack( DelayTime::create(0.8f) );
+            actions.pushBack( JumpBy::create(0.5f, Vec2(60, -960), 30, 1) );
+            actions.pushBack( JumpBy::create(0.2f, Vec2(20, 0), 60, 1) );
+            break;
+        default:
+            break;
+    }
+    actions.pushBack( CallFunc::create([&](){
+        for (auto& child : getCsb()->getChildren()) {
+            child->setVisible(true);
+        }
+    }) );
+    getAvatar()->runAction(Sequence::create(actions));
 }

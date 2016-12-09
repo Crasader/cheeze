@@ -19,13 +19,13 @@
           <AbstractNodeData Name="Window" ActionTag="-1654432867" Tag="745" IconVisible="False" PositionPercentYEnabled="True" BottomMargin="496.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="640.0000" Y="640.0000" />
             <Children>
-              <AbstractNodeData Name="Background" ActionTag="748096127" Tag="744" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-533.5000" RightMargin="-533.5000" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="1285" Scale9Height="218" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Background" ActionTag="748096127" Tag="744" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-1067.0000" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="1285" Scale9Height="218" ctype="ImageViewObjectData">
                 <Size X="1707.0000" Y="640.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="320.0000" Y="640.0000" />
+                <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="640.0000" Y="640.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="1.0000" />
+                <PrePosition X="1.0000" Y="1.0000" />
                 <PreSize X="2.6672" Y="1.0000" />
                 <FileData Type="Normal" Path="Images/UIParts/bg_battle.png" Plist="" />
               </AbstractNodeData>
@@ -65,6 +65,15 @@
                 <PrePosition X="0.4688" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Enemy_3" ActionTag="1811008158" Tag="1332" IconVisible="True" LeftMargin="120.0000" RightMargin="520.0000" TopMargin="400.0000" BottomMargin="240.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="120.0000" Y="240.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1875" Y="0.3750" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
               <AbstractNodeData Name="Enemy_2" ActionTag="491010691" Tag="1331" IconVisible="True" LeftMargin="280.0000" RightMargin="360.0000" TopMargin="520.0000" BottomMargin="120.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
@@ -74,14 +83,65 @@
                 <PrePosition X="0.4375" Y="0.1875" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Enemy_3" ActionTag="1811008158" Tag="1332" IconVisible="True" LeftMargin="120.0000" RightMargin="520.0000" TopMargin="400.0000" BottomMargin="240.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="120.0000" Y="240.0000" />
+              <AbstractNodeData Name="IconFire" ActionTag="-1975828079" Tag="137" IconVisible="False" LeftMargin="39.9998" RightMargin="560.0002" TopMargin="505.0002" BottomMargin="94.9998" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="40.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="59.9998" Y="114.9998" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1875" Y="0.3750" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PrePosition X="0.0937" Y="0.1797" />
+                <PreSize X="0.0625" Y="0.0625" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_fire.png" Plist="Csis/UIParts.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconWind" ActionTag="-580920900" Tag="138" IconVisible="False" LeftMargin="75.0000" RightMargin="525.0000" TopMargin="560.0000" BottomMargin="40.0000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="40.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="95.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1484" Y="0.0938" />
+                <PreSize X="0.0625" Y="0.0625" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_wind.png" Plist="Csis/UIParts.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconWater" ActionTag="1944000167" Tag="139" IconVisible="False" LeftMargin="5.0000" RightMargin="595.0000" TopMargin="560.0000" BottomMargin="40.0000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="40.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="25.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0391" Y="0.0938" />
+                <PreSize X="0.0625" Y="0.0625" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_water.png" Plist="Csis/UIParts.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconArrow1" ActionTag="259547793" Tag="140" RotationSkewX="-35.0000" RotationSkewY="-35.0000" IconVisible="False" LeftMargin="67.5000" RightMargin="547.5000" TopMargin="542.5000" BottomMargin="72.5000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="25.0000" Y="25.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="80.0000" Y="85.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1250" Y="0.1328" />
+                <PreSize X="0.0391" Y="0.0391" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_arrow_down.png" Plist="Csis/UIParts.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconArrow2" ActionTag="-1890795446" Tag="142" RotationSkewX="90.0000" RotationSkewY="90.0002" IconVisible="False" LeftMargin="45.5002" RightMargin="569.4998" TopMargin="567.5000" BottomMargin="47.5000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="25.0000" Y="25.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="58.0002" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0906" Y="0.0938" />
+                <PreSize X="0.0391" Y="0.0391" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_arrow_down.png" Plist="Csis/UIParts.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconArrow3" ActionTag="647479808" Tag="141" RotationSkewX="215.0000" RotationSkewY="215.0004" IconVisible="False" LeftMargin="27.4999" RightMargin="587.5001" TopMargin="542.4999" BottomMargin="72.5001" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
+                <Size X="25.0000" Y="25.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="39.9999" Y="85.0001" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0625" Y="0.1328" />
+                <PreSize X="0.0391" Y="0.0391" />
+                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_arrow_down.png" Plist="Csis/UIParts.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleY="1.0000" />
@@ -208,15 +268,14 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="MenuLayer" ActionTag="-313650766" VisibleForFrame="False" Tag="210" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="640.0000" Y="1136.0000" />
+          <AbstractNodeData Name="MenuLayer" ActionTag="-313650766" VisibleForFrame="False" Tag="210" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="0.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="Csbs/Battle/MenuLayer.csd" Plist="" />
+            <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="BattleStatus" ActionTag="1229530116" Tag="290" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="1086.0000" TouchEnable="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="640.0000" Y="50.0000" />
@@ -271,7 +330,7 @@
                 <PreSize X="0.3328" Y="1.9200" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Round" ActionTag="1173767338" Tag="110" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="20.0000" RightMargin="251.0000" TopMargin="-21.0000" BottomMargin="-21.0000" LabelText="Round 1/3" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="Round" ActionTag="1173767338" Tag="110" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="20.0000" RightMargin="251.0000" TopMargin="-21.0000" BottomMargin="-21.0000" LabelText="Trick 1/3" ctype="TextBMFontObjectData">
                 <Size X="369.0000" Y="92.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="20.0000" Y="25.0000" />
@@ -339,6 +398,16 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="LabelRound" ActionTag="-271061991" VisibleForFrame="False" Tag="310" IconVisible="False" LeftMargin="52.8552" RightMargin="23.1448" TopMargin="206.9600" BottomMargin="653.0400" LabelText="Trick&#xA;     or &#xA;       Treat!!" ctype="TextBMFontObjectData">
+            <Size X="564.0000" Y="276.0000" />
+            <AnchorPoint ScaleX="0.4382" ScaleY="0.4600" />
+            <Position X="300.0000" Y="780.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4688" Y="0.6866" />
+            <PreSize X="0.8813" Y="0.2430" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -49,18 +49,24 @@ void MemberStatusBox::appendTo(PageView* pageView, const int position)
 
 void MemberStatusBox::setStatus()
 {
-    auto& data = getUnitData();
-    auto& spCommand = data.command_data;
+    auto& unitData = getUnitData();
+    auto& weaponData = getWeaponData();
+    auto& spCommand = unitData.command_data;
     auto icon = getCsb()->getChildByName<ImageView*>("IconElementType");
-    ImageManager::loadTexture(icon, "Images/UIParts/icon_" + elementCodes.at(data.element).code + ".png");
+    ImageManager::loadTexture(icon, "Images/UIParts/icon_" + elementCodes.at(unitData.element).code + ".png");
     auto name = _menuLabels->getChildByName<TextBMFont*>("Name");
-    name->setString(data.name);
+    name->setString(unitData.name);
     auto level = _basicLabels->getChildByName<TextBMFont*>("Level");
     level->setString("Lv." + std::to_string(1) + "/" + std::to_string(30));
     auto hp = _basicLabels->getChildByName<TextBMFont*>("HP");
-    hp->setString(std::to_string(data.hp));
+    hp->setString(std::to_string(unitData.hp + weaponData.hp));
     auto attack = _basicLabels->getChildByName<TextBMFont*>("Attack");
-    attack->setString(std::to_string(data.attack));
+    attack->setString(std::to_string(unitData.attack + weaponData.attack));
+    auto orgHp = _basicLabels->getChildByName<TextBMFont*>("OrgHP");
+    orgHp->setString("(" + std::to_string(unitData.hp) + "+" + std::to_string(weaponData.hp) + ")");
+    auto orgAttack = _basicLabels->getChildByName<TextBMFont*>("OrgAttack");
+    orgAttack->setString("(" + std::to_string(unitData.attack) + "+" + std::to_string(weaponData.attack) + ")");
+
     auto spName = _basicLabels->getChildByName<TextBMFont*>("Special");
     spName->setString(spCommand.name);
     auto spExplain = _labels->getChildByName<Text*>("Special");
@@ -74,26 +80,20 @@ void MemberStatusBox::setWeapon()
     ImageManager::loadTexture(icon, "Images/UIParts/icon_" + weaponCodes.at(data.type).code + ".png");
     auto name = _menuLabels->getChildByName<TextBMFont*>("WeaponName");
     name->setString(data.name);
-    auto hp = _basicLabels->getChildByName<TextBMFont*>("WeaponHP");
-    hp->setString("(+" + std::to_string(data.hp) + ")");
-    auto attack = _basicLabels->getChildByName<TextBMFont*>("WeaponAT");
-    attack->setString("(+" + std::to_string(data.attack) + ")");
 
     auto commands = data.commands;
     auto i = 1;
     for (auto& command : commands) {
-        std::stringstream nameSS;
-        nameSS << "コマンド";
-        nameSS << i;
-        nameSS << " : ";
-        nameSS << command.name;
-        nameSS << " [AP:";
-        nameSS << command.ap;
-        nameSS << "]";
         auto name = _basicLabels->getChildByName<TextBMFont*>("Command_" + std::to_string(i));
-        name->setString(nameSS.str());
+        name->setString(command.name);
         auto text = _labels->getChildByName<Text*>("Command_" + std::to_string(i));
         text->setString(command.explain);
+        auto needAP = _basicLabels->getChildByName<TextBMFont*>("APCommand_" + std::to_string(i));
+        std::stringstream apSS;
+        for (auto i = 0; i < command.ap; i++) {
+            apSS << "★";
+        }
+        needAP->setString(apSS.str());
         i++;
     }
 }

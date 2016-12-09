@@ -14,7 +14,7 @@
 typedef struct UnitData {
     const std::string name;
     const std::string code;
-    const int rank;
+    const UnitAnimationType animation;
     const int hp;
     const int attack;
     const int ap;

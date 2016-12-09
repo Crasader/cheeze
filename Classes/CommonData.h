@@ -15,25 +15,30 @@
 using namespace cocos2d;
 
 enum class ItemType : int {
-    BATTLE, COIN, SWEETS
+    BATTLE, MEDAL, SWEETS
 };
 enum class WeaponType : int {
     ENEMY, SWORD, LANCE, ARCH, AX, CANE, MUSIC
 };
+enum class UnitAnimationType : int {
+    WALK, FLOAT, FLY, CRAWL, FALL
+};
 enum class ElementType : int {
-    SELF, NONE, FIRE, WATER, WIND,
-    //    EARTH,
+    SELF, NONE, FIRE, WATER, WIND
 };
 enum class TargetType : int {
-    OWN, SAME, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ALL
+    OWN, SAME, PARTY_ONE, PARTY_ALL, ENEMY_ONE, ENEMY_ONE_MIN, ENEMY_ONE_MAX, ENEMY_ALL
 };
 enum class EffectType : int {
-    DAMAGE, ATK_UP, ATK_DOWN, DAMAGE_CUT, AP_UP, AP_DOWN, POISON, REGENE, INVICIBLE, REFRESH,
-    TP_UP, TP_DOWN, HEAL, RESURRECTION, MORE_DROP
+    DAMAGE, HEAL, AP_UP, AP_DOWN, RESURRECTION, MORE_DROP, 
+    TP_UP, TP_DOWN, ATK_UP, ATK_DOWN, DAMAGE_CUT, POISON, REGENE, INVICIBLE, REFRESH
 };
 enum class ItemId : int {
-    NONE, CHARGE, SOUL, COIN, HEAL, HEAL_ALL, RESURRECTION, AP_UP, MORE_DROP,
-    PUMPKIN_COIN
+    NONE, CHARGE, SOUL, HEAL, HEAL_ALL, RESURRECTION, AP_UP, MORE_DROP,
+    SWEETS_DONUT, SWEETS_CANDY_LOLLIPOP, SWEETS_CHOCOLATE,
+    SWEETS_MACAROON_RED, SWEETS_MACAROON_GREEN, SWEETS_MACAROON_BLUE,
+    SWEETS_COOKIE, SWEETS_CANDY, SWEETS_PUDDING, SWEETS_CAKE,
+    GHOST_MEDAL, PUMPKIN_MEDAL
 };
 enum class WeaponId : int {
     NONE, 
@@ -63,7 +68,8 @@ typedef struct CommandData {
 typedef struct CodeName {
     const std::string name;
     const std::string code;
-    const Color3B color;
+    const Color3B bg_color;
+    const Color3B text_color;
 } CodeName;
 
 extern const std::unordered_map<WeaponType, const CodeName> weaponCodes;

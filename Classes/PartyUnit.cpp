@@ -54,7 +54,7 @@ void PartyUnit::appendTo(ListView* list, const int position, Node* avatar)
 void PartyUnit::setThumbnail()
 {
     auto thumbnail = getCsb()->getChildByName<ImageView*>("Thumbnail");
-    ImageManager::loadTexture(thumbnail, "Images/Character/" + getUnitData().code + ".png");
+    ImageManager::loadTexture(thumbnail, "Images/UIParts/" + getUnitData().code + ".png");
 }
 
 void PartyUnit::setHP()
@@ -108,8 +108,11 @@ void PartyUnit::setCommand(const int number)
             commandButton->setEnabled(false);
         }
     } else {
-        needAPLabel->setString("AP:" + std::to_string(needAP));
-        needAPLabel->setColor(Color3B(255, 136, 136));
+        std::stringstream apSS;
+        for (auto i = 0; i < needAP; i++) {
+            apSS << "★";
+        }
+        needAPLabel->setString(apSS.str());
         if (getAP() >= needAP && !isDead()) {
             commandButton->setBright(true);
             commandButton->setEnabled(true);
@@ -178,11 +181,23 @@ void PartyUnit::damaged(const int damage, const bool weak, const WeaponType weap
         animationLabel(damageLabel);
         if (weak) {
             auto weakLabel = TextBMFont::create("Weak Point!!", "Fonts/BasicLabel.fnt");
-            weakLabel->setScale(1.5f);
+            weakLabel->setScale(0.75f);
             auto size = node->getContentSize();
-            auto pos = Vec2(size.width / 4, size.height / 4);
+            auto pos = Vec2(size.width / 2, size.height * 3 / 4);
             weakLabel->setPosition(pos);
-            weakLabel->setColor(elementCodes.at(getUnitData().element).color);
+            switch (getElementType()) {
+                case ElementType::FIRE :
+                    weakLabel->setColor(elementCodes.at(ElementType::WATER).text_color);
+                    break;
+                case ElementType::WIND :
+                    weakLabel->setColor(elementCodes.at(ElementType::FIRE).text_color);
+                    break;
+                case ElementType::WATER :
+                    weakLabel->setColor(elementCodes.at(ElementType::WIND).text_color);
+                    break;
+                default:
+                    break;
+            }
             node->addChild(weakLabel);
             auto move   = MoveBy::create(0.5f, Point(0, 80));
             auto wait   = DelayTime::create(0.4f);
@@ -198,6 +213,9 @@ void PartyUnit::damaged(const int damage, const bool weak, const WeaponType weap
     });
     auto hpBarDown = CallFunc::create([&, damage](){
         updateHP(-damage);
+        if (isDead()) {
+            getAvatar()->runAction(FadeOut::create(0.4f));
+        }
     });
     auto se = CallFunc::create([&]{
         BGMPlayer::play2d("Sounds/se_damage_human.mp3");
@@ -257,6 +275,20 @@ void PartyUnit::turnChange()
     }
     updateAP();
     setCommands();
+}
+
+void PartyUnit::animationAppear()
+{
+    auto start = CallFuncN::create([&](Node* node){
+        node->setPosition(Vec2(300, 0));
+        node->setVisible(true);
+    });
+    auto wait = DelayTime::create(random(0.5f, 0.8f));
+    auto jump = JumpBy::create(0.5f, Vec2(-300, 0), 30, 3);
+    auto finish = CallFunc::create([&]{
+    });
+    auto action = Sequence::create(start, wait, jump, finish, nullptr);
+    getAvatar()->runAction(action);
 }
 
 const std::string PartyUnit::getImagePath()

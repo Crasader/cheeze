@@ -73,7 +73,11 @@ void WeaponListBoard::setListBox(Node* node, const WeaponData data)
         auto nameLabel = node->getChildByName<TextBMFont*>("NameCommand_" + std::to_string(i));
         nameLabel->setString(command.name);
         auto needAPLabel = node->getChildByName<TextBMFont*>("APCommand_" + std::to_string(i));
-        needAPLabel->setString("[AP:" + std::to_string(command.ap) + "]");
+        std::stringstream apSS;
+        for (auto i = 0; i < command.ap; i++) {
+            apSS << "★";
+        }
+        needAPLabel->setString(apSS.str());
         i++;
     }
 }

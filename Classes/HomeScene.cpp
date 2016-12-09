@@ -40,6 +40,29 @@ void HomeScene::onEnter()
     BGMPlayer::play("Sounds/no_1_Clowns_Party.mp3");
 }
 
+void HomeScene::onEnterTransitionDidFinish()
+{
+    BaseScene::onEnterTransitionDidFinish();
+    
+    auto image = getChildByName<ImageView*>("BgMain");
+    auto rotate = RotateBy::create(60.0f, 360);
+    auto action = RepeatForever::create(rotate);
+    image->setRotation(0);
+    image->runAction(action);
+    
+    auto arrowR = getChildByName<TextBMFont*>("Arrow_R");
+    auto moveR = MoveBy::create(0.6f, Vec2(15, 0));
+    auto seqR = Sequence::create(moveR, moveR->reverse(), nullptr);
+    auto actionR = RepeatForever::create(seqR);
+    arrowR->runAction(actionR);
+    
+    auto arrowL = getChildByName<TextBMFont*>("Arrow_L");
+    auto moveL = MoveBy::create(0.6f, Vec2(-15, 0));
+    auto seqL = Sequence::create(moveL, moveL->reverse(), nullptr);
+    auto actionL = RepeatForever::create(seqL);
+    arrowL->runAction(actionL);
+}
+
 void HomeScene::setPartyMembers()
 {
     _party.clear();
@@ -107,22 +130,4 @@ void HomeScene::setUIParts()
         BGMPlayer::play2d("Sounds/se_ok.mp3");
         getItemListBoard()->setItemList(ItemType::BATTLE);
     });
-    
-    auto image = getChildByName<ImageView*>("BgMain");
-    auto rotate = RotateBy::create(48.0f, 360);
-    auto action = RepeatForever::create(rotate);
-    image->setRotation(0);
-    image->runAction(action);
-    
-    auto arrowR = getChildByName<TextBMFont*>("Arrow_R");
-    auto moveR = MoveBy::create(0.6f, Vec2(15, 0));
-    auto seqR = Sequence::create(moveR, moveR->reverse(), nullptr);
-    auto actionR = RepeatForever::create(seqR);
-    arrowR->runAction(actionR);
-    
-    auto arrowL = getChildByName<TextBMFont*>("Arrow_L");
-    auto moveL = MoveBy::create(0.6f, Vec2(-15, 0));
-    auto seqL = Sequence::create(moveL, moveL->reverse(), nullptr);
-    auto actionL = RepeatForever::create(seqL);
-    arrowL->runAction(actionL);
 }

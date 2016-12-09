@@ -25,9 +25,13 @@ void ItemListBoard::init()
     });
 
     auto board = getBoard();
-    onTouch(board->getChildByName<Button*>("Coin"), [&](Ref* ref){
+    onTouch(board->getChildByName<Button*>("Medal"), [&](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");
-        setItemList(ItemType::COIN);
+        setItemList(ItemType::MEDAL);
+    });
+    onTouch(board->getChildByName<Button*>("Sweets"), [&](Ref* ref){
+        BGMPlayer::play2d("Sounds/se_ok.mp3");
+        setItemList(ItemType::SWEETS);
     });
     onTouch(board->getChildByName<Button*>("Battle"), [&](Ref* ref){
         BGMPlayer::play2d("Sounds/se_ok.mp3");
@@ -46,6 +50,19 @@ void ItemListBoard::setItemList(const ItemType type)
         }
     }
     std::sort(orderedIds.begin(), orderedIds.end());
+    switch (type) {
+        case ItemType::BATTLE :
+            getBoard()->getChildByName<Text*>("Description")->setString("バトルで使用するアイテムの一覧です");
+            break;
+        case ItemType::SWEETS :
+            getBoard()->getChildByName<Text*>("Description")->setString("おかしはキャラの成長に利用します");
+            break;
+        case ItemType::MEDAL :
+            getBoard()->getChildByName<Text*>("Description")->setString("メダルは武器やアイテムと交換できます");
+            break;
+        default:
+            break;
+    }
     auto tmpl = CSLoader::createNode("Csbs/Home/ItemListBox.csb")->getChildByName<Widget*>("Template");
     tmpl->retain();
     setBoxTemplate(tmpl);

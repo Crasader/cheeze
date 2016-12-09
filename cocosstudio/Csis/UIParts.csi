@@ -29,6 +29,30 @@
       <FilePathData Path="Images/UIParts/icon_lance.png" />
       <FilePathData Path="Images/UIParts/icon_music.png" />
       <FilePathData Path="Images/UIParts/icon_coin_pumpkin.png" />
+      <FilePathData Path="Images/UIParts/hiraly.png" />
+      <FilePathData Path="Images/UIParts/kiraly.png" />
+      <FilePathData Path="Images/UIParts/saraly.png" />
+      <FilePathData Path="Images/UIParts/sweets_cake.png" />
+      <FilePathData Path="Images/UIParts/sweets_cake_chocolate.png" />
+      <FilePathData Path="Images/UIParts/sweets_cake_roll.png" />
+      <FilePathData Path="Images/UIParts/sweets_candy.png" />
+      <FilePathData Path="Images/UIParts/sweets_candy_lollipop.png" />
+      <FilePathData Path="Images/UIParts/sweets_chocolate.png" />
+      <FilePathData Path="Images/UIParts/sweets_cookie.png" />
+      <FilePathData Path="Images/UIParts/sweets_donut.png" />
+      <FilePathData Path="Images/UIParts/sweets_donut_chocolate.png" />
+      <FilePathData Path="Images/UIParts/sweets_ice_cream.png" />
+      <FilePathData Path="Images/UIParts/sweets_jelly.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_blue.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_brown.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_green.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_purple.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_red.png" />
+      <FilePathData Path="Images/UIParts/sweets_macaroon_yellow.png" />
+      <FilePathData Path="Images/UIParts/sweets_montblanc.png" />
+      <FilePathData Path="Images/UIParts/sweets_panna_cotta.png" />
+      <FilePathData Path="Images/UIParts/sweets_pudding.png" />
+      <FilePathData Path="Images/UIParts/icon_arrow_down.png" />
     </ImageFiles>
     <MaxSize Width="2048" Height="2048" />
   </Content>

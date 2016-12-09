@@ -56,6 +56,16 @@
             <PreSize X="0.0562" Y="0.0810" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="LabelGameOver" ActionTag="1593225899" Tag="339" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="98.0000" RightMargin="98.0000" TopMargin="476.0000" BottomMargin="568.0000" LabelText="GAME OVER!!" ctype="TextBMFontObjectData">
+            <Size X="444.0000" Y="92.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="320.0000" Y="568.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.6938" Y="0.0810" />
+            <LabelBMFontFile_CNB Type="Normal" Path="Fonts/MenuLabel.fnt" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

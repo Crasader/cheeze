@@ -26,13 +26,13 @@
             <PreSize X="1.7750" Y="1.0000" />
             <FileData Type="Normal" Path="Images/UIParts/bg_main.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PageView" ActionTag="-1193173631" Tag="143" IconVisible="False" PositionPercentXEnabled="True" TopMargin="76.0000" BottomMargin="260.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
+          <AbstractNodeData Name="PageView" ActionTag="-1193173631" Tag="143" IconVisible="False" PositionPercentXEnabled="True" TopMargin="55.9993" BottomMargin="280.0007" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
             <Size X="640.0000" Y="800.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="320.0000" Y="660.0000" />
+            <Position X="320.0000" Y="680.0007" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5810" />
+            <PrePosition X="0.5000" Y="0.5986" />
             <PreSize X="1.0000" Y="0.7042" />
             <SingleColor A="255" R="150" G="150" B="100" />
             <FirstColor A="255" R="150" G="150" B="100" />
@@ -45,7 +45,7 @@
               <AbstractNodeData Name="Member_1" ActionTag="1976715443" Tag="548" IconVisible="True" LeftMargin="-160.0000" RightMargin="160.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Avatar" ActionTag="909063043" Tag="71" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Avatar" ActionTag="909063043" Tag="71" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" TouchEnable="True" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
                     <Size X="300.0000" Y="300.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position />
@@ -53,7 +53,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/kiraly.png" Plist="Csis/Units.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/UIParts/kiraly.png" Plist="Csis/UIParts.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -66,7 +66,7 @@
               <AbstractNodeData Name="Member_2" ActionTag="1821865690" Tag="547" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Avatar" ActionTag="-1381688988" Tag="72" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Avatar" ActionTag="-1381688988" Tag="72" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" TouchEnable="True" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
                     <Size X="300.0000" Y="300.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position />
@@ -74,7 +74,7 @@
                     <CColor A="255" R="136" G="136" B="136" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/hiraly.png" Plist="Csis/Units.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/UIParts/hiraly.png" Plist="Csis/UIParts.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -87,7 +87,7 @@
               <AbstractNodeData Name="Member_3" ActionTag="687944631" Tag="546" IconVisible="True" LeftMargin="160.0000" RightMargin="-160.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Avatar" ActionTag="-1505950856" Tag="73" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Avatar" ActionTag="-1505950856" Tag="73" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-300.0000" TouchEnable="True" LeftEage="99" RightEage="99" TopEage="99" BottomEage="99" Scale9OriginX="99" Scale9OriginY="99" Scale9Width="102" Scale9Height="102" ctype="ImageViewObjectData">
                     <Size X="300.0000" Y="300.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position />
@@ -95,7 +95,7 @@
                     <CColor A="255" R="136" G="136" B="136" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="Images/Character/saraly.png" Plist="Csis/Units.plist" />
+                    <FileData Type="MarkedSubImage" Path="Images/UIParts/saraly.png" Plist="Csis/UIParts.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -116,16 +116,6 @@
           <AbstractNodeData Name="PlayerStatus" ActionTag="-1136680528" Tag="271" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="1076.0000" TouchEnable="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="640.0000" Y="60.0000" />
             <Children>
-              <AbstractNodeData Name="IconCoin" ActionTag="-406856580" Tag="310" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="570.0000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="106" Scale9Height="106" ctype="ImageViewObjectData">
-                <Size X="60.0000" Y="60.0000" />
-                <AnchorPoint ScaleY="0.5000" />
-                <Position X="10.0000" Y="30.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0156" Y="0.5000" />
-                <PreSize X="0.0938" Y="1.0000" />
-                <FileData Type="MarkedSubImage" Path="Images/UIParts/icon_coin.png" Plist="Csis/UIParts.plist" />
-              </AbstractNodeData>
               <AbstractNodeData Name="LabelRank" ActionTag="-1156449734" VisibleForFrame="False" Tag="145" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="20.0000" RightMargin="376.0000" TopMargin="-16.0000" BottomMargin="-16.0000" LabelText="Rank 1" ctype="TextBMFontObjectData">
                 <Size X="244.0000" Y="92.0000" />
                 <AnchorPoint ScaleY="0.5000" />
@@ -144,16 +134,6 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5156" Y="0.5000" />
                 <PreSize X="0.6484" Y="1.6000" />
-                <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="LabelCoin" ActionTag="-986531995" Tag="143" IconVisible="False" LeftMargin="70.0000" RightMargin="277.0000" TopMargin="-13.0000" BottomMargin="-23.0000" LabelText="9999999" ctype="TextBMFontObjectData">
-                <Size X="293.0000" Y="96.0000" />
-                <AnchorPoint ScaleY="0.5000" />
-                <Position X="70.0000" Y="25.0000" />
-                <Scale ScaleX="0.5000" ScaleY="0.5000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1094" Y="0.4167" />
-                <PreSize X="0.4578" Y="1.6000" />
                 <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
               </AbstractNodeData>
             </Children>
@@ -258,23 +238,23 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Arrow_R" ActionTag="622261590" Tag="497" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="549.0000" RightMargin="6.0000" TopMargin="520.0000" BottomMargin="520.0000" LabelText="▲" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="Arrow_R" ActionTag="622261590" Tag="497" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="548.9999" RightMargin="6.0001" TopMargin="407.9999" BottomMargin="632.0001" LabelText="▲" ctype="TextBMFontObjectData">
             <Size X="85.0000" Y="96.0000" />
             <AnchorPoint ScaleX="0.6000" ScaleY="0.5000" />
-            <Position X="600.0000" Y="568.0000" />
+            <Position X="599.9999" Y="680.0001" />
             <Scale ScaleX="0.6000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9375" Y="0.5000" />
+            <PrePosition X="0.9375" Y="0.5986" />
             <PreSize X="0.1328" Y="0.0845" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Arrow_L" ActionTag="2126422995" Tag="498" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-10.9999" RightMargin="565.9999" TopMargin="520.0000" BottomMargin="520.0000" LabelText="▲" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="Arrow_L" ActionTag="2126422995" Tag="498" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-11.0015" RightMargin="566.0015" TopMargin="407.9983" BottomMargin="632.0017" LabelText="▲" ctype="TextBMFontObjectData">
             <Size X="85.0000" Y="96.0000" />
             <AnchorPoint ScaleX="0.6000" ScaleY="0.5000" />
-            <Position X="40.0001" Y="568.0000" />
+            <Position X="39.9985" Y="680.0017" />
             <Scale ScaleX="0.6000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0625" Y="0.5000" />
+            <PrePosition X="0.0625" Y="0.5986" />
             <PreSize X="0.1328" Y="0.0845" />
             <LabelBMFontFile_CNB Type="Normal" Path="Fonts/BasicLabel.fnt" Plist="" />
           </AbstractNodeData>
